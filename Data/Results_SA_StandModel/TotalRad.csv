@@ -1,0 +1,2501 @@
+"ExNum" "CrownShape" "WeatherStation" "CrownTransmissibility" "ForestGapSize" "PlotID" "TotalRad"
+1 "Disk" "Phillip SW Belize" 0.2 5 1 1967090797.30824
+2 "Ellipsoid" "Phillip SW Belize" 0.2 5 1 2019248363.62355
+3 "Disk" "Lake Charles" 0.2 5 1 2000630316.44256
+4 "Ellipsoid" "Lake Charles" 0.2 5 1 2053925848.01294
+5 "Disk" "McMinnville" 0.2 5 1 2509958392.17468
+6 "Ellipsoid" "McMinnville" 0.2 5 1 2591045763.19345
+7 "Disk" "Lindenberg" 0.2 5 1 2306310562.1556
+8 "Ellipsoid" "Lindenberg" 0.2 5 1 2378666406.64212
+9 "Disk" "Croker river" 0.2 5 1 3053133836.07028
+10 "Ellipsoid" "Croker river" 0.2 5 1 3105308173.13585
+11 "Disk" "Phillip SW Belize" 0.15 5 1 1756808229.10624
+12 "Ellipsoid" "Phillip SW Belize" 0.15 5 1 1812333993.66701
+13 "Disk" "Lake Charles" 0.15 5 1 1787282765.9722
+14 "Ellipsoid" "Lake Charles" 0.15 5 1 1844283350.2802
+15 "Disk" "McMinnville" 0.15 5 1 2248853901.25854
+16 "Ellipsoid" "McMinnville" 0.15 5 1 2335851985.99429
+17 "Disk" "Lindenberg" 0.15 5 1 2069512234.09326
+18 "Ellipsoid" "Lindenberg" 0.15 5 1 2147561145.15342
+19 "Disk" "Croker river" 0.15 5 1 2768011071.44736
+20 "Ellipsoid" "Croker river" 0.15 5 1 2824533367.83039
+21 "Disk" "Phillip SW Belize" 0.1 5 1 1565275097.60309
+22 "Ellipsoid" "Phillip SW Belize" 0.1 5 1 1623877411.19699
+23 "Disk" "Lake Charles" 0.1 5 1 1592846288.0977
+24 "Ellipsoid" "Lake Charles" 0.1 5 1 1653251889.25325
+25 "Disk" "McMinnville" 0.1 5 1 2010394995.55662
+26 "Ellipsoid" "McMinnville" 0.1 5 1 2102893095.47748
+27 "Disk" "Lindenberg" 0.1 5 1 1853029898.31449
+28 "Ellipsoid" "Lindenberg" 0.1 5 1 1936412869.44279
+29 "Disk" "Croker river" 0.1 5 1 2506196483.69253
+30 "Ellipsoid" "Croker river" 0.1 5 1 2567107482.34477
+31 "Disk" "Phillip SW Belize" 0.05 5 1 1391295495.2703
+32 "Ellipsoid" "Phillip SW Belize" 0.05 5 1 1452656779.91766
+33 "Disk" "Lake Charles" 0.05 5 1 1416087087.25412
+34 "Ellipsoid" "Lake Charles" 0.05 5 1 1479572133.14033
+35 "Disk" "McMinnville" 0.05 5 1 1793046180.12266
+36 "Ellipsoid" "McMinnville" 0.05 5 1 1890593420.25783
+37 "Disk" "Lindenberg" 0.05 5 1 1655466776.73833
+38 "Ellipsoid" "Lindenberg" 0.05 5 1 1743783707.28418
+39 "Disk" "Croker river" 0.05 5 1 2265943764.69692
+40 "Ellipsoid" "Croker river" 0.05 5 1 2331276927.44725
+41 "Disk" "Phillip SW Belize" 0 5 1 1233732776.32711
+42 "Ellipsoid" "Phillip SW Belize" 0 5 1 1297514467.49378
+43 "Disk" "Lake Charles" 0 5 1 1255832681.17709
+44 "Ellipsoid" "Lake Charles" 0 5 1 1322051898.34906
+45 "Disk" "McMinnville" 0 5 1 1595355991.1576
+46 "Ellipsoid" "McMinnville" 0 5 1 1697468136.25885
+47 "Disk" "Lindenberg" 0 5 1 1475506047.40653
+48 "Ellipsoid" "Lindenberg" 0 5 1 1568321760.42524
+49 "Disk" "Croker river" 0 5 1 2045624089.16006
+50 "Ellipsoid" "Croker river" 0 5 1 2115406337.26373
+51 "Disk" "Phillip SW Belize" 0.2 10 1 2125357735.42339
+52 "Ellipsoid" "Phillip SW Belize" 0.2 10 1 2183012660.25839
+53 "Disk" "Lake Charles" 0.2 10 1 2160284529.1613
+54 "Ellipsoid" "Lake Charles" 0.2 10 1 2222340412.67878
+55 "Disk" "McMinnville" 0.2 10 1 2691967538.76061
+56 "Ellipsoid" "McMinnville" 0.2 10 1 2785915829.86487
+57 "Disk" "Lindenberg" 0.2 10 1 2469084150.40852
+58 "Ellipsoid" "Lindenberg" 0.2 10 1 2554747433.9655
+59 "Disk" "Croker river" 0.2 10 1 3179879375.49536
+60 "Ellipsoid" "Croker river" 0.2 10 1 3265775609.47619
+61 "Disk" "Phillip SW Belize" 0.15 10 1 1915910648.85417
+62 "Ellipsoid" "Phillip SW Belize" 0.15 10 1 1976592957.49437
+63 "Disk" "Lake Charles" 0.15 10 1 1947863765.20165
+64 "Ellipsoid" "Lake Charles" 0.15 10 1 2013408342.13651
+65 "Disk" "McMinnville" 0.15 10 1 2432062343.87907
+66 "Ellipsoid" "McMinnville" 0.15 10 1 2531774467.36482
+67 "Disk" "Lindenberg" 0.15 10 1 2233367923.76117
+68 "Ellipsoid" "Lindenberg" 0.15 10 1 2324590471.29751
+69 "Disk" "Croker river" 0.15 10 1 2895451541.46445
+70 "Ellipsoid" "Croker river" 0.15 10 1 2985644046.18607
+71 "Disk" "Phillip SW Belize" 0.1 10 1 1724533325.06086
+72 "Ellipsoid" "Phillip SW Belize" 0.1 10 1 1787919523.51033
+73 "Disk" "Lake Charles" 0.1 10 1 1753657502.61221
+74 "Ellipsoid" "Lake Charles" 0.1 10 1 1822368588.27356
+75 "Disk" "McMinnville" 0.1 10 1 2194015817.90236
+76 "Ellipsoid" "McMinnville" 0.1 10 1 2299075434.30209
+77 "Disk" "Lindenberg" 0.1 10 1 2017271319.27264
+78 "Ellipsoid" "Lindenberg" 0.1 10 1 2113685896.9728
+79 "Disk" "Croker river" 0.1 10 1 2633831233.86205
+80 "Ellipsoid" "Croker river" 0.1 10 1 2728249182.12442
+81 "Disk" "Phillip SW Belize" 0.05 10 1 1550084017.75186
+82 "Ellipsoid" "Phillip SW Belize" 0.05 10 1 1615831432.75549
+83 "Disk" "Lake Charles" 0.05 10 1 1576484894.36762
+84 "Ellipsoid" "Lake Charles" 0.05 10 1 1648022734.55113
+85 "Disk" "McMinnville" 0.05 10 1 1976350183.80791
+86 "Ellipsoid" "McMinnville" 0.05 10 1 2086312464.70965
+87 "Disk" "Lindenberg" 0.05 10 1 1819449170.23992
+88 "Ellipsoid" "Lindenberg" 0.05 10 1 1920658665.73327
+89 "Disk" "Croker river" 0.05 10 1 2393318649.35556
+90 "Ellipsoid" "Croker river" 0.05 10 1 2491897932.44389
+91 "Disk" "Phillip SW Belize" 0 10 1 1391478547.08481
+92 "Ellipsoid" "Phillip SW Belize" 0 10 1 1459229869.82814
+93 "Disk" "Lake Charles" 0 10 1 1415225023.2127
+94 "Ellipsoid" "Lake Charles" 0 10 1 1489237368.07188
+95 "Disk" "McMinnville" 0 10 1 1777669765.55758
+96 "Ellipsoid" "McMinnville" 0 10 1 1892067059.46272
+97 "Disk" "Lindenberg" 0 10 1 1638634243.41596
+98 "Ellipsoid" "Lindenberg" 0 10 1 1744216602.42757
+99 "Disk" "Croker river" 0 10 1 2172329070.62831
+100 "Ellipsoid" "Croker river" 0 10 1 2275011686.64734
+101 "Disk" "Phillip SW Belize" 0.2 15 1 2336974254.10232
+102 "Ellipsoid" "Phillip SW Belize" 0.2 15 1 2396092185.44743
+103 "Disk" "Lake Charles" 0.2 15 1 2373648429.68735
+104 "Ellipsoid" "Lake Charles" 0.2 15 1 2436986508.13103
+105 "Disk" "McMinnville" 0.2 15 1 2934340516.79842
+106 "Ellipsoid" "McMinnville" 0.2 15 1 3027408978.43292
+107 "Disk" "Lindenberg" 0.2 15 1 2684569465.0305
+108 "Ellipsoid" "Lindenberg" 0.2 15 1 2770352674.55899
+109 "Disk" "Croker river" 0.2 15 1 3351583616.49852
+110 "Ellipsoid" "Croker river" 0.2 15 1 3456808993.67313
+111 "Disk" "Phillip SW Belize" 0.15 15 1 2135931073.95909
+112 "Ellipsoid" "Phillip SW Belize" 0.15 15 1 2197255785.83978
+113 "Disk" "Lake Charles" 0.15 15 1 2169669395.93886
+114 "Ellipsoid" "Lake Charles" 0.15 15 1 2235619426.98195
+115 "Disk" "McMinnville" 0.15 15 1 2684179914.5762
+116 "Ellipsoid" "McMinnville" 0.15 15 1 2781416781.60636
+117 "Disk" "Lindenberg" 0.15 15 1 2457523615.3869
+118 "Ellipsoid" "Lindenberg" 0.15 15 1 2547237169.75198
+119 "Disk" "Croker river" 0.15 15 1 3073501028.64565
+120 "Ellipsoid" "Croker river" 0.15 15 1 3181883060.62861
+121 "Disk" "Phillip SW Belize" 0.1 15 1 1952487668.77753
+122 "Ellipsoid" "Phillip SW Belize" 0.1 15 1 2015646855.98937
+123 "Disk" "Lake Charles" 0.1 15 1 1983453206.72778
+124 "Ellipsoid" "Lake Charles" 0.1 15 1 2051620922.05467
+125 "Disk" "McMinnville" 0.1 15 1 2455409810.91279
+126 "Ellipsoid" "McMinnville" 0.1 15 1 2556275498.17463
+127 "Disk" "Lindenberg" 0.1 15 1 2249695679.64185
+128 "Ellipsoid" "Lindenberg" 0.1 15 1 2342842719.3256
+129 "Disk" "Croker river" 0.1 15 1 2817875344.54704
+130 "Ellipsoid" "Croker river" 0.1 15 1 2929181812.38857
+131 "Disk" "Phillip SW Belize" 0.05 15 1 1785515458.12844
+132 "Ellipsoid" "Phillip SW Belize" 0.05 15 1 1850126275.53186
+133 "Disk" "Lake Charles" 0.05 15 1 1813836476.68464
+134 "Ellipsoid" "Lake Charles" 0.05 15 1 1883815744.86097
+135 "Disk" "McMinnville" 0.05 15 1 2246575693.81228
+136 "Ellipsoid" "McMinnville" 0.05 15 1 2350509984.9353
+137 "Disk" "Lindenberg" 0.05 15 1 2059763126.18943
+138 "Ellipsoid" "Lindenberg" 0.05 15 1 2155824689.17597
+139 "Disk" "Croker river" 0.05 15 1 2583028877.61302
+140 "Ellipsoid" "Croker river" 0.05 15 1 2697046830.48674
+141 "Disk" "Phillip SW Belize" 0 15 1 1633942807.87072
+142 "Ellipsoid" "Phillip SW Belize" 0 15 1 1699616288.81937
+143 "Disk" "Lake Charles" 0 15 1 1659715092.73062
+144 "Ellipsoid" "Lake Charles" 0 15 1 1731092892.56326
+145 "Disk" "McMinnville" 0 15 1 2056304233.49285
+146 "Ellipsoid" "McMinnville" 0 15 1 2162731705.96105
+147 "Disk" "Lindenberg" 0 15 1 1886480467.74474
+148 "Ellipsoid" "Lindenberg" 0 15 1 1984920042.73223
+149 "Disk" "Croker river" 0 15 1 2367397979.92887
+150 "Ellipsoid" "Croker river" 0 15 1 2483932141.98558
+151 "Disk" "Phillip SW Belize" 0.2 20 1 2728942529.70133
+152 "Ellipsoid" "Phillip SW Belize" 0.2 20 1 2834681448.10896
+153 "Disk" "Lake Charles" 0.2 20 1 2761976578.27802
+154 "Ellipsoid" "Lake Charles" 0.2 20 1 2874464238.34622
+155 "Disk" "McMinnville" 0.2 20 1 3346396211.63267
+156 "Ellipsoid" "McMinnville" 0.2 20 1 3512275235.89366
+157 "Disk" "Lindenberg" 0.2 20 1 3040317946.97313
+158 "Ellipsoid" "Lindenberg" 0.2 20 1 3200328412.46264
+159 "Disk" "Croker river" 0.2 20 1 3628512479.69818
+160 "Ellipsoid" "Croker river" 0.2 20 1 3842767716.89711
+161 "Disk" "Phillip SW Belize" 0.15 20 1 2536449808.5392
+162 "Ellipsoid" "Phillip SW Belize" 0.15 20 1 2646596644.57493
+163 "Disk" "Lake Charles" 0.15 20 1 2565903585.74711
+164 "Ellipsoid" "Lake Charles" 0.15 20 1 2683530404.52833
+165 "Disk" "McMinnville" 0.15 20 1 3102670399.08275
+166 "Ellipsoid" "McMinnville" 0.15 20 1 3276630270.16093
+167 "Disk" "Lindenberg" 0.15 20 1 2817912333.88648
+168 "Ellipsoid" "Lindenberg" 0.15 20 1 2985752171.18275
+169 "Disk" "Croker river" 0.15 20 1 3352415551.33196
+170 "Ellipsoid" "Croker river" 0.15 20 1 3574365572.12851
+171 "Disk" "Phillip SW Belize" 0.1 20 1 2360355846.24805
+172 "Ellipsoid" "Phillip SW Belize" 0.1 20 1 2474443414.46369
+173 "Disk" "Lake Charles" 0.1 20 1 2386362669.63884
+174 "Ellipsoid" "Lake Charles" 0.1 20 1 2508669680.70882
+175 "Disk" "McMinnville" 0.1 20 1 2878896146.06732
+176 "Ellipsoid" "McMinnville" 0.1 20 1 3060351907.37393
+177 "Disk" "Lindenberg" 0.1 20 1 2613423020.56833
+178 "Ellipsoid" "Lindenberg" 0.1 20 1 2788558741.65703
+179 "Disk" "Croker river" 0.1 20 1 3097651781.39357
+180 "Ellipsoid" "Croker river" 0.1 20 1 3326980507.51724
+181 "Disk" "Phillip SW Belize" 0.05 20 1 2199629438.0281
+182 "Ellipsoid" "Phillip SW Belize" 0.05 20 1 2317175319.92954
+183 "Disk" "Lake Charles" 0.05 20 1 2222287282.28082
+184 "Ellipsoid" "Lake Charles" 0.05 20 1 2348801166.58003
+185 "Disk" "McMinnville" 0.05 20 1 2673728568.8602
+186 "Ellipsoid" "McMinnville" 0.05 20 1 2862075211.83484
+187 "Disk" "Lindenberg" 0.05 20 1 2425626968.69209
+188 "Ellipsoid" "Lindenberg" 0.05 20 1 2607505317.76391
+189 "Disk" "Croker river" 0.05 20 1 2862628012.06853
+190 "Ellipsoid" "Croker river" 0.05 20 1 3099055976.82582
+191 "Disk" "Phillip SW Belize" 0 20 1 2053293285.7891
+192 "Ellipsoid" "Phillip SW Belize" 0 20 1 2173803928.64926
+193 "Disk" "Lake Charles" 0 20 1 2072666428.44859
+194 "Ellipsoid" "Lake Charles" 0 20 1 2202904201.97909
+195 "Disk" "McMinnville" 0 20 1 2485898242.71633
+196 "Ellipsoid" "McMinnville" 0 20 1 2680515631.09663
+197 "Disk" "Lindenberg" 0 20 1 2253372708.41106
+198 "Ellipsoid" "Lindenberg" 0 20 1 2441424445.38023
+199 "Disk" "Croker river" 0 20 1 2645860229.21036
+200 "Ellipsoid" "Croker river" 0 20 1 2889140838.60517
+201 "Disk" "Phillip SW Belize" 0.2 25 1 3254908660.07515
+202 "Ellipsoid" "Phillip SW Belize" 0.2 25 1 3392212496.29521
+203 "Disk" "Lake Charles" 0.2 25 1 3314790897.43336
+204 "Ellipsoid" "Lake Charles" 0.2 25 1 3451482917.02101
+205 "Disk" "McMinnville" 0.2 25 1 3991197927.72314
+206 "Ellipsoid" "McMinnville" 0.2 25 1 4181824018.73099
+207 "Disk" "Lindenberg" 0.2 25 1 3617170875.06546
+208 "Ellipsoid" "Lindenberg" 0.2 25 1 3806350630.81725
+209 "Disk" "Croker river" 0.2 25 1 4087205158.62938
+210 "Ellipsoid" "Croker river" 0.2 25 1 4400288083.33598
+211 "Disk" "Phillip SW Belize" 0.15 25 1 3076150105.27637
+212 "Ellipsoid" "Phillip SW Belize" 0.15 25 1 3217424557.39823
+213 "Disk" "Lake Charles" 0.15 25 1 3134206788.26604
+214 "Ellipsoid" "Lake Charles" 0.15 25 1 3275064368.27331
+215 "Disk" "McMinnville" 0.15 25 1 3767006065.70741
+216 "Ellipsoid" "McMinnville" 0.15 25 1 3963548518.48015
+217 "Disk" "Lindenberg" 0.15 25 1 3412989714.50175
+218 "Ellipsoid" "Lindenberg" 0.15 25 1 3607635786.90085
+219 "Disk" "Croker river" 0.15 25 1 3826429432.38683
+220 "Ellipsoid" "Croker river" 0.15 25 1 4146412006.57506
+221 "Disk" "Phillip SW Belize" 0.1 25 1 2912407708.52822
+222 "Ellipsoid" "Phillip SW Belize" 0.1 25 1 3057024257.39886
+223 "Disk" "Lake Charles" 0.1 25 1 2968710515.75696
+224 "Ellipsoid" "Lake Charles" 0.1 25 1 3113145652.0492
+225 "Disk" "McMinnville" 0.1 25 1 3561148753.74069
+226 "Ellipsoid" "McMinnville" 0.1 25 1 3762862855.4724
+227 "Disk" "Lindenberg" 0.1 25 1 3225354667.59322
+228 "Ellipsoid" "Lindenberg" 0.1 25 1 3424719380.74386
+229 "Disk" "Croker river" 0.1 25 1 3586062870.59239
+230 "Ellipsoid" "Croker river" 0.1 25 1 3912130122.6204
+231 "Disk" "Phillip SW Belize" 0.05 25 1 2762763049.27993
+232 "Ellipsoid" "Phillip SW Belize" 0.05 25 1 2910089573.76929
+233 "Disk" "Lake Charles" 0.05 25 1 2817341267.10144
+234 "Ellipsoid" "Lake Charles" 0.05 25 1 2964768048.88914
+235 "Disk" "McMinnville" 0.05 25 1 3372389882.1413
+236 "Ellipsoid" "McMinnville" 0.05 25 1 3578540918.01138
+237 "Disk" "Lindenberg" 0.05 25 1 3053136440.53787
+238 "Ellipsoid" "Lindenberg" 0.05 25 1 3256483747.81677
+239 "Disk" "Croker river" 0.05 25 1 3364587075.86705
+240 "Ellipsoid" "Croker river" 0.05 25 1 3696000447.62117
+241 "Disk" "Phillip SW Belize" 0 25 1 2626346154.85192
+242 "Ellipsoid" "Phillip SW Belize" 0 25 1 2775749425.35358
+243 "Disk" "Lake Charles" 0 25 1 2679188986.74762
+244 "Ellipsoid" "Lake Charles" 0 25 1 2829026490.3723
+245 "Disk" "McMinnville" 0 25 1 3199563804.33796
+246 "Ellipsoid" "McMinnville" 0 25 1 3409429351.31242
+247 "Disk" "Lindenberg" 0 25 1 2895272724.75059
+248 "Ellipsoid" "Lindenberg" 0 25 1 3101879383.76262
+249 "Disk" "Croker river" 0 25 1 3160587632.33177
+250 "Ellipsoid" "Croker river" 0 25 1 3496678730.73966
+251 "Disk" "Phillip SW Belize" 0.2 5 2 2026662916.09863
+252 "Ellipsoid" "Phillip SW Belize" 0.2 5 2 2054628803.65648
+253 "Disk" "Lake Charles" 0.2 5 2 2094543403.9999
+254 "Ellipsoid" "Lake Charles" 0.2 5 2 2122987065.55507
+255 "Disk" "McMinnville" 0.2 5 2 2675957801.70915
+256 "Ellipsoid" "McMinnville" 0.2 5 2 2726765079.6583
+257 "Disk" "Lindenberg" 0.2 5 2 2468397822.7633
+258 "Ellipsoid" "Lindenberg" 0.2 5 2 2524419438.59365
+259 "Disk" "Croker river" 0.2 5 2 3135613872.95624
+260 "Ellipsoid" "Croker river" 0.2 5 2 3244637273.09001
+261 "Disk" "Phillip SW Belize" 0.15 5 2 1813222309.00642
+262 "Ellipsoid" "Phillip SW Belize" 0.15 5 2 1843548334.09474
+263 "Disk" "Lake Charles" 0.15 5 2 1878528802.93372
+264 "Ellipsoid" "Lake Charles" 0.15 5 2 1909129515.7404
+265 "Disk" "McMinnville" 0.15 5 2 2412478530.08785
+266 "Ellipsoid" "McMinnville" 0.15 5 2 2467006590.03151
+267 "Disk" "Lindenberg" 0.15 5 2 2229428331.9655
+268 "Ellipsoid" "Lindenberg" 0.15 5 2 2289781308.11523
+269 "Disk" "Croker river" 0.15 5 2 2843601537.11351
+270 "Ellipsoid" "Croker river" 0.15 5 2 2961386064.44797
+271 "Disk" "Phillip SW Belize" 0.1 5 2 1617868327.65036
+272 "Ellipsoid" "Phillip SW Belize" 0.1 5 2 1650471843.56441
+273 "Disk" "Lake Charles" 0.1 5 2 1680861013.95514
+274 "Ellipsoid" "Lake Charles" 0.1 5 2 1713381216.64224
+275 "Disk" "McMinnville" 0.1 5 2 2170801910.6059
+276 "Ellipsoid" "McMinnville" 0.1 5 2 2228708062.47521
+277 "Disk" "Lindenberg" 0.1 5 2 2009957125.39229
+278 "Ellipsoid" "Lindenberg" 0.1 5 2 2074328461.95112
+279 "Disk" "Croker river" 0.1 5 2 2574615914.99746
+280 "Ellipsoid" "Croker river" 0.1 5 2 2700803448.47153
+281 "Disk" "Phillip SW Belize" 0.05 5 2 1439429101.81919
+282 "Ellipsoid" "Phillip SW Belize" 0.05 5 2 1474215746.02829
+283 "Disk" "Lake Charles" 0.05 5 2 1500371618.179
+284 "Ellipsoid" "Lake Charles" 0.05 5 2 1534544362.22334
+285 "Disk" "McMinnville" 0.05 5 2 1949490259.13133
+286 "Ellipsoid" "McMinnville" 0.05 5 2 2010393085.00379
+287 "Disk" "Lindenberg" 0.05 5 2 1808679787.28531
+288 "Ellipsoid" "Lindenberg" 0.05 5 2 1876717215.45377
+289 "Disk" "Croker river" 0.05 5 2 2327037780.26962
+290 "Ellipsoid" "Croker river" 0.05 5 2 2461222099.85573
+291 "Disk" "Phillip SW Belize" 0 5 2 1276792541.49139
+292 "Ellipsoid" "Phillip SW Belize" 0 5 2 1313658246.96482
+293 "Disk" "Lake Charles" 0 5 2 1335952455.95515
+294 "Ellipsoid" "Lake Charles" 0 5 2 1371483906.68154
+295 "Disk" "McMinnville" 0 5 2 1747186507.32237
+296 "Ellipsoid" "McMinnville" 0 5 2 1810670139.33696
+297 "Disk" "Lindenberg" 0 5 2 1624367739.41299
+298 "Ellipsoid" "Lindenberg" 0 5 2 1695684354.9149
+299 "Disk" "Croker river" 0 5 2 2099354061.75843
+300 "Ellipsoid" "Croker river" 0 5 2 2241087908.56235
+301 "Disk" "Phillip SW Belize" 0.2 10 2 2133018300.8621
+302 "Ellipsoid" "Phillip SW Belize" 0.2 10 2 2153287235.5456
+303 "Disk" "Lake Charles" 0.2 10 2 2198306512.28815
+304 "Ellipsoid" "Lake Charles" 0.2 10 2 2222421956.61884
+305 "Disk" "McMinnville" 0.2 10 2 2792436281.53383
+306 "Ellipsoid" "McMinnville" 0.2 10 2 2840528792.64164
+307 "Disk" "Lindenberg" 0.2 10 2 2574357738.49438
+308 "Ellipsoid" "Lindenberg" 0.2 10 2 2627348261.19429
+309 "Disk" "Croker river" 0.2 10 2 3228240017.0927
+310 "Ellipsoid" "Croker river" 0.2 10 2 3341793663.41147
+311 "Disk" "Phillip SW Belize" 0.15 10 2 1921172127.68876
+312 "Ellipsoid" "Phillip SW Belize" 0.15 10 2 1942760455.87345
+313 "Disk" "Lake Charles" 0.15 10 2 1983529692.52883
+314 "Ellipsoid" "Lake Charles" 0.15 10 2 2008965282.98191
+315 "Disk" "McMinnville" 0.15 10 2 2529891130.27158
+316 "Ellipsoid" "McMinnville" 0.15 10 2 2581029591.0869
+317 "Disk" "Lindenberg" 0.15 10 2 2336230849.09935
+318 "Ellipsoid" "Lindenberg" 0.15 10 2 2392845815.87623
+319 "Disk" "Croker river" 0.15 10 2 2936918331.62589
+320 "Ellipsoid" "Croker river" 0.15 10 2 3058510095.98818
+321 "Disk" "Phillip SW Belize" 0.1 10 2 1727039203.85536
+322 "Ellipsoid" "Phillip SW Belize" 0.1 10 2 1749852854.7647
+323 "Disk" "Lake Charles" 0.1 10 2 1786697288.77555
+324 "Ellipsoid" "Lake Charles" 0.1 10 2 1813213761.55055
+325 "Disk" "McMinnville" 0.1 10 2 2288635959.27217
+326 "Ellipsoid" "McMinnville" 0.1 10 2 2342508380.13694
+327 "Disk" "Lindenberg" 0.1 10 2 2117124693.82591
+328 "Ellipsoid" "Lindenberg" 0.1 10 2 2177085773.98111
+329 "Disk" "Croker river" 0.1 10 2 2668180613.03174
+330 "Ellipsoid" "Croker river" 0.1 10 2 2797496314.63582
+331 "Disk" "Phillip SW Belize" 0.05 10 2 1549479647.84916
+332 "Ellipsoid" "Phillip SW Belize" 0.05 10 2 1573416121.04755
+333 "Disk" "Lake Charles" 0.05 10 2 1606672522.99531
+334 "Ellipsoid" "Lake Charles" 0.05 10 2 1634005279.34007
+335 "Disk" "McMinnville" 0.05 10 2 2067267700.12287
+336 "Ellipsoid" "McMinnville" 0.05 10 2 2123529246.85968
+337 "Disk" "Lindenberg" 0.05 10 2 1915764619.3063
+338 "Ellipsoid" "Lindenberg" 0.05 10 2 1978761299.08058
+339 "Disk" "Croker river" 0.05 10 2 2420429504.4472
+340 "Ellipsoid" "Croker river" 0.05 10 2 2557122837.51937
+341 "Disk" "Phillip SW Belize" 0 10 2 1387412396.85822
+342 "Ellipsoid" "Phillip SW Belize" 0 10 2 1412361848.95474
+343 "Disk" "Lake Charles" 0 10 2 1442378038.24802
+344 "Ellipsoid" "Lake Charles" 0 10 2 1470238553.41466
+345 "Disk" "McMinnville" 0 10 2 1864463021.71826
+346 "Ellipsoid" "McMinnville" 0 10 2 1922738824.26619
+347 "Disk" "Lindenberg" 0 10 2 1730950995.1327
+348 "Ellipsoid" "Lindenberg" 0 10 2 1796643810.24788
+349 "Disk" "Croker river" 0 10 2 2192172902.92484
+350 "Ellipsoid" "Croker river" 0 10 2 2335870832.78017
+351 "Disk" "Phillip SW Belize" 0.2 15 2 2392358629.73228
+352 "Ellipsoid" "Phillip SW Belize" 0.2 15 2 2435334525.62987
+353 "Disk" "Lake Charles" 0.2 15 2 2467494122.22818
+354 "Ellipsoid" "Lake Charles" 0.2 15 2 2510561574.39328
+355 "Disk" "McMinnville" 0.2 15 2 3105932761.26078
+356 "Ellipsoid" "McMinnville" 0.2 15 2 3171645608.36916
+357 "Disk" "Lindenberg" 0.2 15 2 2857507405.98053
+358 "Ellipsoid" "Lindenberg" 0.2 15 2 2926267269.40382
+359 "Disk" "Croker river" 0.2 15 2 3462442646.65159
+360 "Ellipsoid" "Croker river" 0.2 15 2 3608905751.63797
+361 "Disk" "Phillip SW Belize" 0.15 15 2 2186716737.21636
+362 "Ellipsoid" "Phillip SW Belize" 0.15 15 2 2231808213.97818
+363 "Disk" "Lake Charles" 0.15 15 2 2259320065.10885
+364 "Ellipsoid" "Lake Charles" 0.15 15 2 2304379221.37197
+365 "Disk" "McMinnville" 0.15 15 2 2851816526.61155
+366 "Ellipsoid" "McMinnville" 0.15 15 2 2920473553.46304
+367 "Disk" "Lindenberg" 0.15 15 2 2627307589.35576
+368 "Ellipsoid" "Lindenberg" 0.15 15 2 2699239108.70427
+369 "Disk" "Croker river" 0.15 15 2 3178375220.61397
+370 "Ellipsoid" "Croker river" 0.15 15 2 3331485702.08237
+371 "Disk" "Phillip SW Belize" 0.1 15 2 1998027293.76778
+372 "Ellipsoid" "Phillip SW Belize" 0.1 15 2 2045139502.37363
+373 "Disk" "Lake Charles" 0.1 15 2 2068277067.75706
+374 "Ellipsoid" "Lake Charles" 0.1 15 2 2115118415.86434
+375 "Disk" "McMinnville" 0.1 15 2 2618088562.13354
+376 "Ellipsoid" "McMinnville" 0.1 15 2 2689388769.92761
+377 "Disk" "Lindenberg" 0.1 15 2 2415334420.93389
+378 "Ellipsoid" "Lindenberg" 0.1 15 2 2490158184.53021
+379 "Disk" "Croker river" 0.1 15 2 2916276078.54453
+380 "Ellipsoid" "Croker river" 0.1 15 2 3075579119.20341
+381 "Disk" "Phillip SW Belize" 0.05 15 2 1825205737.64496
+382 "Ellipsoid" "Phillip SW Belize" 0.05 15 2 1874245183.05933
+383 "Disk" "Lake Charles" 0.05 15 2 1893279667.60106
+384 "Ellipsoid" "Lake Charles" 0.05 15 2 1941681105.16381
+385 "Disk" "McMinnville" 0.05 15 2 2403402831.0737
+386 "Ellipsoid" "McMinnville" 0.05 15 2 2477029898.33956
+387 "Disk" "Lindenberg" 0.05 15 2 2220363600.51796
+388 "Ellipsoid" "Lindenberg" 0.05 15 2 2297786048.79633
+389 "Disk" "Croker river" 0.05 15 2 2674584629.16318
+390 "Ellipsoid" "Croker river" 0.05 15 2 2839621113.51249
+391 "Disk" "Phillip SW Belize" 0 15 2 1667223960.04032
+392 "Ellipsoid" "Phillip SW Belize" 0 15 2 1718098986.11497
+393 "Disk" "Lake Charles" 0 15 2 1733299472.72901
+394 "Ellipsoid" "Lake Charles" 0 15 2 1783027088.212
+395 "Disk" "McMinnville" 0 15 2 2206490792.30468
+396 "Ellipsoid" "McMinnville" 0 15 2 2282114458.36853
+397 "Disk" "Lindenberg" 0 15 2 2041244097.49406
+398 "Ellipsoid" "Lindenberg" 0 15 2 2120958998.96043
+399 "Disk" "Croker river" 0 15 2 2451844555.59424
+400 "Ellipsoid" "Croker river" 0 15 2 2622153599.06779
+401 "Disk" "Phillip SW Belize" 0.2 20 2 2998330938.60129
+402 "Ellipsoid" "Phillip SW Belize" 0.2 20 2 3082091305.458
+403 "Disk" "Lake Charles" 0.2 20 2 3076652722.17444
+404 "Ellipsoid" "Lake Charles" 0.2 20 2 3161819482.94171
+405 "Disk" "McMinnville" 0.2 20 2 3772494483.09018
+406 "Ellipsoid" "McMinnville" 0.2 20 2 3905364628.33029
+407 "Disk" "Lindenberg" 0.2 20 2 3438538896.86714
+408 "Ellipsoid" "Lindenberg" 0.2 20 2 3581351982.98095
+409 "Disk" "Croker river" 0.2 20 2 3903937867.88646
+410 "Ellipsoid" "Croker river" 0.2 20 2 4197478602.3963
+411 "Disk" "Phillip SW Belize" 0.15 20 2 2811477760.20062
+412 "Ellipsoid" "Phillip SW Belize" 0.15 20 2 2897461165.18195
+413 "Disk" "Lake Charles" 0.15 20 2 2886828745.5599
+414 "Ellipsoid" "Lake Charles" 0.15 20 2 2974370468.92538
+415 "Disk" "McMinnville" 0.15 20 2 3536986113.21588
+416 "Ellipsoid" "McMinnville" 0.15 20 2 3674091164.67182
+417 "Disk" "Lindenberg" 0.15 20 2 3223845573.38755
+418 "Ellipsoid" "Lindenberg" 0.15 20 2 3371495585.824
+419 "Disk" "Croker river" 0.15 20 2 3630297231.54299
+420 "Ellipsoid" "Croker river" 0.15 20 2 3934520839.53784
+421 "Disk" "Phillip SW Belize" 0.1 20 2 2639995336.41763
+422 "Ellipsoid" "Phillip SW Belize" 0.1 20 2 2727908095.30376
+423 "Disk" "Lake Charles" 0.1 20 2 2712483493.91326
+424 "Ellipsoid" "Lake Charles" 0.1 20 2 2802018626.49505
+425 "Disk" "McMinnville" 0.1 20 2 3319915604.87488
+426 "Ellipsoid" "McMinnville" 0.1 20 2 3460779549.92193
+427 "Disk" "Lindenberg" 0.1 20 2 3025623446.42168
+428 "Ellipsoid" "Lindenberg" 0.1 20 2 3177664642.34798
+429 "Disk" "Croker river" 0.1 20 2 3377253008.57735
+430 "Ellipsoid" "Croker river" 0.1 20 2 3691361528.31314
+431 "Disk" "Phillip SW Belize" 0.05 20 2 2482878467.45248
+432 "Ellipsoid" "Phillip SW Belize" 0.05 20 2 2572444233.74134
+433 "Disk" "Lake Charles" 0.05 20 2 2552612812.3728
+434 "Ellipsoid" "Lake Charles" 0.05 20 2 2643764574.63071
+435 "Disk" "McMinnville" 0.05 20 2 3120033408.73002
+436 "Ellipsoid" "McMinnville" 0.05 20 2 3264190180.64783
+437 "Disk" "Lindenberg" 0.05 20 2 2842737374.01761
+438 "Ellipsoid" "Lindenberg" 0.05 20 2 2998735428.6899
+439 "Disk" "Croker river" 0.05 20 2 3143327543.60459
+440 "Ellipsoid" "Croker river" 0.05 20 2 3466550509.7423
+441 "Disk" "Phillip SW Belize" 0 20 2 2339173601.30069
+442 "Ellipsoid" "Phillip SW Belize" 0 20 2 2430133337.28627
+443 "Disk" "Lake Charles" 0 20 2 2406264756.45427
+444 "Ellipsoid" "Lake Charles" 0 20 2 2498661755.96991
+445 "Disk" "McMinnville" 0 20 2 2936162408.55319
+446 "Ellipsoid" "McMinnville" 0 20 2 3083156422.99333
+447 "Disk" "Lindenberg" 0 20 2 2674120999.69725
+448 "Ellipsoid" "Lindenberg" 0 20 2 2833653413.31033
+449 "Disk" "Croker river" 0 20 2 2927143443.34909
+450 "Ellipsoid" "Croker river" 0 20 2 3258738043.49276
+451 "Disk" "Phillip SW Belize" 0.2 25 2 3388108571.18061
+452 "Ellipsoid" "Phillip SW Belize" 0.2 25 2 3486856805.51123
+453 "Disk" "Lake Charles" 0.2 25 2 3461426374.40519
+454 "Ellipsoid" "Lake Charles" 0.2 25 2 3565303022.09839
+455 "Disk" "McMinnville" 0.2 25 2 4191706996.63456
+456 "Ellipsoid" "McMinnville" 0.2 25 2 4359228949.73378
+457 "Disk" "Lindenberg" 0.2 25 2 3804249056.35944
+458 "Ellipsoid" "Lindenberg" 0.2 25 2 3987350652.74562
+459 "Disk" "Croker river" 0.2 25 2 4171776129.25543
+460 "Ellipsoid" "Croker river" 0.2 25 2 4550133898.50916
+461 "Disk" "Phillip SW Belize" 0.15 25 2 3213513107.72671
+462 "Ellipsoid" "Phillip SW Belize" 0.15 25 2 3313693221.46955
+463 "Disk" "Lake Charles" 0.15 25 2 3283762785.72996
+464 "Ellipsoid" "Lake Charles" 0.15 25 2 3389329795.21173
+465 "Disk" "McMinnville" 0.15 25 2 3970370421.11413
+466 "Ellipsoid" "McMinnville" 0.15 25 2 4141184651.58739
+467 "Disk" "Lindenberg" 0.15 25 2 3602588131.4978
+468 "Ellipsoid" "Lindenberg" 0.15 25 2 3789640806.68889
+469 "Disk" "Croker river" 0.15 25 2 3909884987.93249
+470 "Ellipsoid" "Croker river" 0.15 25 2 4298449964.45713
+471 "Disk" "Phillip SW Belize" 0.1 25 2 3053320466.55389
+472 "Ellipsoid" "Phillip SW Belize" 0.1 25 2 3154546696.52014
+473 "Disk" "Lake Charles" 0.1 25 2 3120693690.79013
+474 "Ellipsoid" "Lake Charles" 0.1 25 2 3227440632.55255
+475 "Disk" "McMinnville" 0.1 25 2 3766651127.41985
+476 "Ellipsoid" "McMinnville" 0.1 25 2 3940043168.08632
+477 "Disk" "Lindenberg" 0.1 25 2 3416738772.38471
+478 "Ellipsoid" "Lindenberg" 0.1 25 2 3607040658.59381
+479 "Disk" "Croker river" 0.1 25 2 3668250706.02213
+480 "Ellipsoid" "Croker river" 0.1 25 2 4065805996.63316
+481 "Disk" "Phillip SW Belize" 0.05 25 2 2906592193.37294
+482 "Ellipsoid" "Phillip SW Belize" 0.05 25 2 3008508470.84476
+483 "Disk" "Lake Charles" 0.05 25 2 2971289795.621
+484 "Ellipsoid" "Lake Charles" 0.05 25 2 3078718781.11864
+485 "Disk" "McMinnville" 0.05 25 2 3579383254.9646
+486 "Ellipsoid" "McMinnville" 0.05 25 2 3754658075.89748
+487 "Disk" "Lindenberg" 0.05 25 2 3245634066.49924
+488 "Ellipsoid" "Lindenberg" 0.05 25 2 3438506940.95287
+489 "Disk" "Croker river" 0.05 25 2 3445428215.93806
+490 "Ellipsoid" "Croker river" 0.05 25 2 3850812970.62894
+491 "Disk" "Phillip SW Belize" 0 25 2 2772439648.30296
+492 "Ellipsoid" "Phillip SW Belize" 0 25 2 2874718639.03288
+493 "Disk" "Lake Charles" 0 25 2 2834671883.3051
+494 "Ellipsoid" "Lake Charles" 0 25 2 2942297091.5969
+495 "Disk" "McMinnville" 0 25 2 3407470452.15754
+496 "Ellipsoid" "McMinnville" 0 25 2 3583951148.29474
+497 "Disk" "Lindenberg" 0 25 2 3088273194.2753
+498 "Ellipsoid" "Lindenberg" 0 25 2 3283060975.82221
+499 "Disk" "Croker river" 0 25 2 3240071346.35371
+500 "Ellipsoid" "Croker river" 0 25 2 3652178362.15885
+501 "Disk" "Phillip SW Belize" 0.2 5 3 2013587491.06164
+502 "Ellipsoid" "Phillip SW Belize" 0.2 5 3 2073197690.56736
+503 "Disk" "Lake Charles" 0.2 5 3 2070790697.48728
+504 "Ellipsoid" "Lake Charles" 0.2 5 3 2128811542.24529
+505 "Disk" "McMinnville" 0.2 5 3 2611572601.20964
+506 "Ellipsoid" "McMinnville" 0.2 5 3 2671776762.29455
+507 "Disk" "Lindenberg" 0.2 5 3 2398436034.80537
+508 "Ellipsoid" "Lindenberg" 0.2 5 3 2444416668.13017
+509 "Disk" "Croker river" 0.2 5 3 3173287924.92022
+510 "Ellipsoid" "Croker river" 0.2 5 3 3177874899.90542
+511 "Disk" "Phillip SW Belize" 0.15 5 3 1802730802.25506
+512 "Ellipsoid" "Phillip SW Belize" 0.15 5 3 1864099590.30016
+513 "Disk" "Lake Charles" 0.15 5 3 1858196254.2206
+514 "Ellipsoid" "Lake Charles" 0.15 5 3 1918030605.2747
+515 "Disk" "McMinnville" 0.15 5 3 2352217557.38984
+516 "Ellipsoid" "McMinnville" 0.15 5 3 2415085746.96424
+517 "Disk" "Lindenberg" 0.15 5 3 2163463719.01609
+518 "Ellipsoid" "Lindenberg" 0.15 5 3 2211503931.8362
+519 "Disk" "Croker river" 0.15 5 3 2892797868.69112
+520 "Ellipsoid" "Croker river" 0.15 5 3 2894103390.9233
+521 "Disk" "Phillip SW Belize" 0.1 5 3 1610292140.14752
+522 "Ellipsoid" "Phillip SW Belize" 0.1 5 3 1673116065.04976
+523 "Disk" "Lake Charles" 0.1 5 3 1664127629.29656
+524 "Ellipsoid" "Lake Charles" 0.1 5 3 1725486812.35752
+525 "Disk" "McMinnville" 0.1 5 3 2114970766.46331
+526 "Ellipsoid" "McMinnville" 0.1 5 3 2180216618.08133
+527 "Disk" "Lindenberg" 0.1 5 3 1948398588.81437
+528 "Ellipsoid" "Lindenberg" 0.1 5 3 1998238696.41768
+529 "Disk" "Croker river" 0.1 5 3 2635893159.92074
+530 "Ellipsoid" "Croker river" 0.1 5 3 2633448346.11759
+531 "Disk" "Phillip SW Belize" 0.05 5 3 1435082342.30837
+532 "Ellipsoid" "Phillip SW Belize" 0.05 5 3 1499059832.18838
+533 "Disk" "Lake Charles" 0.05 5 3 1487361641.23118
+534 "Ellipsoid" "Lake Charles" 0.05 5 3 1549960460.13335
+535 "Disk" "McMinnville" 0.05 5 3 1898295449.53106
+536 "Ellipsoid" "McMinnville" 0.05 5 3 1965641709.08768
+537 "Disk" "Lindenberg" 0.05 5 3 1751843603.68171
+538 "Ellipsoid" "Lindenberg" 0.05 5 3 1803229605.14948
+539 "Disk" "Croker river" 0.05 5 3 2400864101.96038
+540 "Ellipsoid" "Croker river" 0.05 5 3 2394218189.3197
+541 "Disk" "Phillip SW Belize" 0 5 3 1275972210.09443
+542 "Ellipsoid" "Phillip SW Belize" 0 5 3 1340805409.91557
+543 "Disk" "Lake Charles" 0 5 3 1326737938.02924
+544 "Ellipsoid" "Lake Charles" 0 5 3 1390297055.71757
+545 "Disk" "McMinnville" 0 5 3 1700738126.82684
+546 "Ellipsoid" "McMinnville" 0 5 3 1769921452.55575
+547 "Disk" "Lindenberg" 0 5 3 1572479626.60111
+548 "Ellipsoid" "Lindenberg" 0 5 3 1625167614.68077
+549 "Disk" "Croker river" 0 5 3 2186109705.75868
+550 "Ellipsoid" "Croker river" 0 5 3 2174832389.6279
+551 "Disk" "Phillip SW Belize" 0.2 10 3 2183146993.68588
+552 "Ellipsoid" "Phillip SW Belize" 0.2 10 3 2250794286.62589
+553 "Disk" "Lake Charles" 0.2 10 3 2233913575.78289
+554 "Ellipsoid" "Lake Charles" 0.2 10 3 2304954535.96623
+555 "Disk" "McMinnville" 0.2 10 3 2792417044.28482
+556 "Ellipsoid" "McMinnville" 0.2 10 3 2871902327.35959
+557 "Disk" "Lindenberg" 0.2 10 3 2560762980.68686
+558 "Ellipsoid" "Lindenberg" 0.2 10 3 2625924843.75424
+559 "Disk" "Croker river" 0.2 10 3 3313552630.42336
+560 "Ellipsoid" "Croker river" 0.2 10 3 3352411967.02281
+561 "Disk" "Phillip SW Belize" 0.15 10 3 1972674334.0208
+562 "Ellipsoid" "Phillip SW Belize" 0.15 10 3 2041174663.51989
+563 "Disk" "Lake Charles" 0.15 10 3 2020907050.81169
+564 "Ellipsoid" "Lake Charles" 0.15 10 3 2093184360.71545
+565 "Disk" "McMinnville" 0.15 10 3 2532039036.14808
+566 "Ellipsoid" "McMinnville" 0.15 10 3 2613716432.14446
+567 "Disk" "Lindenberg" 0.15 10 3 2324776415.09727
+568 "Ellipsoid" "Lindenberg" 0.15 10 3 2391614409.88849
+569 "Disk" "Croker river" 0.15 10 3 3032144288.00234
+570 "Ellipsoid" "Croker river" 0.15 10 3 3067290388.22542
+571 "Disk" "Phillip SW Belize" 0.1 10 3 1780136471.75562
+572 "Ellipsoid" "Phillip SW Belize" 0.1 10 3 1849063473.53305
+573 "Disk" "Lake Charles" 0.1 10 3 1825924499.92461
+574 "Ellipsoid" "Lake Charles" 0.1 10 3 1899027136.34724
+575 "Disk" "McMinnville" 0.1 10 3 2293198223.64849
+576 "Ellipsoid" "McMinnville" 0.1 10 3 2376636929.80502
+577 "Disk" "Lindenberg" 0.1 10 3 2108178151.81213
+578 "Ellipsoid" "Lindenberg" 0.1 10 3 2176306578.37607
+579 "Disk" "Croker river" 0.1 10 3 2773817814.17887
+580 "Ellipsoid" "Croker river" 0.1 10 3 2804674105.12401
+581 "Disk" "Phillip SW Belize" 0.05 10 3 1604414908.96325
+582 "Ellipsoid" "Phillip SW Belize" 0.05 10 3 1673357113.22237
+583 "Disk" "Lake Charles" 0.05 10 3 1647819815.80439
+584 "Ellipsoid" "Lake Charles" 0.05 10 3 1721351132.34455
+585 "Disk" "McMinnville" 0.05 10 3 2074452531.37769
+586 "Ellipsoid" "McMinnville" 0.05 10 3 2159239120.93388
+587 "Disk" "Lindenberg" 0.05 10 3 1909658021.84054
+588 "Ellipsoid" "Lindenberg" 0.05 10 3 1978703393.06821
+589 "Disk" "Croker river" 0.05 10 3 2536935399.83384
+590 "Ellipsoid" "Croker river" 0.05 10 3 2562959142.38977
+591 "Disk" "Phillip SW Belize" 0 10 3 1444443475.53553
+592 "Ellipsoid" "Phillip SW Belize" 0 10 3 1513006554.67171
+593 "Disk" "Lake Charles" 0 10 3 1485502186.06444
+594 "Ellipsoid" "Lake Charles" 0 10 3 1559082627.58732
+595 "Disk" "McMinnville" 0 10 3 1874434683.07284
+596 "Ellipsoid" "McMinnville" 0 10 3 1960177776.45183
+597 "Disk" "Lindenberg" 0 10 3 1727976076.6894
+598 "Ellipsoid" "Lindenberg" 0 10 3 1797581191.33147
+599 "Disk" "Croker river" 0 10 3 2319961807.34221
+600 "Ellipsoid" "Croker river" 0 10 3 2340644512.80889
+601 "Disk" "Phillip SW Belize" 0.2 15 3 2527394284.98422
+602 "Ellipsoid" "Phillip SW Belize" 0.2 15 3 2615547815.68114
+603 "Disk" "Lake Charles" 0.2 15 3 2596167661.62465
+604 "Ellipsoid" "Lake Charles" 0.2 15 3 2683601523.53493
+605 "Disk" "McMinnville" 0.2 15 3 3213089562.75206
+606 "Ellipsoid" "McMinnville" 0.2 15 3 3311949371.75286
+607 "Disk" "Lindenberg" 0.2 15 3 2938523918.65696
+608 "Ellipsoid" "Lindenberg" 0.2 15 3 3024504203.57398
+609 "Disk" "Croker river" 0.2 15 3 3616650257.00651
+610 "Ellipsoid" "Croker river" 0.2 15 3 3721285711.65903
+611 "Disk" "Phillip SW Belize" 0.15 15 3 2323566367.5638
+612 "Ellipsoid" "Phillip SW Belize" 0.15 15 3 2413320472.05765
+613 "Disk" "Lake Charles" 0.15 15 3 2391191387.93666
+614 "Ellipsoid" "Lake Charles" 0.15 15 3 2480042286.70875
+615 "Disk" "McMinnville" 0.15 15 3 2962812378.93122
+616 "Ellipsoid" "McMinnville" 0.15 15 3 3063454392.7459
+617 "Disk" "Lindenberg" 0.15 15 3 2711896946.69997
+618 "Ellipsoid" "Lindenberg" 0.15 15 3 2798904934.1201
+619 "Disk" "Croker river" 0.15 15 3 3342426185.29293
+620 "Ellipsoid" "Croker river" 0.15 15 3 3443352558.10261
+621 "Disk" "Phillip SW Belize" 0.1 15 3 2136490253.76546
+622 "Ellipsoid" "Phillip SW Belize" 0.1 15 3 2227442014.61398
+623 "Disk" "Lake Charles" 0.1 15 3 2203030430.82294
+624 "Ellipsoid" "Lake Charles" 0.1 15 3 2292902658.24956
+625 "Disk" "McMinnville" 0.1 15 3 2732718589.99502
+626 "Ellipsoid" "McMinnville" 0.1 15 3 2834702740.86889
+627 "Disk" "Lindenberg" 0.1 15 3 2503478822.666
+628 "Ellipsoid" "Lindenberg" 0.1 15 3 2591088030.19487
+629 "Disk" "Croker river" 0.1 15 3 3090394364.46433
+630 "Ellipsoid" "Croker river" 0.1 15 3 3186781211.81733
+631 "Disk" "Phillip SW Belize" 0.05 15 3 1965122050.42516
+632 "Ellipsoid" "Phillip SW Belize" 0.05 15 3 2056893864.51089
+633 "Disk" "Lake Charles" 0.05 15 3 2030608326.78185
+634 "Ellipsoid" "Lake Charles" 0.05 15 3 2121133667.53228
+635 "Disk" "McMinnville" 0.05 15 3 2521442362.82629
+636 "Ellipsoid" "McMinnville" 0.05 15 3 2624365656.82291
+637 "Disk" "Lindenberg" 0.05 15 3 2312028304.6263
+638 "Ellipsoid" "Lindenberg" 0.05 15 3 2399844746.58361
+639 "Disk" "Croker river" 0.05 15 3 2858984794.17958
+640 "Ellipsoid" "Croker river" 0.05 15 3 2950058613.87483
+641 "Disk" "Phillip SW Belize" 0 15 3 1808466514.37439
+642 "Ellipsoid" "Phillip SW Belize" 0 15 3 1900707880.05188
+643 "Disk" "Lake Charles" 0 15 3 1872901005.06058
+644 "Ellipsoid" "Lake Charles" 0 15 3 1963740658.96231
+645 "Disk" "McMinnville" 0 15 3 2327689653.76211
+646 "Ellipsoid" "McMinnville" 0 15 3 2431189322.51996
+647 "Disk" "Lindenberg" 0 15 3 2136371668.18773
+648 "Ellipsoid" "Lindenberg" 0 15 3 2224036235.07266
+649 "Disk" "Croker river" 0 15 3 2646727183.10027
+650 "Ellipsoid" "Croker river" 0 15 3 2731769531.58848
+651 "Disk" "Phillip SW Belize" 0.2 20 3 2907677552.29198
+652 "Ellipsoid" "Phillip SW Belize" 0.2 20 3 3016525276.8119
+653 "Disk" "Lake Charles" 0.2 20 3 2963860091.89341
+654 "Ellipsoid" "Lake Charles" 0.2 20 3 3080644818.80094
+655 "Disk" "McMinnville" 0.2 20 3 3607365059.38652
+656 "Ellipsoid" "McMinnville" 0.2 20 3 3756802502.57302
+657 "Disk" "Lindenberg" 0.2 20 3 3275929216.08909
+658 "Ellipsoid" "Lindenberg" 0.2 20 3 3421372523.90256
+659 "Disk" "Croker river" 0.2 20 3 3833965796.19594
+660 "Ellipsoid" "Croker river" 0.2 20 3 4061783465.57197
+661 "Disk" "Phillip SW Belize" 0.15 20 3 2714116965.64869
+662 "Ellipsoid" "Phillip SW Belize" 0.15 20 3 2824273681.12095
+663 "Disk" "Lake Charles" 0.15 20 3 2767947948.17468
+664 "Ellipsoid" "Lake Charles" 0.15 20 3 2886572414.93869
+665 "Disk" "McMinnville" 0.15 20 3 3366293410.28573
+666 "Ellipsoid" "McMinnville" 0.15 20 3 3518673653.93268
+667 "Disk" "Lindenberg" 0.15 20 3 3057003772.86426
+668 "Ellipsoid" "Lindenberg" 0.15 20 3 3204964088.94922
+669 "Disk" "Croker river" 0.15 20 3 3564742502.43902
+670 "Ellipsoid" "Croker river" 0.15 20 3 3791847097.1624
+671 "Disk" "Phillip SW Belize" 0.1 20 3 2536242650.51318
+672 "Ellipsoid" "Phillip SW Belize" 0.1 20 3 2647206078.95186
+673 "Disk" "Lake Charles" 0.1 20 3 2587749350.31794
+674 "Ellipsoid" "Lake Charles" 0.1 20 3 2707755840.92408
+675 "Disk" "McMinnville" 0.1 20 3 3144155493.58838
+676 "Ellipsoid" "McMinnville" 0.1 20 3 3298973718.96124
+677 "Disk" "Lindenberg" 0.1 20 3 2855187290.9451
+678 "Ellipsoid" "Lindenberg" 0.1 20 3 3005155742.12855
+679 "Disk" "Croker river" 0.1 20 3 3317004336.32209
+680 "Ellipsoid" "Croker river" 0.1 20 3 3542255792.42798
+681 "Disk" "Phillip SW Belize" 0.05 20 3 2373087429.81175
+682 "Ellipsoid" "Phillip SW Belize" 0.05 20 3 2484388432.46612
+683 "Disk" "Lake Charles" 0.05 20 3 2422263891.7199
+684 "Ellipsoid" "Lake Charles" 0.05 20 3 2543232439.20914
+685 "Disk" "McMinnville" 0.05 20 3 2939661759.68213
+686 "Ellipsoid" "McMinnville" 0.05 20 3 3096469229.19408
+687 "Disk" "Lindenberg" 0.05 20 3 2669299846.61385
+688 "Ellipsoid" "Lindenberg" 0.05 20 3 2820821999.64197
+689 "Disk" "Croker river" 0.05 20 3 3089216173.19413
+690 "Ellipsoid" "Croker river" 0.05 20 3 3311563715.09647
+691 "Disk" "Phillip SW Belize" 0 20 3 2223730828.11689
+692 "Ellipsoid" "Phillip SW Belize" 0 20 3 2334934071.26128
+693 "Disk" "Lake Charles" 0 20 3 2270541236.42438
+694 "Ellipsoid" "Lake Charles" 0 20 3 2392090364.36611
+695 "Disk" "McMinnville" 0 20 3 2751591657.92107
+696 "Ellipsoid" "McMinnville" 0 20 3 2909997066.77399
+697 "Disk" "Lindenberg" 0 20 3 2498226403.42189
+698 "Ellipsoid" "Lindenberg" 0 20 3 2650902994.13716
+699 "Disk" "Croker river" 0 20 3 2879940529.44532
+700 "Ellipsoid" "Croker river" 0 20 3 3098418937.74033
+701 "Disk" "Phillip SW Belize" 0.2 25 3 3446058705.02086
+702 "Ellipsoid" "Phillip SW Belize" 0.2 25 3 3593847332.83547
+703 "Disk" "Lake Charles" 0.2 25 3 3500623766.12956
+704 "Ellipsoid" "Lake Charles" 0.2 25 3 3659870039.27851
+705 "Disk" "McMinnville" 0.2 25 3 4186264619.15658
+706 "Ellipsoid" "McMinnville" 0.2 25 3 4411589597.94613
+707 "Disk" "Lindenberg" 0.2 25 3 3778393033.84996
+708 "Ellipsoid" "Lindenberg" 0.2 25 3 4008147345.67016
+709 "Disk" "Croker river" 0.2 25 3 4201406491.94346
+710 "Ellipsoid" "Croker river" 0.2 25 3 4586440705.26906
+711 "Disk" "Phillip SW Belize" 0.15 25 3 3268146522.26863
+712 "Ellipsoid" "Phillip SW Belize" 0.15 25 3 3418376304.7957
+713 "Disk" "Lake Charles" 0.15 25 3 3320337495.64133
+714 "Ellipsoid" "Lake Charles" 0.15 25 3 3482699229.06849
+715 "Disk" "McMinnville" 0.15 25 3 3961573901.94416
+716 "Ellipsoid" "McMinnville" 0.15 25 3 4192187558.96132
+717 "Disk" "Lindenberg" 0.15 25 3 3573487352.14711
+718 "Ellipsoid" "Lindenberg" 0.15 25 3 3808433804.94975
+719 "Disk" "Croker river" 0.15 25 3 3940874029.94406
+720 "Ellipsoid" "Croker river" 0.15 25 3 4330889151.20819
+721 "Disk" "Phillip SW Belize" 0.1 25 3 3104472366.71759
+722 "Ellipsoid" "Phillip SW Belize" 0.1 25 3 3256553831.98462
+723 "Disk" "Lake Charles" 0.1 25 3 3154343051.83112
+724 "Ellipsoid" "Lake Charles" 0.1 25 3 3319288024.85711
+725 "Disk" "McMinnville" 0.1 25 3 3754339723.90626
+726 "Ellipsoid" "McMinnville" 0.1 25 3 3989558109.64138
+727 "Disk" "Lindenberg" 0.1 25 3 3384447804.57398
+728 "Ellipsoid" "Lindenberg" 0.1 25 3 3623850019.53192
+729 "Disk" "Croker river" 0.1 25 3 3700875583.97678
+730 "Ellipsoid" "Croker river" 0.1 25 3 4094394537.9453
+731 "Disk" "Phillip SW Belize" 0.05 25 3 2954154022.45076
+732 "Ellipsoid" "Phillip SW Belize" 0.05 25 3 3107538733.19539
+733 "Disk" "Lake Charles" 0.05 25 3 3001725934.4703
+734 "Ellipsoid" "Lake Charles" 0.05 25 3 3168770263.14772
+735 "Disk" "McMinnville" 0.05 25 3 3563375731.40154
+736 "Ellipsoid" "McMinnville" 0.05 25 3 3802583628.34455
+737 "Disk" "Lindenberg" 0.05 25 3 3210189143.3084
+738 "Ellipsoid" "Lindenberg" 0.05 25 3 3453376168.80923
+739 "Disk" "Croker river" 0.05 25 3 3479954398.53535
+740 "Ellipsoid" "Croker river" 0.05 25 3 3875612482.55569
+741 "Disk" "Phillip SW Belize" 0 25 3 2816351329.03571
+742 "Ellipsoid" "Phillip SW Belize" 0 25 3 2970532034.39408
+743 "Disk" "Lake Charles" 0 25 3 2861616822.03007
+744 "Ellipsoid" "Lake Charles" 0 25 3 3030324892.32427
+745 "Disk" "McMinnville" 0 25 3 3387557947.15368
+746 "Ellipsoid" "McMinnville" 0 25 3 3630209487.82682
+747 "Disk" "Lindenberg" 0 25 3 3049684456.7611
+748 "Ellipsoid" "Lindenberg" 0 25 3 3296051166.46163
+749 "Disk" "Croker river" 0 25 3 3276744418.82322
+750 "Ellipsoid" "Croker river" 0 25 3 3673285239.7641
+751 "Disk" "Phillip SW Belize" 0.2 5 4 1982988526.07647
+752 "Ellipsoid" "Phillip SW Belize" 0.2 5 4 1985470276.86491
+753 "Disk" "Lake Charles" 0.2 5 4 2003060621.58077
+754 "Ellipsoid" "Lake Charles" 0.2 5 4 2017221739.6843
+755 "Disk" "McMinnville" 0.2 5 4 2556771935.10123
+756 "Ellipsoid" "McMinnville" 0.2 5 4 2545293238.1934
+757 "Disk" "Lindenberg" 0.2 5 4 2358293350.02461
+758 "Ellipsoid" "Lindenberg" 0.2 5 4 2337615742.14507
+759 "Disk" "Croker river" 0.2 5 4 3097558505.57871
+760 "Ellipsoid" "Croker river" 0.2 5 4 3022148588.15024
+761 "Disk" "Phillip SW Belize" 0.15 5 4 1768709663.85028
+762 "Ellipsoid" "Phillip SW Belize" 0.15 5 4 1770636772.4648
+763 "Disk" "Lake Charles" 0.15 5 4 1788465886.85245
+764 "Ellipsoid" "Lake Charles" 0.15 5 4 1801046611.69899
+765 "Disk" "McMinnville" 0.15 5 4 2301135845.70039
+766 "Ellipsoid" "McMinnville" 0.15 5 4 2286537237.94276
+767 "Disk" "Lindenberg" 0.15 5 4 2128610018.98848
+768 "Ellipsoid" "Lindenberg" 0.15 5 4 2105233283.52609
+769 "Disk" "Croker river" 0.15 5 4 2822785047.92954
+770 "Ellipsoid" "Croker river" 0.15 5 4 2743411905.41317
+771 "Disk" "Phillip SW Belize" 0.1 5 4 1572518414.99419
+772 "Ellipsoid" "Phillip SW Belize" 0.1 5 4 1573860242.08589
+773 "Disk" "Lake Charles" 0.1 5 4 1592153393.29878
+774 "Ellipsoid" "Lake Charles" 0.1 5 4 1603071132.77314
+775 "Disk" "McMinnville" 0.1 5 4 2067451088.43371
+776 "Ellipsoid" "McMinnville" 0.1 5 4 2049686103.16592
+777 "Disk" "Lindenberg" 0.1 5 4 1918687872.21162
+778 "Ellipsoid" "Lindenberg" 0.1 5 4 1892586895.67091
+779 "Disk" "Croker river" 0.1 5 4 2571275419.05569
+780 "Ellipsoid" "Croker river" 0.1 5 4 2488127435.06093
+781 "Disk" "Phillip SW Belize" 0.05 5 4 1393228472.88177
+782 "Ellipsoid" "Phillip SW Belize" 0.05 5 4 1393955165.78106
+783 "Disk" "Lake Charles" 0.05 5 4 1412866435.29171
+784 "Ellipsoid" "Lake Charles" 0.05 5 4 1422055736.54857
+785 "Disk" "McMinnville" 0.05 5 4 1854124383.59985
+786 "Ellipsoid" "McMinnville" 0.05 5 4 1833160981.61939
+787 "Disk" "Lindenberg" 0.05 5 4 1727064365.7935
+788 "Ellipsoid" "Lindenberg" 0.05 5 4 1698220951.14553
+789 "Disk" "Croker river" 0.05 5 4 2341222316.25531
+790 "Ellipsoid" "Croker river" 0.05 5 4 2254486772.89667
+791 "Disk" "Phillip SW Belize" 0 5 4 1229716983.38628
+792 "Ellipsoid" "Phillip SW Belize" 0 5 4 1229798368.67897
+793 "Disk" "Lake Charles" 0 5 4 1249417700.94475
+794 "Ellipsoid" "Lake Charles" 0 5 4 1256827987.72771
+795 "Disk" "McMinnville" 0 5 4 1659660685.59626
+796 "Ellipsoid" "McMinnville" 0 5 4 1635478293.34539
+797 "Disk" "Lindenberg" 0 5 4 1552370328.58294
+798 "Ellipsoid" "Lindenberg" 0 5 4 1520771293.34792
+799 "Disk" "Croker river" 0 5 4 2130948039.66828
+800 "Ellipsoid" "Croker river" 0 5 4 2040808626.1223
+801 "Disk" "Phillip SW Belize" 0.2 10 4 2223272987.34493
+802 "Ellipsoid" "Phillip SW Belize" 0.2 10 4 2233752677.12893
+803 "Disk" "Lake Charles" 0.2 10 4 2237537759.91454
+804 "Ellipsoid" "Lake Charles" 0.2 10 4 2264023838.45187
+805 "Disk" "McMinnville" 0.2 10 4 2811920607.17279
+806 "Ellipsoid" "McMinnville" 0.2 10 4 2817565379.04705
+807 "Disk" "Lindenberg" 0.2 10 4 2581329939.60442
+808 "Ellipsoid" "Lindenberg" 0.2 10 4 2578424009.05047
+809 "Disk" "Croker river" 0.2 10 4 3271328026.0546
+810 "Ellipsoid" "Croker river" 0.2 10 4 3235462896.1388
+811 "Disk" "Phillip SW Belize" 0.15 10 4 2014110332.6546
+812 "Ellipsoid" "Phillip SW Belize" 0.15 10 4 2023949078.25958
+813 "Disk" "Lake Charles" 0.15 10 4 2027606575.67388
+814 "Ellipsoid" "Lake Charles" 0.15 10 4 2052539826.71891
+815 "Disk" "McMinnville" 0.15 10 4 2560558929.8273
+816 "Ellipsoid" "McMinnville" 0.15 10 4 2563059733.68538
+817 "Disk" "Lindenberg" 0.15 10 4 2354933737.05459
+818 "Ellipsoid" "Lindenberg" 0.15 10 4 2349286031.01789
+819 "Disk" "Croker river" 0.15 10 4 2997983450.24082
+820 "Ellipsoid" "Croker river" 0.15 10 4 2958317787.76239
+821 "Disk" "Phillip SW Belize" 0.1 10 4 1822162702.8391
+822 "Ellipsoid" "Phillip SW Belize" 0.1 10 4 1831318436.83627
+823 "Disk" "Lake Charles" 0.1 10 4 1835102111.24399
+824 "Ellipsoid" "Lake Charles" 0.1 10 4 1858377192.21888
+825 "Disk" "McMinnville" 0.1 10 4 2330191747.57281
+826 "Ellipsoid" "McMinnville" 0.1 10 4 2329460034.90253
+827 "Disk" "Lindenberg" 0.1 10 4 2147442903.01024
+828 "Ellipsoid" "Lindenberg" 0.1 10 4 2138985299.88325
+829 "Disk" "Croker river" 0.1 10 4 2747181525.76499
+830 "Ellipsoid" "Croker river" 0.1 10 4 2703801023.17098
+831 "Disk" "Phillip SW Belize" 0.05 10 4 1646286793.23409
+832 "Ellipsoid" "Phillip SW Belize" 0.05 10 4 1654725147.70209
+833 "Disk" "Lake Charles" 0.05 10 4 1658814527.47133
+834 "Ellipsoid" "Lake Charles" 0.05 10 4 1680350798.80195
+835 "Disk" "McMinnville" 0.05 10 4 2119285663.85882
+836 "Ellipsoid" "McMinnville" 0.05 10 4 2115255989.32857
+837 "Disk" "Lindenberg" 0.05 10 4 1957451347.19127
+838 "Ellipsoid" "Lindenberg" 0.05 10 4 1946131813.80504
+839 "Disk" "Croker river" 0.05 10 4 2517170080.54625
+840 "Ellipsoid" "Croker river" 0.05 10 4 2470173941.19004
+841 "Disk" "Phillip SW Belize" 0 10 4 1485401720.8352
+842 "Ellipsoid" "Phillip SW Belize" 0 10 4 1493094386.16736
+843 "Disk" "Lake Charles" 0 10 4 1497602123.24054
+844 "Ellipsoid" "Lake Charles" 0 10 4 1517340804.50782
+845 "Disk" "McMinnville" 0 10 4 1926403635.98434
+846 "Ellipsoid" "McMinnville" 0 10 4 1919029706.49739
+847 "Disk" "Lindenberg" 0 10 4 1783644398.25198
+848 "Ellipsoid" "Lindenberg" 0 10 4 1769424062.58955
+849 "Disk" "Croker river" 0 10 4 2306324710.59491
+850 "Ellipsoid" "Croker river" 0 10 4 2255820938.51339
+851 "Disk" "Phillip SW Belize" 0.2 15 4 2413051649.83586
+852 "Ellipsoid" "Phillip SW Belize" 0.2 15 4 2432743285.23435
+853 "Disk" "Lake Charles" 0.2 15 4 2425844706.66074
+854 "Ellipsoid" "Lake Charles" 0.2 15 4 2461871844.83602
+855 "Disk" "McMinnville" 0.2 15 4 3018210811.35948
+856 "Ellipsoid" "McMinnville" 0.2 15 4 3036677965.72797
+857 "Disk" "Lindenberg" 0.2 15 4 2762701816.01242
+858 "Ellipsoid" "Lindenberg" 0.2 15 4 2773468078.78903
+859 "Disk" "Croker river" 0.2 15 4 3407386849.51801
+860 "Ellipsoid" "Croker river" 0.2 15 4 3407633645.15218
+861 "Disk" "Phillip SW Belize" 0.15 15 4 2208022163.67567
+862 "Ellipsoid" "Phillip SW Belize" 0.15 15 4 2227189304.57313
+863 "Disk" "Lake Charles" 0.15 15 4 2219973841.83482
+864 "Ellipsoid" "Lake Charles" 0.15 15 4 2254422999.21824
+865 "Disk" "McMinnville" 0.15 15 4 2771105843.24221
+866 "Ellipsoid" "McMinnville" 0.15 15 4 2786108127.91577
+867 "Disk" "Lindenberg" 0.15 15 4 2540113323.70688
+868 "Ellipsoid" "Lindenberg" 0.15 15 4 2547631441.02452
+869 "Disk" "Croker river" 0.15 15 4 3136998877.91584
+870 "Ellipsoid" "Croker river" 0.15 15 4 3132989636.29737
+871 "Disk" "Phillip SW Belize" 0.1 15 4 2019601792.7677
+872 "Ellipsoid" "Phillip SW Belize" 0.1 15 4 2038206536.83421
+873 "Disk" "Lake Charles" 0.1 15 4 2030950189.52985
+874 "Ellipsoid" "Lake Charles" 0.1 15 4 2063697673.2978
+875 "Disk" "McMinnville" 0.1 15 4 2544371198.09865
+876 "Ellipsoid" "McMinnville" 0.1 15 4 2555765101.88584
+877 "Disk" "Lindenberg" 0.1 15 4 2335891751.73468
+878 "Ellipsoid" "Lindenberg" 0.1 15 4 2340023043.1778
+879 "Disk" "Croker river" 0.1 15 4 2888753613.01235
+880 "Ellipsoid" "Croker river" 0.1 15 4 2880425054.28146
+881 "Disk" "Phillip SW Belize" 0.05 15 4 1846690284.28438
+882 "Ellipsoid" "Phillip SW Belize" 0.05 15 4 1864706469.13938
+883 "Disk" "Lake Charles" 0.05 15 4 1857608535.31747
+884 "Ellipsoid" "Lake Charles" 0.05 15 4 1888559708.24044
+885 "Disk" "McMinnville" 0.05 15 4 2336525667.42503
+886 "Ellipsoid" "McMinnville" 0.05 15 4 2344197206.98303
+887 "Disk" "Lindenberg" 0.05 15 4 2148676861.12383
+888 "Ellipsoid" "Lindenberg" 0.05 15 4 2149306747.59149
+889 "Disk" "Croker river" 0.05 15 4 2660932032.76671
+890 "Ellipsoid" "Croker river" 0.05 15 4 2648251241.18051
+891 "Disk" "Phillip SW Belize" 0 15 4 1688248269.5043
+892 "Ellipsoid" "Phillip SW Belize" 0 15 4 1705658991.68461
+893 "Disk" "Lake Charles" 0 15 4 1698849788.83001
+894 "Ellipsoid" "Lake Charles" 0 15 4 1727935612.43355
+895 "Disk" "McMinnville" 0 15 4 2146181790.14321
+896 "Ellipsoid" "McMinnville" 0 15 4 2150041761.71504
+897 "Disk" "Lindenberg" 0 15 4 1977197470.72842
+898 "Ellipsoid" "Lindenberg" 0 15 4 1974231634.28929
+899 "Disk" "Croker river" 0 15 4 2451941205.17581
+900 "Ellipsoid" "Croker river" 0 15 4 2434899127.20798
+901 "Disk" "Phillip SW Belize" 0.2 20 4 2998674070.25828
+902 "Ellipsoid" "Phillip SW Belize" 0.2 20 4 3057155314.40084
+903 "Disk" "Lake Charles" 0.2 20 4 3011508870.22443
+904 "Ellipsoid" "Lake Charles" 0.2 20 4 3090198059.32946
+905 "Disk" "McMinnville" 0.2 20 4 3663592151.83261
+906 "Ellipsoid" "McMinnville" 0.2 20 4 3743689967.70132
+907 "Disk" "Lindenberg" 0.2 20 4 3325731323.24867
+908 "Ellipsoid" "Lindenberg" 0.2 20 4 3404662694.34868
+909 "Disk" "Croker river" 0.2 20 4 3826695759.24833
+910 "Ellipsoid" "Croker river" 0.2 20 4 3963637364.80733
+911 "Disk" "Phillip SW Belize" 0.15 20 4 2812112114.55361
+912 "Ellipsoid" "Phillip SW Belize" 0.15 20 4 2870847168.1954
+913 "Disk" "Lake Charles" 0.15 20 4 2823964372.39619
+914 "Ellipsoid" "Lake Charles" 0.15 20 4 2901971147.18293
+915 "Disk" "McMinnville" 0.15 20 4 3436141102.41045
+916 "Ellipsoid" "McMinnville" 0.15 20 4 3513924693.24407
+917 "Disk" "Lindenberg" 0.15 20 4 3120085114.46232
+918 "Ellipsoid" "Lindenberg" 0.15 20 4 3197061264.4041
+919 "Disk" "Croker river" 0.15 20 4 3568736945.92291
+920 "Ellipsoid" "Croker river" 0.15 20 4 3704017556.01779
+921 "Disk" "Phillip SW Belize" 0.1 20 4 2640577777.255
+922 "Ellipsoid" "Phillip SW Belize" 0.1 20 4 2699446077.73135
+923 "Disk" "Lake Charles" 0.1 20 4 2651688153.94685
+924 "Ellipsoid" "Lake Charles" 0.1 20 4 2728791966.94799
+925 "Disk" "McMinnville" 0.1 20 4 3227328427.68782
+926 "Ellipsoid" "McMinnville" 0.1 20 4 3302495380.93709
+927 "Disk" "Lindenberg" 0.1 20 4 2931312885.82343
+928 "Ellipsoid" "Lindenberg" 0.1 20 4 3006010165.19826
+929 "Disk" "Croker river" 0.1 20 4 3331909497.55082
+930 "Ellipsoid" "Croker river" 0.1 20 4 3465032234.14322
+931 "Disk" "Phillip SW Belize" 0.05 20 4 2483043702.16508
+932 "Ellipsoid" "Phillip SW Belize" 0.05 20 4 2541951119.34678
+933 "Disk" "Lake Charles" 0.05 20 4 2493588937.68407
+934 "Ellipsoid" "Lake Charles" 0.05 20 4 2569613764.47553
+935 "Disk" "McMinnville" 0.05 20 4 3035763194.2155
+936 "Ellipsoid" "McMinnville" 0.05 20 4 3108060785.97095
+937 "Disk" "Lindenberg" 0.05 20 4 2758139239.07195
+938 "Ellipsoid" "Lindenberg" 0.05 20 4 2830277505.20438
+939 "Disk" "Croker river" 0.05 20 4 3114571992.19034
+940 "Ellipsoid" "Croker river" 0.05 20 4 3245099706.81463
+941 "Disk" "Phillip SW Belize" 0 20 4 2338539967.02899
+942 "Ellipsoid" "Phillip SW Belize" 0 20 4 2397415753.11203
+943 "Disk" "Lake Charles" 0 20 4 2348637764.9756
+944 "Ellipsoid" "Lake Charles" 0 20 4 2423448142.87144
+945 "Disk" "McMinnville" 0 20 4 2860143651.58819
+946 "Ellipsoid" "McMinnville" 0 20 4 2929362936.86314
+947 "Disk" "Lindenberg" 0 20 4 2599373750.65582
+948 "Ellipsoid" "Lindenberg" 0 20 4 2668711078.08591
+949 "Disk" "Croker river" 0 20 4 2915204966.04171
+950 "Ellipsoid" "Croker river" 0 20 4 3042751373.8766
+951 "Disk" "Phillip SW Belize" 0.2 25 4 3409179114.10386
+952 "Ellipsoid" "Phillip SW Belize" 0.2 25 4 3502306022.60859
+953 "Disk" "Lake Charles" 0.2 25 4 3410619639.93435
+954 "Ellipsoid" "Lake Charles" 0.2 25 4 3529963328.95185
+955 "Disk" "McMinnville" 0.2 25 4 4079070883.95159
+956 "Ellipsoid" "McMinnville" 0.2 25 4 4225995019.27341
+957 "Disk" "Lindenberg" 0.2 25 4 3673873410.08438
+958 "Ellipsoid" "Lindenberg" 0.2 25 4 3826592948.29482
+959 "Disk" "Croker river" 0.2 25 4 4056221066.99953
+960 "Ellipsoid" "Croker river" 0.2 25 4 4314294494.79903
+961 "Disk" "Phillip SW Belize" 0.15 25 4 3234586832.12213
+962 "Ellipsoid" "Phillip SW Belize" 0.15 25 4 3328730228.47816
+963 "Disk" "Lake Charles" 0.15 25 4 3234312984.0359
+964 "Ellipsoid" "Lake Charles" 0.15 25 4 3354218586.69323
+965 "Disk" "McMinnville" 0.15 25 4 3862889837.83483
+966 "Ellipsoid" "McMinnville" 0.15 25 4 4009135163.85387
+967 "Disk" "Lindenberg" 0.15 25 4 3477262406.82594
+968 "Ellipsoid" "Lindenberg" 0.15 25 4 3629771103.51619
+969 "Disk" "Croker river" 0.15 25 4 3802934354.08129
+970 "Ellipsoid" "Croker river" 0.15 25 4 4062228527.56764
+971 "Disk" "Phillip SW Belize" 0.1 25 4 3074024826.61074
+972 "Ellipsoid" "Phillip SW Belize" 0.1 25 4 3168956456.89642
+973 "Disk" "Lake Charles" 0.1 25 4 3072360864.65046
+974 "Ellipsoid" "Lake Charles" 0.1 25 4 3192469783.98557
+975 "Disk" "McMinnville" 0.1 25 4 3664483313.87128
+976 "Ellipsoid" "McMinnville" 0.1 25 4 3809473531.42048
+977 "Disk" "Lindenberg" 0.1 25 4 3296824725.92221
+978 "Ellipsoid" "Lindenberg" 0.1 25 4 3448486365.98117
+979 "Disk" "Croker river" 0.1 25 4 3570282419.05624
+980 "Ellipsoid" "Croker river" 0.1 25 4 3829871591.76171
+981 "Disk" "Phillip SW Belize" 0.05 25 4 2926545021.13746
+982 "Ellipsoid" "Phillip SW Belize" 0.05 25 4 3022067640.15126
+983 "Disk" "Lake Charles" 0.05 25 4 2923759268.8799
+984 "Ellipsoid" "Lake Charles" 0.05 25 4 3043757143.22679
+985 "Disk" "McMinnville" 0.05 25 4 3482561028.08739
+986 "Ellipsoid" "McMinnville" 0.05 25 4 3625773912.47141
+987 "Disk" "Lindenberg" 0.05 25 4 3131374257.80073
+988 "Ellipsoid" "Lindenberg" 0.05 25 4 3281601940.73154
+989 "Disk" "Croker river" 0.05 25 4 3356689252.63986
+990 "Ellipsoid" "Croker river" 0.05 25 4 3615727778.12965
+991 "Disk" "Phillip SW Belize" 0 25 4 2791252462.14118
+992 "Ellipsoid" "Phillip SW Belize" 0 25 4 2887196161.06686
+993 "Disk" "Lake Charles" 0 25 4 2787561069.64662
+994 "Ellipsoid" "Lake Charles" 0 25 4 2907173644.38409
+995 "Disk" "McMinnville" 0 25 4 3315914027.78899
+996 "Ellipsoid" "McMinnville" 0 25 4 3456876064.55003
+997 "Disk" "Lindenberg" 0 25 4 2979802299.71897
+998 "Ellipsoid" "Lindenberg" 0 25 4 3128053842.31388
+999 "Disk" "Croker river" 0 25 4 3160693984.89995
+1000 "Ellipsoid" "Croker river" 0 25 4 3418407672.36717
+1001 "Disk" "Phillip SW Belize" 0.2 5 5 1875031345.69738
+1002 "Ellipsoid" "Phillip SW Belize" 0.2 5 5 1913890242.00563
+1003 "Disk" "Lake Charles" 0.2 5 5 1926899444.41124
+1004 "Ellipsoid" "Lake Charles" 0.2 5 5 1971365032.86055
+1005 "Disk" "McMinnville" 0.2 5 5 2505639231.51418
+1006 "Ellipsoid" "McMinnville" 0.2 5 5 2552863965.07046
+1007 "Disk" "Lindenberg" 0.2 5 5 2343270192.72611
+1008 "Ellipsoid" "Lindenberg" 0.2 5 5 2374369414.62901
+1009 "Disk" "Croker river" 0.2 5 5 3148332912.03345
+1010 "Ellipsoid" "Croker river" 0.2 5 5 3169529588.43519
+1011 "Disk" "Phillip SW Belize" 0.15 5 5 1664325533.18963
+1012 "Ellipsoid" "Phillip SW Belize" 0.15 5 5 1707853548.75601
+1013 "Disk" "Lake Charles" 0.15 5 5 1714034020.92703
+1014 "Ellipsoid" "Lake Charles" 0.15 5 5 1763287229.0538
+1015 "Disk" "McMinnville" 0.15 5 5 2246348964.69541
+1016 "Ellipsoid" "McMinnville" 0.15 5 5 2299955625.56599
+1017 "Disk" "Lindenberg" 0.15 5 5 2109127433.62606
+1018 "Ellipsoid" "Lindenberg" 0.15 5 5 2145509864.39979
+1019 "Disk" "Croker river" 0.15 5 5 2864637184.09063
+1020 "Ellipsoid" "Croker river" 0.15 5 5 2890277138.38447
+1021 "Disk" "Phillip SW Belize" 0.1 5 5 1472048321.58168
+1022 "Ellipsoid" "Phillip SW Belize" 0.1 5 5 1520044254.50512
+1023 "Disk" "Lake Charles" 0.1 5 5 1519665711.11489
+1024 "Ellipsoid" "Lake Charles" 0.1 5 5 1573551493.77503
+1025 "Disk" "McMinnville" 0.1 5 5 2009136557.63733
+1026 "Ellipsoid" "McMinnville" 0.1 5 5 2068904870.13613
+1027 "Disk" "Lindenberg" 0.1 5 5 1894840323.9062
+1028 "Ellipsoid" "Lindenberg" 0.1 5 5 1936237116.03387
+1029 "Disk" "Croker river" 0.1 5 5 2604139389.62898
+1030 "Ellipsoid" "Croker river" 0.1 5 5 2633927932.92303
+1031 "Disk" "Phillip SW Belize" 0.05 5 5 1296904158.53911
+1032 "Ellipsoid" "Phillip SW Belize" 0.05 5 5 1349131128.55442
+1033 "Disk" "Lake Charles" 0.05 5 5 1342456725.96104
+1034 "Ellipsoid" "Lake Charles" 0.05 5 5 1400795832.11453
+1035 "Disk" "McMinnville" 0.05 5 5 1792392771.20902
+1036 "Ellipsoid" "McMinnville" 0.05 5 5 1858061293.37821
+1037 "Disk" "Lindenberg" 0.05 5 5 1698965505.41033
+1038 "Ellipsoid" "Lindenberg" 0.05 5 5 1745065755.99272
+1039 "Disk" "Croker river" 0.05 5 5 2365142909.51166
+1040 "Ellipsoid" "Croker river" 0.05 5 5 2398734925.97768
+1041 "Disk" "Phillip SW Belize" 0 5 5 1137666997.10278
+1042 "Ellipsoid" "Phillip SW Belize" 0 5 5 1193859315.44196
+1043 "Disk" "Lake Charles" 0 5 5 1181141174.86094
+1044 "Ellipsoid" "Lake Charles" 0 5 5 1243737110.03748
+1045 "Disk" "McMinnville" 0 5 5 1594600359.94869
+1046 "Ellipsoid" "McMinnville" 0 5 5 1665877406.77172
+1047 "Disk" "Lindenberg" 0 5 5 1520143410.60417
+1048 "Ellipsoid" "Lindenberg" 0 5 5 1570605577.2453
+1049 "Disk" "Croker river" 0 5 5 2146064749.85056
+1050 "Ellipsoid" "Croker river" 0 5 5 2183073198.83446
+1051 "Disk" "Phillip SW Belize" 0.2 10 5 2008600096.81944
+1052 "Ellipsoid" "Phillip SW Belize" 0.2 10 5 2052208278.16694
+1053 "Disk" "Lake Charles" 0.2 10 5 2069576171.37689
+1054 "Ellipsoid" "Lake Charles" 0.2 10 5 2117215288.20785
+1055 "Disk" "McMinnville" 0.2 10 5 2674884052.66001
+1056 "Ellipsoid" "McMinnville" 0.2 10 5 2719407738.07717
+1057 "Disk" "Lindenberg" 0.2 10 5 2494847771.24053
+1058 "Ellipsoid" "Lindenberg" 0.2 10 5 2522553497.34395
+1059 "Disk" "Croker river" 0.2 10 5 3267453315.62865
+1060 "Ellipsoid" "Croker river" 0.2 10 5 3298592441.4401
+1061 "Disk" "Phillip SW Belize" 0.15 10 5 1801264122.89774
+1062 "Ellipsoid" "Phillip SW Belize" 0.15 10 5 1849446564.05186
+1063 "Disk" "Lake Charles" 0.15 10 5 1860822426.1388
+1064 "Ellipsoid" "Lake Charles" 0.15 10 5 1912902366.3507
+1065 "Disk" "McMinnville" 0.15 10 5 2420873172.30686
+1066 "Ellipsoid" "McMinnville" 0.15 10 5 2470602838.05764
+1067 "Disk" "Lindenberg" 0.15 10 5 2265454648.89452
+1068 "Ellipsoid" "Lindenberg" 0.15 10 5 2297085680.97094
+1069 "Disk" "Croker river" 0.15 10 5 2986946696.74454
+1070 "Ellipsoid" "Croker river" 0.15 10 5 3021179054.69234
+1071 "Disk" "Phillip SW Belize" 0.1 10 5 1612052153.15312
+1072 "Ellipsoid" "Phillip SW Belize" 0.1 10 5 1664576707.56243
+1073 "Disk" "Lake Charles" 0.1 10 5 1670247935.35631
+1074 "Ellipsoid" "Lake Charles" 0.1 10 5 1726584887.62151
+1075 "Disk" "McMinnville" 0.1 10 5 2188579817.74466
+1076 "Ellipsoid" "McMinnville" 0.1 10 5 2243250369.80686
+1077 "Disk" "Lindenberg" 0.1 10 5 2055595584.90528
+1078 "Ellipsoid" "Lindenberg" 0.1 10 5 2090833201.82236
+1079 "Disk" "Croker river" 0.1 10 5 2729332222.54426
+1080 "Ellipsoid" "Croker river" 0.1 10 5 2766282323.56462
+1081 "Disk" "Phillip SW Belize" 0.05 10 5 1439703188.84023
+1082 "Ellipsoid" "Phillip SW Belize" 0.05 10 5 1496300867.68299
+1083 "Disk" "Lake Charles" 0.05 10 5 1496546863.99055
+1084 "Ellipsoid" "Lake Charles" 0.05 10 5 1556933867.56793
+1085 "Disk" "McMinnville" 0.05 10 5 1976428216.33828
+1086 "Ellipsoid" "McMinnville" 0.05 10 5 2035738854.82748
+1087 "Disk" "Lindenberg" 0.05 10 5 1863856273.20625
+1088 "Ellipsoid" "Lindenberg" 0.05 10 5 1902347310.01048
+1089 "Disk" "Croker river" 0.05 10 5 2492934435.84911
+1090 "Ellipsoid" "Croker river" 0.05 10 5 2532193887.03189
+1091 "Disk" "Phillip SW Belize" 0 10 5 1283023493.96119
+1092 "Ellipsoid" "Phillip SW Belize" 0 10 5 1343394856.85936
+1093 "Disk" "Lake Charles" 0 10 5 1338483616.63485
+1094 "Ellipsoid" "Lake Charles" 0 10 5 1402696825.06874
+1095 "Disk" "McMinnville" 0 10 5 1782932723.95178
+1096 "Ellipsoid" "McMinnville" 0 10 5 1846556887.26061
+1097 "Disk" "Lindenberg" 0 10 5 1688904471.90698
+1098 "Ellipsoid" "Lindenberg" 0 10 5 1730271751.46361
+1099 "Disk" "Croker river" 0 10 5 2276189662.90359
+1100 "Ellipsoid" "Croker river" 0 10 5 2317324471.61478
+1101 "Disk" "Phillip SW Belize" 0.2 15 5 2335616147.94047
+1102 "Ellipsoid" "Phillip SW Belize" 0.2 15 5 2395443672.10868
+1103 "Disk" "Lake Charles" 0.2 15 5 2383690580.37941
+1104 "Ellipsoid" "Lake Charles" 0.2 15 5 2454324269.36004
+1105 "Disk" "McMinnville" 0.2 15 5 3016275901.73452
+1106 "Ellipsoid" "McMinnville" 0.2 15 5 3092109794.31077
+1107 "Disk" "Lindenberg" 0.2 15 5 2792520155.82779
+1108 "Ellipsoid" "Lindenberg" 0.2 15 5 2853464293.52393
+1109 "Disk" "Croker river" 0.2 15 5 3490960049.66736
+1110 "Ellipsoid" "Croker river" 0.2 15 5 3584674799.86538
+1111 "Disk" "Phillip SW Belize" 0.15 15 5 2133304060.03752
+1112 "Ellipsoid" "Phillip SW Belize" 0.15 15 5 2197133536.05726
+1113 "Disk" "Lake Charles" 0.15 15 5 2178843984.78764
+1114 "Ellipsoid" "Lake Charles" 0.15 15 5 2253472208.11696
+1115 "Disk" "McMinnville" 0.15 15 5 2766204341.29998
+1116 "Ellipsoid" "McMinnville" 0.15 15 5 2846234785.87952
+1117 "Disk" "Lindenberg" 0.15 15 5 2566677399.5037
+1118 "Ellipsoid" "Lindenberg" 0.15 15 5 2630396178.95618
+1119 "Disk" "Croker river" 0.15 15 5 3214581965.55564
+1120 "Ellipsoid" "Croker river" 0.15 15 5 3309395348.8591
+1121 "Disk" "Phillip SW Belize" 0.1 15 5 1948146120.752
+1122 "Ellipsoid" "Phillip SW Belize" 0.1 15 5 2015698928.76536
+1123 "Disk" "Lake Charles" 0.1 15 5 1991242205.8782
+1124 "Ellipsoid" "Lake Charles" 0.1 15 5 2069577575.42375
+1125 "Disk" "McMinnville" 0.1 15 5 2536838677.48185
+1126 "Ellipsoid" "McMinnville" 0.1 15 5 2620633526.48522
+1127 "Disk" "Lindenberg" 0.1 15 5 2359478840.52344
+1128 "Ellipsoid" "Lindenberg" 0.1 15 5 2425488142.7392
+1129 "Disk" "Croker river" 0.1 15 5 2960472047.42483
+1130 "Ellipsoid" "Croker river" 0.1 15 5 3055728765.04737
+1131 "Disk" "Phillip SW Belize" 0.05 15 5 1778974029.31269
+1132 "Ellipsoid" "Phillip SW Belize" 0.05 15 5 1849950007.26095
+1133 "Disk" "Lake Charles" 0.05 15 5 1819685737.53013
+1134 "Ellipsoid" "Lake Charles" 0.05 15 5 1901428254.33428
+1135 "Disk" "McMinnville" 0.05 15 5 2326724650.3394
+1136 "Ellipsoid" "McMinnville" 0.05 15 5 2413832762.08071
+1137 "Disk" "Lindenberg" 0.05 15 5 2169612466.97505
+1138 "Ellipsoid" "Lindenberg" 0.05 15 5 2237415087.41952
+1139 "Disk" "Croker river" 0.05 15 5 2727013111.87296
+1140 "Ellipsoid" "Croker river" 0.05 15 5 2822070695.1805
+1141 "Disk" "Phillip SW Belize" 0 15 5 1624679474.98873
+1142 "Ellipsoid" "Phillip SW Belize" 0 15 5 1698761793.8868
+1143 "Disk" "Lake Charles" 0 15 5 1663037977.48136
+1144 "Ellipsoid" "Lake Charles" 0 15 5 1747879707.49163
+1145 "Disk" "McMinnville" 0 15 5 2134489944.21556
+1146 "Ellipsoid" "McMinnville" 0 15 5 2224448628.82907
+1147 "Disk" "Lindenberg" 0 15 5 1995841058.76892
+1148 "Ellipsoid" "Lindenberg" 0 15 5 2064934654.96493
+1149 "Disk" "Croker river" 0 15 5 2512695002.05381
+1150 "Ellipsoid" "Croker river" 0 15 5 2606927191.5138
+1151 "Disk" "Phillip SW Belize" 0.2 20 5 2775732412.07293
+1152 "Ellipsoid" "Phillip SW Belize" 0.2 20 5 2868749027.14816
+1153 "Disk" "Lake Charles" 0.2 20 5 2831327449.59457
+1154 "Ellipsoid" "Lake Charles" 0.2 20 5 2931585850.58792
+1155 "Disk" "McMinnville" 0.2 20 5 3522396974.07855
+1156 "Ellipsoid" "McMinnville" 0.2 20 5 3638945662.58028
+1157 "Disk" "Lindenberg" 0.2 20 5 3239178845.26936
+1158 "Ellipsoid" "Lindenberg" 0.2 20 5 3346231321.65327
+1159 "Disk" "Croker river" 0.2 20 5 3830573555.74375
+1160 "Ellipsoid" "Croker river" 0.2 20 5 4030925706.1102
+1161 "Disk" "Phillip SW Belize" 0.15 20 5 2582356212.20474
+1162 "Ellipsoid" "Phillip SW Belize" 0.15 20 5 2680384503.28903
+1163 "Disk" "Lake Charles" 0.15 20 5 2635373210.74729
+1164 "Ellipsoid" "Lake Charles" 0.15 20 5 2740581823.79295
+1165 "Disk" "McMinnville" 0.15 20 5 3282658367.56476
+1166 "Ellipsoid" "McMinnville" 0.15 20 5 3404134156.27856
+1167 "Disk" "Lindenberg" 0.15 20 5 3022442894.40564
+1168 "Ellipsoid" "Lindenberg" 0.15 20 5 3133055494.30972
+1169 "Disk" "Croker river" 0.15 20 5 3560515790.10926
+1170 "Ellipsoid" "Croker river" 0.15 20 5 3763994521.70913
+1171 "Disk" "Phillip SW Belize" 0.1 20 5 2404739993.78487
+1172 "Ellipsoid" "Phillip SW Belize" 0.1 20 5 2507466107.40458
+1173 "Disk" "Lake Charles" 0.1 20 5 2455183544.82966
+1174 "Ellipsoid" "Lake Charles" 0.1 20 5 2565066247.71821
+1175 "Disk" "McMinnville" 0.1 20 5 3061965675.0707
+1176 "Ellipsoid" "McMinnville" 0.1 20 5 3187926289.69736
+1177 "Disk" "Lindenberg" 0.1 20 5 2822894243.84036
+1178 "Ellipsoid" "Lindenberg" 0.1 20 5 2936549811.70195
+1179 "Disk" "Croker river" 0.1 20 5 3311615568.47343
+1180 "Ellipsoid" "Croker river" 0.1 20 5 3517344935.28669
+1181 "Disk" "Phillip SW Belize" 0.05 20 5 2241814196.67853
+1182 "Ellipsoid" "Phillip SW Belize" 0.05 20 5 2348908813.94385
+1183 "Disk" "Lake Charles" 0.05 20 5 2289655726.78051
+1184 "Ellipsoid" "Lake Charles" 0.05 20 5 2403933578.38513
+1185 "Disk" "McMinnville" 0.05 20 5 2858974257.32098
+1186 "Ellipsoid" "McMinnville" 0.05 20 5 2988975320.9316
+1187 "Disk" "Lindenberg" 0.05 20 5 2639319519.06912
+1188 "Ellipsoid" "Lindenberg" 0.05 20 5 2755505733.63259
+1189 "Disk" "Croker river" 0.05 20 5 3082335816.37265
+1190 "Ellipsoid" "Croker river" 0.05 20 5 3289484064.56841
+1191 "Disk" "Phillip SW Belize" 0 20 5 2092563078.21713
+1192 "Ellipsoid" "Phillip SW Belize" 0 20 5 2203685148.65026
+1193 "Disk" "Lake Charles" 0 20 5 2137744304.0783
+1194 "Ellipsoid" "Lake Charles" 0 20 5 2256138840.85914
+1195 "Disk" "McMinnville" 0 20 5 2672415931.65167
+1196 "Ellipsoid" "McMinnville" 0 20 5 2806015725.45791
+1197 "Disk" "Lindenberg" 0 20 5 2470575413.52772
+1198 "Ellipsoid" "Lindenberg" 0 20 5 2588789967.01841
+1199 "Disk" "Croker river" 0 20 5 2871242001.95489
+1200 "Ellipsoid" "Croker river" 0 20 5 3079021534.21946
+1201 "Disk" "Phillip SW Belize" 0.2 25 5 3305675034.31236
+1202 "Ellipsoid" "Phillip SW Belize" 0.2 25 5 3425209286.07769
+1203 "Disk" "Lake Charles" 0.2 25 5 3349760913.15689
+1204 "Ellipsoid" "Lake Charles" 0.2 25 5 3481881256.89917
+1205 "Disk" "McMinnville" 0.2 25 5 4072135633.3269
+1206 "Ellipsoid" "McMinnville" 0.2 25 5 4248549605.96453
+1207 "Disk" "Lindenberg" 0.2 25 5 3714657177.77373
+1208 "Ellipsoid" "Lindenberg" 0.2 25 5 3886684317.30885
+1209 "Disk" "Croker river" 0.2 25 5 4185831701.07342
+1210 "Ellipsoid" "Croker river" 0.2 25 5 4504331620.05756
+1211 "Disk" "Phillip SW Belize" 0.15 25 5 3128414557.50878
+1212 "Ellipsoid" "Phillip SW Belize" 0.15 25 5 3252295774.6985
+1213 "Disk" "Lake Charles" 0.15 25 5 3168415550.62342
+1214 "Ellipsoid" "Lake Charles" 0.15 25 5 3305537550.68148
+1215 "Disk" "McMinnville" 0.15 25 5 3846124112.33188
+1216 "Ellipsoid" "McMinnville" 0.15 25 5 4028589563.88156
+1217 "Disk" "Lindenberg" 0.15 25 5 3509169983.47181
+1218 "Ellipsoid" "Lindenberg" 0.15 25 5 3686105254.39999
+1219 "Disk" "Croker river" 0.15 25 5 3923004886.35674
+1220 "Ellipsoid" "Croker river" 0.15 25 5 4246930022.18883
+1221 "Disk" "Phillip SW Belize" 0.1 25 5 2965679067.54842
+1222 "Ellipsoid" "Phillip SW Belize" 0.1 25 5 3093449207.11225
+1223 "Disk" "Lake Charles" 0.1 25 5 3001560484.07885
+1224 "Ellipsoid" "Lake Charles" 0.1 25 5 3143302278.79073
+1225 "Disk" "McMinnville" 0.1 25 5 3637728829.30339
+1226 "Ellipsoid" "McMinnville" 0.1 25 5 3825662175.97903
+1227 "Disk" "Lindenberg" 0.1 25 5 3319608270.60868
+1228 "Ellipsoid" "Lindenberg" 0.1 25 5 3500790897.90311
+1229 "Disk" "Croker river" 0.1 25 5 3680456699.92544
+1230 "Ellipsoid" "Croker river" 0.1 25 5 4008585966.46396
+1231 "Disk" "Phillip SW Belize" 0.05 25 5 2816488185.78264
+1232 "Ellipsoid" "Phillip SW Belize" 0.05 25 5 2947688585.70149
+1233 "Disk" "Lake Charles" 0.05 25 5 2848185063.13806
+1234 "Ellipsoid" "Lake Charles" 0.05 25 5 2994177489.15761
+1235 "Disk" "McMinnville" 0.05 25 5 3445711908.55775
+1236 "Ellipsoid" "McMinnville" 0.05 25 5 3638550645.15545
+1237 "Disk" "Lindenberg" 0.05 25 5 3144854033.54958
+1238 "Ellipsoid" "Lindenberg" 0.05 25 5 3329652555.47441
+1239 "Disk" "Croker river" 0.05 25 5 3456734066.55541
+1240 "Ellipsoid" "Croker river" 0.05 25 5 3787927429.71561
+1241 "Disk" "Phillip SW Belize" 0 25 5 2679910074.07603
+1242 "Ellipsoid" "Phillip SW Belize" 0 25 5 2814083327.89523
+1243 "Disk" "Lake Charles" 0 25 5 2707329395.45834
+1244 "Ellipsoid" "Lake Charles" 0 25 5 2857218015.46415
+1245 "Disk" "McMinnville" 0 25 5 3268903149.69014
+1246 "Ellipsoid" "McMinnville" 0 25 5 3466109399.08542
+1247 "Disk" "Lindenberg" 0 25 5 2983850909.66892
+1248 "Ellipsoid" "Lindenberg" 0 25 5 3171667245.4402
+1249 "Disk" "Croker river" 0 25 5 3250477195.02924
+1250 "Ellipsoid" "Croker river" 0 25 5 3583674420.59763
+1251 "Disk" "Phillip SW Belize" 0.2 5 6 2077866912.63754
+1252 "Ellipsoid" "Phillip SW Belize" 0.2 5 6 2080453986.35617
+1253 "Disk" "Lake Charles" 0.2 5 6 2143394712.52052
+1254 "Ellipsoid" "Lake Charles" 0.2 5 6 2140882628.39197
+1255 "Disk" "McMinnville" 0.2 5 6 2757544064.84071
+1256 "Ellipsoid" "McMinnville" 0.2 5 6 2750392117.84564
+1257 "Disk" "Lindenberg" 0.2 5 6 2544646839.38442
+1258 "Ellipsoid" "Lindenberg" 0.2 5 6 2550508644.60743
+1259 "Disk" "Croker river" 0.2 5 6 3284967642.94462
+1260 "Ellipsoid" "Croker river" 0.2 5 6 3301664575.77423
+1261 "Disk" "Phillip SW Belize" 0.15 5 6 1867162390.23281
+1262 "Ellipsoid" "Phillip SW Belize" 0.15 5 6 1868210051.16698
+1263 "Disk" "Lake Charles" 0.15 5 6 1931768450.79535
+1264 "Ellipsoid" "Lake Charles" 0.15 5 6 1926819215.43562
+1265 "Disk" "McMinnville" 0.15 5 6 2501905325.39238
+1266 "Ellipsoid" "McMinnville" 0.15 5 6 2491862949.13404
+1267 "Disk" "Lindenberg" 0.15 5 6 2313609405.24956
+1268 "Ellipsoid" "Lindenberg" 0.15 5 6 2316935111.24424
+1269 "Disk" "Croker river" 0.15 5 6 3005788562.09937
+1270 "Ellipsoid" "Croker river" 0.15 5 6 3019726500.92667
+1271 "Disk" "Phillip SW Belize" 0.1 5 6 1674440803.26091
+1272 "Ellipsoid" "Phillip SW Belize" 0.1 5 6 1673835306.63305
+1273 "Disk" "Lake Charles" 0.1 5 6 1738537654.25253
+1274 "Ellipsoid" "Lake Charles" 0.1 5 6 1730885822.84549
+1275 "Disk" "McMinnville" 0.1 5 6 2268347141.67489
+1276 "Ellipsoid" "McMinnville" 0.1 5 6 2255024610.23507
+1277 "Disk" "Lindenberg" 0.1 5 6 2102417302.65161
+1278 "Ellipsoid" "Lindenberg" 0.1 5 6 2102754944.43144
+1279 "Disk" "Croker river" 0.1 5 6 2749743446.83326
+1280 "Ellipsoid" "Croker river" 0.1 5 6 2760473073.643
+1281 "Disk" "Phillip SW Belize" 0.05 5 6 1498520107.32751
+1282 "Ellipsoid" "Phillip SW Belize" 0.05 5 6 1496175279.44526
+1283 "Disk" "Lake Charles" 0.05 5 6 1562496740.21929
+1284 "Ellipsoid" "Lake Charles" 0.05 5 6 1551901580.00289
+1285 "Disk" "McMinnville" 0.05 5 6 2055375375.00846
+1286 "Ellipsoid" "McMinnville" 0.05 5 6 2038412471.09263
+1287 "Disk" "Lindenberg" 0.05 5 6 1909706744.31457
+1288 "Ellipsoid" "Lindenberg" 0.05 5 6 1906634445.29612
+1289 "Disk" "Croker river" 0.05 5 6 2515128855.23242
+1290 "Ellipsoid" "Croker river" 0.05 5 6 2522246821.15157
+1291 "Disk" "Phillip SW Belize" 0 5 6 1338278223.33396
+1292 "Ellipsoid" "Phillip SW Belize" 0 5 6 1334136733.51052
+1293 "Disk" "Lake Charles" 0 5 6 1402497745.2711
+1294 "Ellipsoid" "Lake Charles" 0 5 6 1388746380.92425
+1295 "Disk" "McMinnville" 0 5 6 1861570569.04649
+1296 "Ellipsoid" "McMinnville" 0 5 6 1840642648.2172
+1297 "Disk" "Lindenberg" 0 5 6 1734183845.07023
+1298 "Ellipsoid" "Lindenberg" 0 5 6 1727315895.4079
+1299 "Disk" "Croker river" 0 5 6 2300346566.56746
+1300 "Ellipsoid" "Croker river" 0 5 6 2303499615.85957
+1301 "Disk" "Phillip SW Belize" 0.2 10 6 2109798435.58884
+1302 "Ellipsoid" "Phillip SW Belize" 0.2 10 6 2116307828.33294
+1303 "Disk" "Lake Charles" 0.2 10 6 2179138192.63031
+1304 "Ellipsoid" "Lake Charles" 0.2 10 6 2178250084.23236
+1305 "Disk" "McMinnville" 0.2 10 6 2801898574.81231
+1306 "Ellipsoid" "McMinnville" 0.2 10 6 2791718902.01734
+1307 "Disk" "Lindenberg" 0.2 10 6 2585786280.48866
+1308 "Ellipsoid" "Lindenberg" 0.2 10 6 2586711470.10759
+1309 "Disk" "Croker river" 0.2 10 6 3320234454.94633
+1310 "Ellipsoid" "Croker river" 0.2 10 6 3332513010.72557
+1311 "Disk" "Phillip SW Belize" 0.15 10 6 1900028171.52831
+1312 "Ellipsoid" "Phillip SW Belize" 0.15 10 6 1905150649.60457
+1313 "Disk" "Lake Charles" 0.15 10 6 1968810545.12798
+1314 "Ellipsoid" "Lake Charles" 0.15 10 6 1965424653.72125
+1315 "Disk" "McMinnville" 0.15 10 6 2548189792.73318
+1316 "Ellipsoid" "McMinnville" 0.15 10 6 2534452582.54003
+1317 "Disk" "Lindenberg" 0.15 10 6 2356631894.38853
+1318 "Ellipsoid" "Lindenberg" 0.15 10 6 2354140990.68895
+1319 "Disk" "Croker river" 0.15 10 6 3042707642.70528
+1320 "Ellipsoid" "Croker river" 0.15 10 6 3051132193.4353
+1321 "Disk" "Phillip SW Belize" 0.1 10 6 1708158966.07679
+1322 "Ellipsoid" "Phillip SW Belize" 0.1 10 6 1711756885.29936
+1323 "Disk" "Lake Charles" 0.1 10 6 1776806934.98826
+1324 "Ellipsoid" "Lake Charles" 0.1 10 6 1770630672.61747
+1325 "Disk" "McMinnville" 0.1 10 6 2316498469.54687
+1326 "Ellipsoid" "McMinnville" 0.1 10 6 2298766659.95492
+1327 "Disk" "Lindenberg" 0.1 10 6 2147270057.07426
+1328 "Ellipsoid" "Lindenberg" 0.1 10 6 2140861555.84703
+1329 "Disk" "Croker river" 0.1 10 6 2788268886.06528
+1330 "Ellipsoid" "Croker river" 0.1 10 6 2792331473.56352
+1331 "Disk" "Phillip SW Belize" 0.05 10 6 1533015941.19506
+1332 "Ellipsoid" "Phillip SW Belize" 0.05 10 6 1534976760.55623
+1333 "Disk" "Lake Charles" 0.05 10 6 1601928206.33302
+1334 "Ellipsoid" "Lake Charles" 0.05 10 6 1592692056.89729
+1335 "Disk" "McMinnville" 0.05 10 6 2105336434.45421
+1336 "Ellipsoid" "McMinnville" 0.05 10 6 2083203393.18547
+1337 "Disk" "Lindenberg" 0.05 10 6 1956341645.8834
+1338 "Ellipsoid" "Lindenberg" 0.05 10 6 1945546418.72479
+1339 "Disk" "Croker river" 0.05 10 6 2555217828.33435
+1340 "Ellipsoid" "Croker river" 0.05 10 6 2554461230.75022
+1341 "Disk" "Phillip SW Belize" 0 10 6 1373484184.03744
+1342 "Ellipsoid" "Phillip SW Belize" 0 10 6 1373721685.25707
+1343 "Disk" "Lake Charles" 0 10 6 1443032820.67358
+1344 "Ellipsoid" "Lake Charles" 0 10 6 1430493432.51567
+1345 "Disk" "McMinnville" 0 10 6 1913290192.73755
+1346 "Ellipsoid" "McMinnville" 0 10 6 1886385681.51026
+1347 "Disk" "Lindenberg" 0 10 6 1782557433.58078
+1348 "Ellipsoid" "Lindenberg" 0 10 6 1766944686.13447
+1349 "Disk" "Croker river" 0 10 6 2341959316.14739
+1350 "Ellipsoid" "Croker river" 0 10 6 2335980903.65905
+1351 "Disk" "Phillip SW Belize" 0.2 15 6 2372759522.23828
+1352 "Ellipsoid" "Phillip SW Belize" 0.2 15 6 2391651773.31213
+1353 "Disk" "Lake Charles" 0.2 15 6 2435727190.18553
+1354 "Ellipsoid" "Lake Charles" 0.2 15 6 2453151423.13608
+1355 "Disk" "McMinnville" 0.2 15 6 3080871651.0582
+1356 "Ellipsoid" "McMinnville" 0.2 15 6 3101714802.29119
+1357 "Disk" "Lindenberg" 0.2 15 6 2828972481.29194
+1358 "Ellipsoid" "Lindenberg" 0.2 15 6 2864621395.57436
+1359 "Disk" "Croker river" 0.2 15 6 3509942590.36453
+1360 "Ellipsoid" "Croker river" 0.2 15 6 3585282742.29967
+1361 "Disk" "Phillip SW Belize" 0.15 15 6 2167835307.92788
+1362 "Ellipsoid" "Phillip SW Belize" 0.15 15 6 2185778866.08617
+1363 "Disk" "Lake Charles" 0.15 15 6 2229419655.52986
+1364 "Ellipsoid" "Lake Charles" 0.15 15 6 2245273436.44761
+1365 "Disk" "McMinnville" 0.15 15 6 2830571497.97821
+1366 "Ellipsoid" "McMinnville" 0.15 15 6 2849699988.72268
+1367 "Disk" "Lindenberg" 0.15 15 6 2602405194.07768
+1368 "Ellipsoid" "Lindenberg" 0.15 15 6 2636651934.75844
+1369 "Disk" "Croker river" 0.15 15 6 3233988221.10933
+1370 "Ellipsoid" "Croker river" 0.15 15 6 3307769669.14604
+1371 "Disk" "Phillip SW Belize" 0.1 15 6 1979790591.34711
+1372 "Ellipsoid" "Phillip SW Belize" 0.1 15 6 1996710993.06977
+1373 "Disk" "Lake Charles" 0.1 15 6 2040396825.85002
+1374 "Ellipsoid" "Lake Charles" 0.1 15 6 2054454835.09296
+1375 "Disk" "McMinnville" 0.1 15 6 2601097558.58464
+1376 "Ellipsoid" "McMinnville" 0.1 15 6 2618188536.33209
+1377 "Disk" "Lindenberg" 0.1 15 6 2394576185.93929
+1378 "Ellipsoid" "Lindenberg" 0.1 15 6 2427025434.17574
+1379 "Disk" "Croker river" 0.1 15 6 2980292519.44732
+1380 "Ellipsoid" "Croker river" 0.1 15 6 3052021332.35551
+1381 "Disk" "Phillip SW Belize" 0.05 15 6 1807503346.61657
+1382 "Ellipsoid" "Phillip SW Belize" 0.05 15 6 1823361403.6619
+1383 "Disk" "Lake Charles" 0.05 15 6 1867517823.19338
+1384 "Ellipsoid" "Lake Charles" 0.05 15 6 1879586055.22956
+1385 "Disk" "McMinnville" 0.05 15 6 2391032099.57961
+1386 "Ellipsoid" "McMinnville" 0.05 15 6 2405802055.60805
+1387 "Disk" "Lindenberg" 0.05 15 6 2204190649.10446
+1388 "Ellipsoid" "Lindenberg" 0.05 15 6 2234487905.67729
+1389 "Disk" "Croker river" 0.05 15 6 2747208688.64981
+1390 "Ellipsoid" "Croker river" 0.05 15 6 2816458565.98041
+1391 "Disk" "Phillip SW Belize" 0 15 6 1649910666.72659
+1392 "Ellipsoid" "Phillip SW Belize" 0 15 6 1664702504.35456
+1393 "Disk" "Lake Charles" 0 15 6 1709698525.89281
+1394 "Ellipsoid" "Lake Charles" 0 15 6 1719616144.38648
+1395 "Disk" "McMinnville" 0 15 6 2199030856.49231
+1396 "Ellipsoid" "McMinnville" 0 15 6 2211239505.85469
+1397 "Disk" "Lindenberg" 0 15 6 2030022285.44486
+1398 "Ellipsoid" "Lindenberg" 0 15 6 2057857688.7449
+1399 "Disk" "Croker river" 0 15 6 2533193537.57759
+1400 "Ellipsoid" "Croker river" 0 15 6 2599606613.78054
+1401 "Disk" "Phillip SW Belize" 0.2 20 6 2901435687.26686
+1402 "Ellipsoid" "Phillip SW Belize" 0.2 20 6 2948161156.64977
+1403 "Disk" "Lake Charles" 0.2 20 6 2960797496.31008
+1404 "Ellipsoid" "Lake Charles" 0.2 20 6 3009991546.3921
+1405 "Disk" "McMinnville" 0.2 20 6 3651083861.11578
+1406 "Ellipsoid" "McMinnville" 0.2 20 6 3721642401.19458
+1407 "Disk" "Lindenberg" 0.2 20 6 3325471041.11267
+1408 "Ellipsoid" "Lindenberg" 0.2 20 6 3415800209.44661
+1409 "Disk" "Croker river" 0.2 20 6 3876552994.32605
+1410 "Ellipsoid" "Croker river" 0.2 20 6 4066710378.82342
+1411 "Disk" "Phillip SW Belize" 0.15 20 6 2714375134.75827
+1412 "Ellipsoid" "Phillip SW Belize" 0.15 20 6 2759766040.18123
+1413 "Disk" "Lake Charles" 0.15 20 6 2771257024.56016
+1414 "Ellipsoid" "Lake Charles" 0.15 20 6 2818989965.15747
+1415 "Disk" "McMinnville" 0.15 20 6 3418132639.45648
+1416 "Ellipsoid" "McMinnville" 0.15 20 6 3486965305.02723
+1417 "Disk" "Lindenberg" 0.15 20 6 3113846058.91891
+1418 "Ellipsoid" "Lindenberg" 0.15 20 6 3202691712.73004
+1419 "Disk" "Croker river" 0.15 20 6 3611798755.44217
+1420 "Ellipsoid" "Croker river" 0.15 20 6 3800969636.09304
+1421 "Disk" "Phillip SW Belize" 0.1 20 6 2543001318.31004
+1422 "Ellipsoid" "Phillip SW Belize" 0.1 20 6 2586786440.23681
+1423 "Disk" "Lake Charles" 0.1 20 6 2597701633.50487
+1424 "Ellipsoid" "Lake Charles" 0.1 20 6 2643596943.51018
+1425 "Disk" "McMinnville" 0.1 20 6 3204562273.93931
+1426 "Ellipsoid" "McMinnville" 0.1 20 6 3271107427.39447
+1427 "Disk" "Lindenberg" 0.1 20 6 2919717777.40528
+1428 "Ellipsoid" "Lindenberg" 0.1 20 6 3006416243.87118
+1429 "Disk" "Croker river" 0.1 20 6 3368475043.69295
+1430 "Ellipsoid" "Croker river" 0.1 20 6 3555666647.84346
+1431 "Disk" "Phillip SW Belize" 0.05 20 6 2386264920.61325
+1432 "Ellipsoid" "Phillip SW Belize" 0.05 20 6 2428216475.82383
+1433 "Disk" "Lake Charles" 0.05 20 6 2439065761.19558
+1434 "Ellipsoid" "Lake Charles" 0.05 20 6 2482787781.19079
+1435 "Disk" "McMinnville" 0.05 20 6 3009046410.0822
+1436 "Ellipsoid" "McMinnville" 0.05 20 6 3072798651.19201
+1437 "Disk" "Lindenberg" 0.05 20 6 2741874743.21509
+1438 "Ellipsoid" "Lindenberg" 0.05 20 6 2825822425.53308
+1439 "Disk" "Croker river" 0.05 20 6 3145000807.09602
+1440 "Ellipsoid" "Croker river" 0.05 20 6 3329323420.48818
+1441 "Disk" "Phillip SW Belize" 0 20 6 2243171214.78454
+1442 "Ellipsoid" "Phillip SW Belize" 0 20 6 2283104831.70285
+1443 "Disk" "Lake Charles" 0 20 6 2294336556.57703
+1444 "Ellipsoid" "Lake Charles" 0 20 6 2335592121.53166
+1445 "Disk" "McMinnville" 0 20 6 2830327385.80645
+1446 "Ellipsoid" "McMinnville" 0 20 6 2890840860.72205
+1447 "Disk" "Lindenberg" 0 20 6 2579169510.81223
+1448 "Ellipsoid" "Lindenberg" 0 20 6 2659825994.13622
+1449 "Disk" "Croker river" 0 20 6 2939894118.83515
+1450 "Ellipsoid" "Croker river" 0 20 6 3120560192.53084
+1451 "Disk" "Phillip SW Belize" 0.2 25 6 3218456242.22065
+1452 "Ellipsoid" "Phillip SW Belize" 0.2 25 6 3295501904.9976
+1453 "Disk" "Lake Charles" 0.2 25 6 3300548759.9146
+1454 "Ellipsoid" "Lake Charles" 0.2 25 6 3374798531.94021
+1455 "Disk" "McMinnville" 0.2 25 6 4051478209.01934
+1456 "Ellipsoid" "McMinnville" 0.2 25 6 4155027781.43349
+1457 "Disk" "Lindenberg" 0.2 25 6 3682186493.84809
+1458 "Ellipsoid" "Lindenberg" 0.2 25 6 3809806727.97929
+1459 "Disk" "Croker river" 0.2 25 6 4146440458.67213
+1460 "Ellipsoid" "Croker river" 0.2 25 6 4424978051.69633
+1461 "Disk" "Phillip SW Belize" 0.15 25 6 3036255878.03674
+1462 "Ellipsoid" "Phillip SW Belize" 0.15 25 6 3113290815.30533
+1463 "Disk" "Lake Charles" 0.15 25 6 3117492299.33213
+1464 "Ellipsoid" "Lake Charles" 0.15 25 6 3191040256.13
+1465 "Disk" "McMinnville" 0.15 25 6 3827936918.18757
+1466 "Ellipsoid" "McMinnville" 0.15 25 6 3929968437.69856
+1467 "Disk" "Lindenberg" 0.15 25 6 3479438960.42918
+1468 "Ellipsoid" "Lindenberg" 0.15 25 6 3605831639.4985
+1469 "Disk" "Croker river" 0.15 25 6 3887981006.42268
+1470 "Ellipsoid" "Croker river" 0.15 25 6 4167443473.03979
+1471 "Disk" "Phillip SW Belize" 0.1 25 6 2868627983.36212
+1472 "Ellipsoid" "Phillip SW Belize" 0.1 25 6 2945375476.94879
+1473 "Disk" "Lake Charles" 0.1 25 6 2949261971.00131
+1474 "Ellipsoid" "Lake Charles" 0.1 25 6 3021704903.88028
+1475 "Disk" "McMinnville" 0.1 25 6 3622541511.99845
+1476 "Ellipsoid" "McMinnville" 0.1 25 6 3722392672.84103
+1477 "Disk" "Lindenberg" 0.1 25 6 3293158237.39078
+1478 "Ellipsoid" "Lindenberg" 0.1 25 6 3417525593.30913
+1479 "Disk" "Croker river" 0.1 25 6 3650238159.2024
+1480 "Ellipsoid" "Croker river" 0.1 25 6 3929369086.07287
+1481 "Disk" "Phillip SW Belize" 0.05 25 6 2714608980.94609
+1482 "Ellipsoid" "Phillip SW Belize" 0.05 25 6 2790840911.66207
+1483 "Disk" "Lake Charles" 0.05 25 6 2794873423.82546
+1484 "Ellipsoid" "Lake Charles" 0.05 25 6 2865852923.02823
+1485 "Disk" "McMinnville" 0.05 25 6 3434050995.41061
+1486 "Ellipsoid" "McMinnville" 0.05 25 6 3531122677.17092
+1487 "Disk" "Lindenberg" 0.05 25 6 3122207952.37048
+1488 "Ellipsoid" "Lindenberg" 0.05 25 6 3243819319.8316
+1489 "Disk" "Croker river" 0.05 25 6 3431695779.41196
+1490 "Ellipsoid" "Croker river" 0.05 25 6 3709356597.42041
+1491 "Disk" "Phillip SW Belize" 0 25 6 2573285979.06482
+1492 "Ellipsoid" "Phillip SW Belize" 0 25 6 2648822035.49757
+1493 "Disk" "Lake Charles" 0 25 6 2653392276.82979
+1494 "Ellipsoid" "Lake Charles" 0 25 6 2722595077.7257
+1495 "Disk" "McMinnville" 0 25 6 3261290632.64516
+1496 "Ellipsoid" "McMinnville" 0 25 6 3355047823.06273
+1497 "Disk" "Lindenberg" 0 25 6 2965513113.43741
+1498 "Ellipsoid" "Lindenberg" 0 25 6 3083705885.54792
+1499 "Disk" "Croker river" 0 25 6 3230932974.99295
+1500 "Ellipsoid" "Croker river" 0 25 6 3506100165.43351
+1501 "Disk" "Phillip SW Belize" 0.2 5 7 2386924191.08938
+1502 "Ellipsoid" "Phillip SW Belize" 0.2 5 7 2424828104.72149
+1503 "Disk" "Lake Charles" 0.2 5 7 2379513874.88759
+1504 "Ellipsoid" "Lake Charles" 0.2 5 7 2441177481.66907
+1505 "Disk" "McMinnville" 0.2 5 7 2865725917.77946
+1506 "Ellipsoid" "McMinnville" 0.2 5 7 2969583566.62178
+1507 "Disk" "Lindenberg" 0.2 5 7 2590832149.40615
+1508 "Ellipsoid" "Lindenberg" 0.2 5 7 2673506502.98069
+1509 "Disk" "Croker river" 0.2 5 7 3186768494.27787
+1510 "Ellipsoid" "Croker river" 0.2 5 7 3268174005.71171
+1511 "Disk" "Phillip SW Belize" 0.15 5 7 2172489655.28688
+1512 "Ellipsoid" "Phillip SW Belize" 0.15 5 7 2212195435.86432
+1513 "Disk" "Lake Charles" 0.15 5 7 2163918042.36777
+1514 "Ellipsoid" "Lake Charles" 0.15 5 7 2226947004.65668
+1515 "Disk" "McMinnville" 0.15 5 7 2605047777.38213
+1516 "Ellipsoid" "McMinnville" 0.15 5 7 2709472672.50217
+1517 "Disk" "Lindenberg" 0.15 5 7 2356436731.11992
+1518 "Ellipsoid" "Lindenberg" 0.15 5 7 2438321684.46359
+1519 "Disk" "Croker river" 0.15 5 7 2905063354.02728
+1520 "Ellipsoid" "Croker river" 0.15 5 7 2984698358.61116
+1521 "Disk" "Phillip SW Belize" 0.1 5 7 1974969940.93815
+1522 "Ellipsoid" "Phillip SW Belize" 0.1 5 7 2016271783.73845
+1523 "Disk" "Lake Charles" 0.1 5 7 1965729043.94698
+1524 "Ellipsoid" "Lake Charles" 0.1 5 7 2029757227.57702
+1525 "Disk" "McMinnville" 0.1 5 7 2365760934.59542
+1526 "Ellipsoid" "McMinnville" 0.1 5 7 2470114454.9337
+1527 "Disk" "Lindenberg" 0.1 5 7 2141355155.55751
+1528 "Ellipsoid" "Lindenberg" 0.1 5 7 2221927630.01206
+1529 "Disk" "Croker river" 0.1 5 7 2646549888.33512
+1530 "Ellipsoid" "Croker river" 0.1 5 7 2723945730.20571
+1531 "Disk" "Phillip SW Belize" 0.05 5 7 1793368027.05461
+1532 "Ellipsoid" "Phillip SW Belize" 0.05 5 7 1836045119.04159
+1533 "Disk" "Lake Charles" 0.05 5 7 1783899506.82925
+1534 "Ellipsoid" "Lake Charles" 0.05 5 7 1848553952.57311
+1535 "Disk" "McMinnville" 0.05 5 7 2146486481.89138
+1536 "Ellipsoid" "McMinnville" 0.05 5 7 2250146974.34446
+1537 "Disk" "Lindenberg" 0.05 5 7 1944283697.4904
+1538 "Ellipsoid" "Lindenberg" 0.05 5 7 2023052924.28626
+1539 "Disk" "Croker river" 0.05 5 7 2409525562.92602
+1540 "Ellipsoid" "Croker river" 0.05 5 7 2484256485.41996
+1541 "Disk" "Phillip SW Belize" 0 5 7 1626731342.04526
+1542 "Ellipsoid" "Phillip SW Belize" 0 5 7 1670549820.31214
+1543 "Disk" "Lake Charles" 0 5 7 1617431306.56289
+1544 "Ellipsoid" "Lake Charles" 0 5 7 1682333862.62191
+1545 "Disk" "McMinnville" 0 5 7 1945918487.20673
+1546 "Ellipsoid" "McMinnville" 0 5 7 2048282899.66826
+1547 "Disk" "Lindenberg" 0 5 7 1763990666.05615
+1548 "Ellipsoid" "Lindenberg" 0 5 7 1840499054.07617
+1549 "Disk" "Croker river" 0 5 7 2192399690.96627
+1550 "Ellipsoid" "Croker river" 0 5 7 2264080875.42084
+1551 "Disk" "Phillip SW Belize" 0.2 10 7 2534906732.46404
+1552 "Ellipsoid" "Phillip SW Belize" 0.2 10 7 2576033461.4695
+1553 "Disk" "Lake Charles" 0.2 10 7 2522445449.38844
+1554 "Ellipsoid" "Lake Charles" 0.2 10 7 2591872628.35646
+1555 "Disk" "McMinnville" 0.2 10 7 3019593224.16019
+1556 "Ellipsoid" "McMinnville" 0.2 10 7 3134975724.76193
+1557 "Disk" "Lindenberg" 0.2 10 7 2725661903.65886
+1558 "Ellipsoid" "Lindenberg" 0.2 10 7 2819049431.12004
+1559 "Disk" "Croker river" 0.2 10 7 3289899746.63761
+1560 "Ellipsoid" "Croker river" 0.2 10 7 3390071542.58883
+1561 "Disk" "Phillip SW Belize" 0.15 10 7 2325324394.2094
+1562 "Ellipsoid" "Phillip SW Belize" 0.15 10 7 2367994089.40369
+1563 "Disk" "Lake Charles" 0.15 10 7 2311257071.4673
+1564 "Ellipsoid" "Lake Charles" 0.15 10 7 2381948736.78264
+1565 "Disk" "McMinnville" 0.15 10 7 2762995990.89697
+1566 "Ellipsoid" "McMinnville" 0.15 10 7 2878911983.49631
+1567 "Disk" "Lindenberg" 0.15 10 7 2494569713.02612
+1568 "Ellipsoid" "Lindenberg" 0.15 10 7 2587032167.11959
+1569 "Disk" "Croker river" 0.15 10 7 3010049806.2755
+1570 "Ellipsoid" "Croker river" 0.15 10 7 3107939820.44344
+1571 "Disk" "Phillip SW Belize" 0.1 10 7 2132260778.26057
+1572 "Ellipsoid" "Phillip SW Belize" 0.1 10 7 2176233260.44166
+1573 "Disk" "Lake Charles" 0.1 10 7 2117075706.58049
+1574 "Ellipsoid" "Lake Charles" 0.1 10 7 2188617155.93521
+1575 "Disk" "McMinnville" 0.1 10 7 2527322386.70261
+1576 "Ellipsoid" "McMinnville" 0.1 10 7 2643068975.67278
+1577 "Disk" "Lindenberg" 0.1 10 7 2282369680.99216
+1578 "Ellipsoid" "Lindenberg" 0.1 10 7 2373315618.28109
+1579 "Disk" "Croker river" 0.1 10 7 2753037110.71628
+1580 "Ellipsoid" "Croker river" 0.1 10 7 2848059369.39325
+1581 "Disk" "Phillip SW Belize" 0.05 10 7 1954735934.14184
+1582 "Ellipsoid" "Phillip SW Belize" 0.05 10 7 1999758232.59961
+1583 "Disk" "Lake Charles" 0.05 10 7 1938873795.51443
+1584 "Ellipsoid" "Lake Charles" 0.05 10 7 2010845052.65024
+1585 "Disk" "McMinnville" 0.05 10 7 2311221924.54016
+1586 "Ellipsoid" "McMinnville" 0.05 10 7 2426114016.80771
+1587 "Disk" "Lindenberg" 0.05 10 7 2087786011.17914
+1588 "Ellipsoid" "Lindenberg" 0.05 10 7 2176657403.93778
+1589 "Disk" "Croker river" 0.05 10 7 2517186378.64788
+1590 "Ellipsoid" "Croker river" 0.05 10 7 2608806173.18172
+1591 "Disk" "Phillip SW Belize" 0 10 7 1791813814.09623
+1592 "Ellipsoid" "Phillip SW Belize" 0 10 7 1837621919.93465
+1593 "Disk" "Lake Charles" 0 10 7 1775672630.64256
+1594 "Ellipsoid" "Lake Charles" 0 10 7 1847649737.70969
+1595 "Disk" "McMinnville" 0 10 7 2113416705.34792
+1596 "Ellipsoid" "McMinnville" 0 10 7 2226788056.15116
+1597 "Disk" "Lindenberg" 0 10 7 1909614509.27821
+1598 "Ellipsoid" "Lindenberg" 0 10 7 1995887034.48359
+1599 "Disk" "Croker river" 0 10 7 2300933427.72639
+1600 "Ellipsoid" "Croker river" 0 10 7 2388664496.37421
+1601 "Disk" "Phillip SW Belize" 0.2 15 7 2792346343.4781
+1602 "Ellipsoid" "Phillip SW Belize" 0.2 15 7 2842218067.71062
+1603 "Disk" "Lake Charles" 0.2 15 7 2775391132.48916
+1604 "Ellipsoid" "Lake Charles" 0.2 15 7 2859180688.22277
+1605 "Disk" "McMinnville" 0.2 15 7 3298180394.55011
+1606 "Ellipsoid" "McMinnville" 0.2 15 7 3440070019.50015
+1607 "Disk" "Lindenberg" 0.2 15 7 2969317205.71232
+1608 "Ellipsoid" "Lindenberg" 0.2 15 7 3094509300.46032
+1609 "Disk" "Croker river" 0.2 15 7 3477156449.33971
+1610 "Ellipsoid" "Croker river" 0.2 15 7 3641462528.61996
+1611 "Disk" "Phillip SW Belize" 0.15 15 7 2588462829.21767
+1612 "Ellipsoid" "Phillip SW Belize" 0.15 15 7 2639457471.21216
+1613 "Disk" "Lake Charles" 0.15 15 7 2569084833.74914
+1614 "Ellipsoid" "Lake Charles" 0.15 15 7 2654279582.08978
+1615 "Disk" "McMinnville" 0.15 15 7 3046252822.27412
+1616 "Ellipsoid" "McMinnville" 0.15 15 7 3189618963.89633
+1617 "Disk" "Lindenberg" 0.15 15 7 2742055532.63366
+1618 "Ellipsoid" "Lindenberg" 0.15 15 7 2867470395.37416
+1619 "Disk" "Croker river" 0.15 15 7 3199876294.32041
+1620 "Ellipsoid" "Croker river" 0.15 15 7 3363415455.21577
+1621 "Disk" "Phillip SW Belize" 0.1 15 7 2400263754.72002
+1622 "Ellipsoid" "Phillip SW Belize" 0.1 15 7 2452131045.57395
+1623 "Disk" "Lake Charles" 0.1 15 7 2378876845.61199
+1624 "Ellipsoid" "Lake Charles" 0.1 15 7 2465090667.96218
+1625 "Disk" "McMinnville" 0.1 15 7 2814188627.0061
+1626 "Ellipsoid" "McMinnville" 0.1 15 7 2958383281.76358
+1627 "Disk" "Lindenberg" 0.1 15 7 2532759560.82939
+1628 "Ellipsoid" "Lindenberg" 0.1 15 7 2657826266.73134
+1629 "Disk" "Croker river" 0.1 15 7 2944756634.52053
+1630 "Ellipsoid" "Croker river" 0.1 15 7 3106786824.42662
+1631 "Disk" "Phillip SW Belize" 0.05 15 7 2226827070.18044
+1632 "Ellipsoid" "Phillip SW Belize" 0.05 15 7 2279315048.0403
+1633 "Disk" "Lake Charles" 0.05 15 7 2203793953.8845
+1634 "Ellipsoid" "Lake Charles" 0.05 15 7 2290647750.45313
+1635 "Disk" "McMinnville" 0.05 15 7 2600695767.402
+1636 "Ellipsoid" "McMinnville" 0.05 15 7 2745104550.02619
+1637 "Disk" "Lindenberg" 0.05 15 7 2340206826.70266
+1638 "Ellipsoid" "Lindenberg" 0.05 15 7 2464402419.47689
+1639 "Disk" "Croker river" 0.05 15 7 2710170160.07496
+1640 "Ellipsoid" "Croker river" 0.05 15 7 2870018369.58194
+1641 "Disk" "Phillip SW Belize" 0 15 7 2067273346.84037
+1642 "Ellipsoid" "Phillip SW Belize" 0 15 7 2120128971.2292
+1643 "Disk" "Lake Charles" 0 15 7 2042910183.86725
+1644 "Ellipsoid" "Lake Charles" 0 15 7 2130031849.82246
+1645 "Disk" "McMinnville" 0 15 7 2404551973.39962
+1646 "Ellipsoid" "McMinnville" 0 15 7 2548593971.94689
+1647 "Disk" "Lindenberg" 0 15 7 2163243473.56508
+1648 "Ellipsoid" "Lindenberg" 0 15 7 2286092463.45894
+1649 "Disk" "Croker river" 0 15 7 2494597199.85057
+1650 "Ellipsoid" "Croker river" 0 15 7 2651656053.49037
+1651 "Disk" "Phillip SW Belize" 0.2 20 7 3235138985.87055
+1652 "Ellipsoid" "Phillip SW Belize" 0.2 20 7 3312036851.90922
+1653 "Disk" "Lake Charles" 0.2 20 7 3232596397.97451
+1654 "Ellipsoid" "Lake Charles" 0.2 20 7 3341069025.21292
+1655 "Disk" "McMinnville" 0.2 20 7 3818459638.34954
+1656 "Ellipsoid" "McMinnville" 0.2 20 7 3994979519.05345
+1657 "Disk" "Lindenberg" 0.2 20 7 3431564326.47527
+1658 "Ellipsoid" "Lindenberg" 0.2 20 7 3596115783.76602
+1659 "Disk" "Croker river" 0.2 20 7 3838225992.47254
+1660 "Ellipsoid" "Croker river" 0.2 20 7 4100785506.64532
+1661 "Disk" "Phillip SW Belize" 0.15 20 7 3044077316.01516
+1662 "Ellipsoid" "Phillip SW Belize" 0.15 20 7 3122635215.54477
+1663 "Disk" "Lake Charles" 0.15 20 7 3040474879.36397
+1664 "Ellipsoid" "Lake Charles" 0.15 20 7 3150471754.40575
+1665 "Disk" "McMinnville" 0.15 20 7 3583448406.75646
+1666 "Ellipsoid" "McMinnville" 0.15 20 7 3761036220.71972
+1667 "Disk" "Lindenberg" 0.15 20 7 3219276940.85359
+1668 "Ellipsoid" "Lindenberg" 0.15 20 7 3383860206.73493
+1669 "Disk" "Croker river" 0.15 20 7 3571187938.88408
+1670 "Ellipsoid" "Croker river" 0.15 20 7 3835177786.7284
+1671 "Disk" "Phillip SW Belize" 0.1 20 7 2867464481.48278
+1672 "Ellipsoid" "Phillip SW Belize" 0.1 20 7 2947366051.90687
+1673 "Disk" "Lake Charles" 0.1 20 7 2863268213.42895
+1674 "Ellipsoid" "Lake Charles" 0.1 20 7 2974303389.55932
+1675 "Disk" "McMinnville" 0.1 20 7 3367088994.83017
+1676 "Ellipsoid" "McMinnville" 0.1 20 7 3544888078.27798
+1677 "Disk" "Lindenberg" 0.1 20 7 3023882360.27133
+1678 "Ellipsoid" "Lindenberg" 0.1 20 7 3187716947.91125
+1679 "Disk" "Croker river" 0.1 20 7 3325325279.76704
+1680 "Ellipsoid" "Croker river" 0.1 20 7 3589779894.38298
+1681 "Disk" "Phillip SW Belize" 0.05 20 7 2704446662.45947
+1682 "Ellipsoid" "Phillip SW Belize" 0.05 20 7 2785383971.55262
+1683 "Disk" "Lake Charles" 0.05 20 7 2700071663.42659
+1684 "Ellipsoid" "Lake Charles" 0.05 20 7 2811675810.22177
+1685 "Disk" "McMinnville" 0.05 20 7 3168174109.377
+1686 "Ellipsoid" "McMinnville" 0.05 20 7 3345371648.14372
+1687 "Disk" "Lindenberg" 0.05 20 7 2844235192.39489
+1688 "Ellipsoid" "Lindenberg" 0.05 20 7 3006599193.76312
+1689 "Disk" "Croker river" 0.05 20 7 3099072866.858
+1690 "Ellipsoid" "Croker river" 0.05 20 7 3363122106.69408
+1691 "Disk" "Phillip SW Belize" 0 20 7 2554209906.57422
+1692 "Ellipsoid" "Phillip SW Belize" 0 20 7 2635883557.71818
+1693 "Disk" "Lake Charles" 0 20 7 2550025171.67773
+1694 "Ellipsoid" "Lake Charles" 0 20 7 2661744915.41172
+1695 "Disk" "McMinnville" 0 20 7 2985562982.48134
+1696 "Ellipsoid" "McMinnville" 0 20 7 3161388772.28017
+1697 "Disk" "Lindenberg" 0 20 7 2679255711.91547
+1698 "Ellipsoid" "Lindenberg" 0 20 7 2839484091.88071
+1699 "Disk" "Croker river" 0 20 7 2890970458.55149
+1700 "Ellipsoid" "Croker river" 0 20 7 3153833959.2217
+1701 "Disk" "Phillip SW Belize" 0.2 25 7 3655400455.35885
+1702 "Ellipsoid" "Phillip SW Belize" 0.2 25 7 3780797194.07927
+1703 "Disk" "Lake Charles" 0.2 25 7 3666790458.15725
+1704 "Ellipsoid" "Lake Charles" 0.2 25 7 3820099689.05296
+1705 "Disk" "McMinnville" 0.2 25 7 4313005395.38747
+1706 "Ellipsoid" "McMinnville" 0.2 25 7 4555839647.76188
+1707 "Disk" "Lindenberg" 0.2 25 7 3873953790.51669
+1708 "Ellipsoid" "Lindenberg" 0.2 25 7 4108469554.10419
+1709 "Disk" "Croker river" 0.2 25 7 4195574181.01156
+1710 "Ellipsoid" "Croker river" 0.2 25 7 4580306813.54782
+1711 "Disk" "Phillip SW Belize" 0.15 25 7 3472331134.64936
+1712 "Ellipsoid" "Phillip SW Belize" 0.15 25 7 3601028872.91279
+1713 "Disk" "Lake Charles" 0.15 25 7 3483480240.89963
+1714 "Ellipsoid" "Lake Charles" 0.15 25 7 3639929323.77179
+1715 "Disk" "McMinnville" 0.15 25 7 4089170241.32426
+1716 "Ellipsoid" "McMinnville" 0.15 25 7 4335283532.62727
+1717 "Disk" "Lindenberg" 0.15 25 7 3672340839.69019
+1718 "Ellipsoid" "Lindenberg" 0.15 25 7 3909011318.85143
+1719 "Disk" "Croker river" 0.15 25 7 3937695788.04927
+1720 "Ellipsoid" "Croker river" 0.15 25 7 4327428149.14613
+1721 "Disk" "Phillip SW Belize" 0.1 25 7 3302162055.52818
+1722 "Ellipsoid" "Phillip SW Belize" 0.1 25 7 3433736385.64096
+1723 "Disk" "Lake Charles" 0.1 25 7 3313523654.2385
+1724 "Ellipsoid" "Lake Charles" 0.1 25 7 3472541962.37932
+1725 "Disk" "McMinnville" 0.1 25 7 3882348599.41909
+1726 "Ellipsoid" "McMinnville" 0.1 25 7 4130730234.98575
+1727 "Disk" "Lindenberg" 0.1 25 7 3486236310.94425
+1728 "Ellipsoid" "Lindenberg" 0.1 25 7 3724091913.99672
+1729 "Disk" "Croker river" 0.1 25 7 3699961179.31364
+1730 "Ellipsoid" "Croker river" 0.1 25 7 4093395681.67418
+1731 "Disk" "Phillip SW Belize" 0.05 25 7 3144124878.49147
+1732 "Ellipsoid" "Phillip SW Belize" 0.05 25 7 3278168294.77173
+1733 "Disk" "Lake Charles" 0.05 25 7 3156097892.92877
+1734 "Ellipsoid" "Lake Charles" 0.05 25 7 3317140432.23158
+1735 "Disk" "McMinnville" 0.05 25 7 3691423901.39817
+1736 "Ellipsoid" "McMinnville" 0.05 25 7 3941119065.16162
+1737 "Disk" "Lindenberg" 0.05 25 7 3314575481.29176
+1738 "Ellipsoid" "Lindenberg" 0.05 25 7 3552716661.94995
+1739 "Disk" "Croker river" 0.05 25 7 3480869907.19173
+1740 "Ellipsoid" "Croker river" 0.05 25 7 3876824545.54096
+1741 "Disk" "Phillip SW Belize" 0 25 7 2997488312.16096
+1742 "Ellipsoid" "Phillip SW Belize" 0 25 7 3133610246.56148
+1743 "Disk" "Lake Charles" 0 25 7 3010421612.47942
+1744 "Ellipsoid" "Lake Charles" 0 25 7 3172968435.96672
+1745 "Disk" "McMinnville" 0 25 7 3515342023.99185
+1746 "Ellipsoid" "McMinnville" 0 25 7 3765450499.53971
+1747 "Disk" "Lindenberg" 0 25 7 3156355573.95836
+1748 "Ellipsoid" "Lindenberg" 0 25 7 3393950893.70838
+1749 "Disk" "Croker river" 0 25 7 3279022648.90274
+1750 "Ellipsoid" "Croker river" 0 25 7 3676424692.27524
+1751 "Disk" "Phillip SW Belize" 0.2 5 8 2063503904.80139
+1752 "Ellipsoid" "Phillip SW Belize" 0.2 5 8 2083871349.80905
+1753 "Disk" "Lake Charles" 0.2 5 8 2085468005.64531
+1754 "Ellipsoid" "Lake Charles" 0.2 5 8 2128106501.59014
+1755 "Disk" "McMinnville" 0.2 5 8 2657742105.73854
+1756 "Ellipsoid" "McMinnville" 0.2 5 8 2689773002.78488
+1757 "Disk" "Lindenberg" 0.2 5 8 2439181531.82444
+1758 "Ellipsoid" "Lindenberg" 0.2 5 8 2466635066.38218
+1759 "Disk" "Croker river" 0.2 5 8 3265247642.78319
+1760 "Ellipsoid" "Croker river" 0.2 5 8 3223591362.28643
+1761 "Disk" "Phillip SW Belize" 0.15 5 8 1852359105.0999
+1762 "Ellipsoid" "Phillip SW Belize" 0.15 5 8 1874491602.97112
+1763 "Disk" "Lake Charles" 0.15 5 8 1870676655.91133
+1764 "Ellipsoid" "Lake Charles" 0.15 5 8 1914815189.84896
+1765 "Disk" "McMinnville" 0.15 5 8 2396052670.63251
+1766 "Ellipsoid" "McMinnville" 0.15 5 8 2430358754.92901
+1767 "Disk" "Lindenberg" 0.15 5 8 2202421060.39628
+1768 "Ellipsoid" "Lindenberg" 0.15 5 8 2232252945.61267
+1769 "Disk" "Croker river" 0.15 5 8 2981165572.27417
+1770 "Ellipsoid" "Croker river" 0.15 5 8 2940639381.68448
+1771 "Disk" "Phillip SW Belize" 0.1 5 8 1659421099.41618
+1772 "Ellipsoid" "Phillip SW Belize" 0.1 5 8 1683317567.26732
+1773 "Disk" "Lake Charles" 0.1 5 8 1674265668.63165
+1774 "Ellipsoid" "Lake Charles" 0.1 5 8 1719795158.3057
+1775 "Disk" "McMinnville" 0.1 5 8 2156320092.35867
+1776 "Ellipsoid" "McMinnville" 0.1 5 8 2192747535.96826
+1777 "Disk" "Lindenberg" 0.1 5 8 1985425140.35293
+1778 "Ellipsoid" "Lindenberg" 0.1 5 8 2017473898.25388
+1779 "Disk" "Croker river" 0.1 5 8 2720009216.3049
+1780 "Ellipsoid" "Croker river" 0.1 5 8 2680636880.32638
+1781 "Disk" "Phillip SW Belize" 0.05 5 8 1483504322.06525
+1782 "Ellipsoid" "Phillip SW Belize" 0.05 5 8 1509165520.4623
+1783 "Disk" "Lake Charles" 0.05 5 8 1495013601.08907
+1784 "Ellipsoid" "Lake Charles" 0.05 5 8 1541843899.17576
+1785 "Disk" "McMinnville" 0.05 5 8 1937047044.80978
+1786 "Ellipsoid" "McMinnville" 0.05 5 8 1975439135.08159
+1787 "Disk" "Lindenberg" 0.05 5 8 1786827217.46215
+1788 "Ellipsoid" "Lindenberg" 0.05 5 8 1820922631.88207
+1789 "Disk" "Croker river" 0.05 5 8 2480102704.63421
+1790 "Ellipsoid" "Croker river" 0.05 5 8 2441895733.11781
+1791 "Disk" "Phillip SW Belize" 0 5 8 1323479740.62672
+1792 "Ellipsoid" "Phillip SW Belize" 0 5 8 1350909251.56661
+1793 "Disk" "Lake Charles" 0 5 8 1331757395.45901
+1794 "Ellipsoid" "Lake Charles" 0 5 8 1379818950.07881
+1795 "Disk" "McMinnville" 0 5 8 1736814018.07634
+1796 "Ellipsoid" "McMinnville" 0 5 8 1777015913.59307
+1797 "Disk" "Lindenberg" 0 5 8 1605334400.01686
+1798 "Ellipsoid" "Lindenberg" 0 5 8 1641302387.01925
+1799 "Disk" "Croker river" 0 5 8 2259872443.47394
+1800 "Ellipsoid" "Croker river" 0 5 8 2222838458.86203
+1801 "Disk" "Phillip SW Belize" 0.2 10 8 2224083851.68138
+1802 "Ellipsoid" "Phillip SW Belize" 0.2 10 8 2259497351.54043
+1803 "Disk" "Lake Charles" 0.2 10 8 2253596110.74022
+1804 "Ellipsoid" "Lake Charles" 0.2 10 8 2310521295.18517
+1805 "Disk" "McMinnville" 0.2 10 8 2849335040.31532
+1806 "Ellipsoid" "McMinnville" 0.2 10 8 2901574649.23688
+1807 "Disk" "Lindenberg" 0.2 10 8 2608941156.96765
+1808 "Ellipsoid" "Lindenberg" 0.2 10 8 2659641296.60646
+1809 "Disk" "Croker river" 0.2 10 8 3400505257.36503
+1810 "Ellipsoid" "Croker river" 0.2 10 8 3401873270.81767
+1811 "Disk" "Phillip SW Belize" 0.15 10 8 2012168137.49747
+1812 "Ellipsoid" "Phillip SW Belize" 0.15 10 8 2049967891.32536
+1813 "Disk" "Lake Charles" 0.15 10 8 2038409416.53342
+1814 "Ellipsoid" "Lake Charles" 0.15 10 8 2097266637.96555
+1815 "Disk" "McMinnville" 0.15 10 8 2586914617.61467
+1816 "Ellipsoid" "McMinnville" 0.15 10 8 2642240431.04051
+1817 "Disk" "Lindenberg" 0.15 10 8 2371263075.10936
+1818 "Ellipsoid" "Lindenberg" 0.15 10 8 2425425135.92742
+1819 "Disk" "Croker river" 0.15 10 8 3115953483.81233
+1820 "Ellipsoid" "Croker river" 0.15 10 8 3119062775.46674
+1821 "Disk" "Phillip SW Belize" 0.1 10 8 1817801026.08902
+1822 "Ellipsoid" "Phillip SW Belize" 0.1 10 8 1857977770.53705
+1823 "Disk" "Lake Charles" 0.1 10 8 1840891710.74456
+1824 "Ellipsoid" "Lake Charles" 0.1 10 8 1901568716.0957
+1825 "Disk" "McMinnville" 0.1 10 8 2345533177.19891
+1826 "Ellipsoid" "McMinnville" 0.1 10 8 2403865187.20993
+1827 "Disk" "Lindenberg" 0.1 10 8 2152480329.85822
+1828 "Ellipsoid" "Lindenberg" 0.1 10 8 2210049067.58616
+1829 "Disk" "Croker river" 0.1 10 8 2853663673.84599
+1830 "Ellipsoid" "Croker river" 0.1 10 8 2858519654.62319
+1831 "Disk" "Phillip SW Belize" 0.05 10 8 1639877185.25521
+1832 "Ellipsoid" "Phillip SW Belize" 0.05 10 8 1682423168.75074
+1833 "Disk" "Lake Charles" 0.05 10 8 1659898988.22338
+1834 "Ellipsoid" "Lake Charles" 0.05 10 8 1722303907.52676
+1835 "Disk" "McMinnville" 0.05 10 8 2123771611.25559
+1836 "Ellipsoid" "McMinnville" 0.05 10 8 2185036911.56234
+1837 "Disk" "Lindenberg" 0.05 10 8 1951291250.62055
+1838 "Ellipsoid" "Lindenberg" 0.05 10 8 2012216309.4775
+1839 "Disk" "Croker river" 0.05 10 8 2612010702.96062
+1840 "Ellipsoid" "Croker river" 0.05 10 8 2618627549.45548
+1841 "Disk" "Phillip SW Belize" 0 10 8 1477343547.84836
+1842 "Ellipsoid" "Phillip SW Belize" 0 10 8 1522252930.16815
+1843 "Disk" "Lake Charles" 0 10 8 1494342130.11444
+1844 "Ellipsoid" "Lake Charles" 0 10 8 1558404171.14967
+1845 "Disk" "McMinnville" 0 10 8 1920285271.27069
+1846 "Ellipsoid" "McMinnville" 0 10 8 1984420986.77786
+1847 "Disk" "Lindenberg" 0 10 8 1766464861.85703
+1848 "Ellipsoid" "Lindenberg" 0 10 8 1830703750.58075
+1849 "Disk" "Croker river" 0 10 8 2389469293.96345
+1850 "Ellipsoid" "Croker river" 0 10 8 2397875620.90408
+1851 "Disk" "Phillip SW Belize" 0.2 15 8 2501722201.96716
+1852 "Ellipsoid" "Phillip SW Belize" 0.2 15 8 2538330973.71242
+1853 "Disk" "Lake Charles" 0.2 15 8 2543808047.27826
+1854 "Ellipsoid" "Lake Charles" 0.2 15 8 2601924156.89072
+1855 "Disk" "McMinnville" 0.2 15 8 3197240453.31213
+1856 "Ellipsoid" "McMinnville" 0.2 15 8 3247520575.16051
+1857 "Disk" "Lindenberg" 0.2 15 8 2926024805.8687
+1858 "Ellipsoid" "Lindenberg" 0.2 15 8 2975619476.98816
+1859 "Disk" "Croker river" 0.2 15 8 3667068152.78281
+1860 "Ellipsoid" "Croker river" 0.2 15 8 3699060076.15628
+1861 "Disk" "Phillip SW Belize" 0.15 15 8 2294068150.30578
+1862 "Ellipsoid" "Phillip SW Belize" 0.15 15 8 2331872383.74986
+1863 "Disk" "Lake Charles" 0.15 15 8 2334334679.81147
+1864 "Ellipsoid" "Lake Charles" 0.15 15 8 2392853885.02196
+1865 "Disk" "McMinnville" 0.15 15 8 2943697100.18433
+1866 "Ellipsoid" "McMinnville" 0.15 15 8 2994116953.85848
+1867 "Disk" "Lindenberg" 0.15 15 8 2696989286.30387
+1868 "Ellipsoid" "Lindenberg" 0.15 15 8 2747027849.30347
+1869 "Disk" "Croker river" 0.15 15 8 3389894437.14315
+1870 "Ellipsoid" "Croker river" 0.15 15 8 3421192156.59742
+1871 "Disk" "Phillip SW Belize" 0.1 15 8 2102944694.54627
+1872 "Ellipsoid" "Phillip SW Belize" 0.1 15 8 2141869687.22321
+1873 "Disk" "Lake Charles" 0.1 15 8 2141603373.25071
+1874 "Ellipsoid" "Lake Charles" 0.1 15 8 2200299097.26917
+1875 "Disk" "McMinnville" 0.1 15 8 2710299067.58941
+1876 "Ellipsoid" "McMinnville" 0.1 15 8 2760557605.87079
+1877 "Disk" "Lindenberg" 0.1 15 8 2486104380.12391
+1878 "Ellipsoid" "Lindenberg" 0.1 15 8 2536295429.35841
+1879 "Disk" "Croker river" 0.1 15 8 3134428512.59954
+1880 "Ellipsoid" "Croker river" 0.1 15 8 3164709621.96835
+1881 "Disk" "Phillip SW Belize" 0.05 15 8 1927315418.80445
+1882 "Ellipsoid" "Phillip SW Belize" 0.05 15 8 1967293303.44974
+1883 "Disk" "Lake Charles" 0.05 15 8 1964540927.63709
+1884 "Ellipsoid" "Lake Charles" 0.05 15 8 2023211323.3824
+1885 "Disk" "McMinnville" 0.05 15 8 2495711868.83729
+1886 "Ellipsoid" "McMinnville" 0.05 15 8 2545521552.18136
+1887 "Disk" "Lindenberg" 0.05 15 8 2292146332.80994
+1888 "Ellipsoid" "Lindenberg" 0.05 15 8 2342209576.91238
+1889 "Disk" "Croker river" 0.05 15 8 2899112028.86093
+1890 "Ellipsoid" "Croker river" 0.05 15 8 2928079334.65841
+1891 "Disk" "Phillip SW Belize" 0 15 8 1766192644.66612
+1892 "Ellipsoid" "Phillip SW Belize" 0 15 8 1807161264.15186
+1893 "Disk" "Lake Charles" 0 15 8 1802125530.78032
+1894 "Ellipsoid" "Lake Charles" 0 15 8 1860592698.64202
+1895 "Disk" "McMinnville" 0 15 8 2298672095.20861
+1896 "Ellipsoid" "McMinnville" 0 15 8 2347759621.90034
+1897 "Disk" "Lindenberg" 0 15 8 2113959113.27436
+1898 "Ellipsoid" "Lindenberg" 0 15 8 2163626151.09878
+1899 "Disk" "Croker river" 0 15 8 2682482591.77432
+1900 "Ellipsoid" "Croker river" 0 15 8 2709867651.19467
+1901 "Disk" "Phillip SW Belize" 0.2 20 8 3039023284.60947
+1902 "Ellipsoid" "Phillip SW Belize" 0.2 20 8 3115222820.35468
+1903 "Disk" "Lake Charles" 0.2 20 8 3079090335.98657
+1904 "Ellipsoid" "Lake Charles" 0.2 20 8 3178520473.90262
+1905 "Disk" "McMinnville" 0.2 20 8 3779425234.34309
+1906 "Ellipsoid" "McMinnville" 0.2 20 8 3887188486.48786
+1907 "Disk" "Lindenberg" 0.2 20 8 3428931644.66518
+1908 "Ellipsoid" "Lindenberg" 0.2 20 8 3540921323.54126
+1909 "Disk" "Croker river" 0.2 20 8 4031474814.36585
+1910 "Ellipsoid" "Croker river" 0.2 20 8 4184111276.66243
+1911 "Disk" "Phillip SW Belize" 0.15 20 8 2847364567.38836
+1912 "Ellipsoid" "Phillip SW Belize" 0.15 20 8 2925260230.07165
+1913 "Disk" "Lake Charles" 0.15 20 8 2885121371.76682
+1914 "Ellipsoid" "Lake Charles" 0.15 20 8 2985631070.69483
+1915 "Disk" "McMinnville" 0.15 20 8 3542296152.62434
+1916 "Ellipsoid" "McMinnville" 0.15 20 8 3650732988.86612
+1917 "Disk" "Lindenberg" 0.15 20 8 3213954040.01068
+1918 "Ellipsoid" "Lindenberg" 0.15 20 8 3326739072.04229
+1919 "Disk" "Croker river" 0.15 20 8 3764597273.12186
+1920 "Ellipsoid" "Croker river" 0.15 20 8 3917614306.57084
+1921 "Disk" "Phillip SW Belize" 0.1 20 8 2670819565.82435
+1922 "Ellipsoid" "Phillip SW Belize" 0.1 20 8 2750233665.82731
+1923 "Disk" "Lake Charles" 0.1 20 8 2706463419.45
+1924 "Ellipsoid" "Lake Charles" 0.1 20 8 2807735066.99284
+1925 "Disk" "McMinnville" 0.1 20 8 3323743026.60405
+1926 "Ellipsoid" "McMinnville" 0.1 20 8 3432403956.65708
+1927 "Disk" "Lindenberg" 0.1 20 8 3015768150.93583
+1928 "Ellipsoid" "Lindenberg" 0.1 20 8 3128876356.23555
+1929 "Disk" "Croker river" 0.1 20 8 3518393030.63553
+1930 "Ellipsoid" "Croker river" 0.1 20 8 3671147944.98937
+1931 "Disk" "Phillip SW Belize" 0.05 20 8 2508440592.80015
+1932 "Ellipsoid" "Phillip SW Belize" 0.05 20 8 2589221488.02981
+1933 "Disk" "Lake Charles" 0.05 20 8 2542134756.45099
+1934 "Ellipsoid" "Lake Charles" 0.05 20 8 2643894191.35723
+1935 "Disk" "McMinnville" 0.05 20 8 3122530154.84718
+1936 "Ellipsoid" "McMinnville" 0.05 20 8 3231008484.46832
+1937 "Disk" "Lindenberg" 0.05 20 8 2833233198.36201
+1938 "Ellipsoid" "Lindenberg" 0.05 20 8 2946236842.29427
+1939 "Disk" "Croker river" 0.05 20 8 3291350730.56988
+1940 "Ellipsoid" "Croker river" 0.05 20 8 3443283827.31004
+1941 "Disk" "Phillip SW Belize" 0 20 8 2359324873.21359
+1942 "Ellipsoid" "Phillip SW Belize" 0 20 8 2441345441.86416
+1943 "Disk" "Lake Charles" 0 20 8 2391200876.34611
+1944 "Ellipsoid" "Lake Charles" 0 20 8 2493215996.74229
+1945 "Disk" "McMinnville" 0 20 8 2937487093.80009
+1946 "Ellipsoid" "McMinnville" 0 20 8 3045418695.89365
+1947 "Disk" "Lindenberg" 0 20 8 2665270432.82703
+1948 "Ellipsoid" "Lindenberg" 0 20 8 2777786032.36993
+1949 "Disk" "Croker river" 0 20 8 3082050962.5645
+1950 "Ellipsoid" "Croker river" 0 20 8 3232686266.59274
+1951 "Disk" "Phillip SW Belize" 0.2 25 8 3516490074.55738
+1952 "Ellipsoid" "Phillip SW Belize" 0.2 25 8 3618077406.62359
+1953 "Disk" "Lake Charles" 0.2 25 8 3548713662.53122
+1954 "Ellipsoid" "Lake Charles" 0.2 25 8 3681287309.99101
+1955 "Disk" "McMinnville" 0.2 25 8 4283950694.67806
+1956 "Ellipsoid" "McMinnville" 0.2 25 8 4455573106.79324
+1957 "Disk" "Lindenberg" 0.2 25 8 3863996979.90406
+1958 "Ellipsoid" "Lindenberg" 0.2 25 8 4050116849.87741
+1959 "Disk" "Croker river" 0.2 25 8 4339803288.33852
+1960 "Ellipsoid" "Croker river" 0.2 25 8 4633396837.79098
+1961 "Disk" "Phillip SW Belize" 0.15 25 8 3339693769.65371
+1962 "Ellipsoid" "Phillip SW Belize" 0.15 25 8 3443734238.86694
+1963 "Disk" "Lake Charles" 0.15 25 8 3368718839.71894
+1964 "Ellipsoid" "Lake Charles" 0.15 25 8 3503717394.27779
+1965 "Disk" "McMinnville" 0.15 25 8 4061195122.28979
+1966 "Ellipsoid" "McMinnville" 0.15 25 8 4236037557.27411
+1967 "Disk" "Lindenberg" 0.15 25 8 3661205302.62441
+1968 "Ellipsoid" "Lindenberg" 0.15 25 8 3851116301.88578
+1969 "Disk" "Croker river" 0.15 25 8 4081255637.45806
+1970 "Ellipsoid" "Croker river" 0.15 25 8 4379955705.97867
+1971 "Disk" "Phillip SW Belize" 0.1 25 8 3176694617.13502
+1972 "Ellipsoid" "Phillip SW Belize" 0.1 25 8 3282992805.41983
+1973 "Disk" "Lake Charles" 0.1 25 8 3202676668.02437
+1974 "Ellipsoid" "Lake Charles" 0.1 25 8 3339793591.66993
+1975 "Disk" "McMinnville" 0.1 25 8 3855564224.98664
+1976 "Ellipsoid" "McMinnville" 0.1 25 8 4033127342.6926
+1977 "Disk" "Lindenberg" 0.1 25 8 3473978759.92222
+1978 "Ellipsoid" "Lindenberg" 0.1 25 8 3667119033.19964
+1979 "Disk" "Croker river" 0.1 25 8 3842597303.94267
+1980 "Ellipsoid" "Croker river" 0.1 25 8 4145447391.51446
+1981 "Disk" "Phillip SW Belize" 0.05 25 8 3026611644.20251
+1982 "Ellipsoid" "Phillip SW Belize" 0.05 25 8 3135003765.13725
+1983 "Disk" "Lake Charles" 0.05 25 8 3049671900.99912
+1984 "Ellipsoid" "Lake Charles" 0.05 25 8 3188653333.00015
+1985 "Disk" "McMinnville" 0.05 25 8 3665903461.50442
+1986 "Ellipsoid" "McMinnville" 0.05 25 8 3845741451.25883
+1987 "Disk" "Lindenberg" 0.05 25 8 3301251631.67199
+1988 "Ellipsoid" "Lindenberg" 0.05 25 8 3497112489.7119
+1989 "Disk" "Croker river" 0.05 25 8 3622379127.02167
+1990 "Ellipsoid" "Croker river" 0.05 25 8 3928523075.98633
+1991 "Disk" "Phillip SW Belize" 0 25 8 2888607295.88188
+1992 "Ellipsoid" "Phillip SW Belize" 0 25 8 2998958397.66251
+1993 "Disk" "Lake Charles" 0 25 8 2908834891.64374
+1994 "Ellipsoid" "Lake Charles" 0 25 8 3049477059.25617
+1995 "Disk" "McMinnville" 0 25 8 3491120979.30373
+1996 "Ellipsoid" "McMinnville" 0 25 8 3672839829.76212
+1997 "Disk" "Lindenberg" 0 25 8 3142017386.48189
+1998 "Ellipsoid" "Lindenberg" 0 25 8 3340141834.87353
+1999 "Disk" "Croker river" 0 25 8 3419240129.63645
+2000 "Ellipsoid" "Croker river" 0 25 8 3727921333.75633
+2001 "Disk" "Phillip SW Belize" 0.2 5 9 2116826358.87972
+2002 "Ellipsoid" "Phillip SW Belize" 0.2 5 9 2170993174.14503
+2003 "Disk" "Lake Charles" 0.2 5 9 2083390781.45988
+2004 "Ellipsoid" "Lake Charles" 0.2 5 9 2168964326.04558
+2005 "Disk" "McMinnville" 0.2 5 9 2560759491.04689
+2006 "Ellipsoid" "McMinnville" 0.2 5 9 2698821947.41502
+2007 "Disk" "Lindenberg" 0.2 5 9 2335241556.05773
+2008 "Ellipsoid" "Lindenberg" 0.2 5 9 2479157231.28749
+2009 "Disk" "Croker river" 0.2 5 9 3110207221.97056
+2010 "Ellipsoid" "Croker river" 0.2 5 9 3243069886.10609
+2011 "Disk" "Phillip SW Belize" 0.15 5 9 1898930472.23569
+2012 "Ellipsoid" "Phillip SW Belize" 0.15 5 9 1956509040.40654
+2013 "Disk" "Lake Charles" 0.15 5 9 1860963105.75181
+2014 "Ellipsoid" "Lake Charles" 0.15 5 9 1951373847.83185
+2015 "Disk" "McMinnville" 0.15 5 9 2289739391.33294
+2016 "Ellipsoid" "McMinnville" 0.15 5 9 2435352829.44395
+2017 "Disk" "Lindenberg" 0.15 5 9 2089343407.45232
+2018 "Ellipsoid" "Lindenberg" 0.15 5 9 2241423552.63431
+2019 "Disk" "Croker river" 0.15 5 9 2816301357.94581
+2020 "Ellipsoid" "Croker river" 0.15 5 9 2957369812.46017
+2021 "Disk" "Phillip SW Belize" 0.1 5 9 1698847283.22816
+2022 "Ellipsoid" "Phillip SW Belize" 0.1 5 9 1759554201.4631
+2023 "Disk" "Lake Charles" 0.1 5 9 1656878558.61792
+2024 "Ellipsoid" "Lake Charles" 0.1 5 9 1751746935.55826
+2025 "Disk" "McMinnville" 0.1 5 9 2041243041.30324
+2026 "Ellipsoid" "McMinnville" 0.1 5 9 2193619730.74504
+2027 "Disk" "Lindenberg" 0.1 5 9 1863839826.35579
+2028 "Ellipsoid" "Lindenberg" 0.1 5 9 2023241179.77014
+2029 "Disk" "Croker river" 0.1 5 9 2546097608.46705
+2030 "Ellipsoid" "Croker river" 0.1 5 9 2694558278.54012
+2031 "Disk" "Phillip SW Belize" 0.05 5 9 1515507744.50385
+2032 "Ellipsoid" "Phillip SW Belize" 0.05 5 9 1579032490.58149
+2033 "Disk" "Lake Charles" 0.05 5 9 1470043267.26689
+2034 "Ellipsoid" "Lake Charles" 0.05 5 9 1568961032.24783
+2035 "Disk" "McMinnville" 0.05 5 9 1813910747.26661
+2036 "Ellipsoid" "McMinnville" 0.05 5 9 1972198901.09823
+2037 "Disk" "Lindenberg" 0.05 5 9 1657493874.95648
+2038 "Ellipsoid" "Lindenberg" 0.05 5 9 1823300168.31405
+2039 "Disk" "Croker river" 0.05 5 9 2298015754.7258
+2040 "Ellipsoid" "Croker river" 0.05 5 9 2452995103.47806
+2041 "Disk" "Phillip SW Belize" 0 5 9 1347895694.368
+2042 "Ellipsoid" "Phillip SW Belize" 0 5 9 1413903437.30546
+2043 "Disk" "Lake Charles" 0 5 9 1299418436.12091
+2044 "Ellipsoid" "Lake Charles" 0 5 9 1401951980.27565
+2045 "Disk" "McMinnville" 0 5 9 1606456480.43433
+2046 "Ellipsoid" "McMinnville" 0 5 9 1769746984.37527
+2047 "Disk" "Lindenberg" 0 5 9 1469136914.73544
+2048 "Ellipsoid" "Lindenberg" 0 5 9 1640366373.88782
+2049 "Disk" "Croker river" 0 5 9 2070571946.97893
+2050 "Ellipsoid" "Croker river" 0 5 9 2231146476.61671
+2051 "Disk" "Phillip SW Belize" 0.2 10 9 2294760510.6247
+2052 "Ellipsoid" "Phillip SW Belize" 0.2 10 9 2351589208.03571
+2053 "Disk" "Lake Charles" 0.2 10 9 2263450927.57411
+2054 "Ellipsoid" "Lake Charles" 0.2 10 9 2351981221.21493
+2055 "Disk" "McMinnville" 0.2 10 9 2763760627.62056
+2056 "Ellipsoid" "McMinnville" 0.2 10 9 2905110805.90586
+2057 "Disk" "Lindenberg" 0.2 10 9 2516368347.08519
+2058 "Ellipsoid" "Lindenberg" 0.2 10 9 2663213079.47851
+2059 "Disk" "Croker river" 0.2 10 9 3255683622.98317
+2060 "Ellipsoid" "Croker river" 0.2 10 9 3408009733.61724
+2061 "Disk" "Phillip SW Belize" 0.15 10 9 2079546801.91588
+2062 "Ellipsoid" "Phillip SW Belize" 0.15 10 9 2139326866.55137
+2063 "Disk" "Lake Charles" 0.15 10 9 2043742000.621
+2064 "Ellipsoid" "Lake Charles" 0.15 10 9 2136636221.21236
+2065 "Disk" "McMinnville" 0.15 10 9 2495554163.07484
+2066 "Ellipsoid" "McMinnville" 0.15 10 9 2643725817.97584
+2067 "Disk" "Lindenberg" 0.15 10 9 2272939493.76926
+2068 "Ellipsoid" "Lindenberg" 0.15 10 9 2427066421.09291
+2069 "Disk" "Croker river" 0.15 10 9 2963422656.4264
+2070 "Ellipsoid" "Croker river" 0.15 10 9 3122858906.06428
+2071 "Disk" "Phillip SW Belize" 0.1 10 9 1881481077.41321
+2072 "Ellipsoid" "Phillip SW Belize" 0.1 10 9 1943913075.10499
+2073 "Disk" "Lake Charles" 0.1 10 9 1841697301.34606
+2074 "Ellipsoid" "Lake Charles" 0.1 10 9 1938567487.78298
+2075 "Disk" "McMinnville" 0.1 10 9 2249072951.97979
+2076 "Ellipsoid" "McMinnville" 0.1 10 9 2403289170.34649
+2077 "Disk" "Lindenberg" 0.1 10 9 2049189904.70028
+2078 "Ellipsoid" "Lindenberg" 0.1 10 9 2209764165.35183
+2079 "Disk" "Croker river" 0.1 10 9 2694283659.91023
+2080 "Ellipsoid" "Croker river" 0.1 10 9 2859948651.64966
+2081 "Disk" "Phillip SW Belize" 0.05 10 9 1699538977.08669
+2082 "Ellipsoid" "Phillip SW Belize" 0.05 10 9 1764301440.79695
+2083 "Disk" "Lake Charles" 0.05 10 9 1656268930.55778
+2084 "Ellipsoid" "Lake Charles" 0.05 10 9 1756703852.45714
+2085 "Disk" "McMinnville" 0.05 10 9 2023007930.24816
+2086 "Ellipsoid" "McMinnville" 0.05 10 9 2182439228.86497
+2087 "Disk" "Lindenberg" 0.05 10 9 1843927170.96529
+2088 "Ellipsoid" "Lindenberg" 0.05 10 9 2010054667.49885
+2089 "Disk" "Croker river" 0.05 10 9 2446724102.66543
+2090 "Ellipsoid" "Croker river" 0.05 10 9 2617699029.91946
+2091 "Disk" "Phillip SW Belize" 0 10 9 1532747183.61062
+2092 "Ellipsoid" "Phillip SW Belize" 0 10 9 1599498706.88186
+2093 "Disk" "Lake Charles" 0 10 9 1486462546.54724
+2094 "Ellipsoid" "Lake Charles" 0 10 9 1590030051.51254
+2095 "Disk" "McMinnville" 0 10 9 1816121904.78995
+2096 "Ellipsoid" "McMinnville" 0 10 9 1979891526.60116
+2097 "Disk" "Lindenberg" 0 10 9 1656025392.44516
+2098 "Ellipsoid" "Lindenberg" 0 10 9 1826758907.06348
+2099 "Disk" "Croker river" 0 10 9 2219295651.83557
+2100 "Ellipsoid" "Croker river" 0 10 9 2394632623.2199
+2101 "Disk" "Phillip SW Belize" 0.2 15 9 2621730336.50661
+2102 "Ellipsoid" "Phillip SW Belize" 0.2 15 9 2687571080.6974
+2103 "Disk" "Lake Charles" 0.2 15 9 2598487239.76304
+2104 "Ellipsoid" "Lake Charles" 0.2 15 9 2694601705.24074
+2105 "Disk" "McMinnville" 0.2 15 9 3142394317.18865
+2106 "Ellipsoid" "McMinnville" 0.2 15 9 3296539067.90713
+2107 "Disk" "Lindenberg" 0.2 15 9 2852346910.5684
+2108 "Ellipsoid" "Lindenberg" 0.2 15 9 3015734293.97563
+2109 "Disk" "Croker river" 0.2 15 9 3527100458.38169
+2110 "Ellipsoid" "Croker river" 0.2 15 9 3729958095.99335
+2111 "Disk" "Phillip SW Belize" 0.15 15 9 2414467142.86773
+2112 "Ellipsoid" "Phillip SW Belize" 0.15 15 9 2483110489.32256
+2113 "Disk" "Lake Charles" 0.15 15 9 2387349517.85821
+2114 "Ellipsoid" "Lake Charles" 0.15 15 9 2487308723.54887
+2115 "Disk" "McMinnville" 0.15 15 9 2884194355.13362
+2116 "Ellipsoid" "McMinnville" 0.15 15 9 3044108841.05427
+2117 "Disk" "Lindenberg" 0.15 15 9 2617782777.85847
+2118 "Ellipsoid" "Lindenberg" 0.15 15 9 2787509990.62313
+2119 "Disk" "Croker river" 0.15 15 9 3241829916.17919
+2120 "Ellipsoid" "Croker river" 0.15 15 9 3451342166.78611
+2121 "Disk" "Phillip SW Belize" 0.1 15 9 2223283433.09722
+2122 "Ellipsoid" "Phillip SW Belize" 0.1 15 9 2294441299.88998
+2123 "Disk" "Lake Charles" 0.1 15 9 2192791402.39272
+2124 "Ellipsoid" "Lake Charles" 0.1 15 9 2296209267.30159
+2125 "Disk" "McMinnville" 0.1 15 9 2646544945.56537
+2126 "Ellipsoid" "McMinnville" 0.1 15 9 2811407208.32685
+2127 "Disk" "Lindenberg" 0.1 15 9 2401867716.09282
+2128 "Ellipsoid" "Lindenberg" 0.1 15 9 2577041503.08204
+2129 "Disk" "Croker river" 0.1 15 9 2978876536.08357
+2130 "Ellipsoid" "Croker river" 0.1 15 9 3193986217.13536
+2131 "Disk" "Phillip SW Belize" 0.05 15 9 2047210135.02268
+2132 "Ellipsoid" "Phillip SW Belize" 0.05 15 9 2120583132.82673
+2133 "Disk" "Lake Charles" 0.05 15 9 2013816679.18795
+2134 "Ellipsoid" "Lake Charles" 0.05 15 9 2120298218.51769
+2135 "Disk" "McMinnville" 0.05 15 9 2428197294.70478
+2136 "Ellipsoid" "McMinnville" 0.05 15 9 2597153297.8175
+2137 "Disk" "Lindenberg" 0.05 15 9 2203463678.064
+2138 "Ellipsoid" "Lindenberg" 0.05 15 9 2383151967.53527
+2139 "Disk" "Croker river" 0.05 15 9 2736744947.44198
+2140 "Ellipsoid" "Croker river" 0.05 15 9 2956385036.48132
+2141 "Disk" "Phillip SW Belize" 0 15 9 1885326948.45553
+2142 "Ellipsoid" "Phillip SW Belize" 0 15 9 1960605652.64399
+2143 "Disk" "Lake Charles" 0 15 9 1849480739.4007
+2144 "Ellipsoid" "Lake Charles" 0 15 9 1958623520.31579
+2145 "Disk" "McMinnville" 0 15 9 2227972376.83681
+2146 "Ellipsoid" "McMinnville" 0 15 9 2400139890.74758
+2147 "Disk" "Lindenberg" 0 15 9 2021497086.07767
+2148 "Ellipsoid" "Lindenberg" 0 15 9 2204733640.27822
+2149 "Disk" "Croker river" 0 15 9 2514031648.78419
+2150 "Ellipsoid" "Croker river" 0 15 9 2737131329.0382
+2151 "Disk" "Phillip SW Belize" 0.2 20 9 2994241082.65876
+2152 "Ellipsoid" "Phillip SW Belize" 0.2 20 9 3085528177.28176
+2153 "Disk" "Lake Charles" 0.2 20 9 2959944628.50649
+2154 "Ellipsoid" "Lake Charles" 0.2 20 9 3088750692.0949
+2155 "Disk" "McMinnville" 0.2 20 9 3527061339.01934
+2156 "Ellipsoid" "McMinnville" 0.2 20 9 3732673934.26343
+2157 "Disk" "Lindenberg" 0.2 20 9 3181933600.56952
+2158 "Ellipsoid" "Lindenberg" 0.2 20 9 3401220282.86436
+2159 "Disk" "Croker river" 0.2 20 9 3762867155.73158
+2160 "Ellipsoid" "Croker river" 0.2 20 9 4065377866.56265
+2161 "Disk" "Phillip SW Belize" 0.15 20 9 2797555878.38934
+2162 "Ellipsoid" "Phillip SW Belize" 0.15 20 9 2891892194.92415
+2163 "Disk" "Lake Charles" 0.15 20 9 2757946500.65596
+2164 "Ellipsoid" "Lake Charles" 0.15 20 9 2891752365.63593
+2165 "Disk" "McMinnville" 0.15 20 9 3277277549.73308
+2166 "Ellipsoid" "McMinnville" 0.15 20 9 3490608155.61662
+2167 "Disk" "Lindenberg" 0.15 20 9 2954081299.05216
+2168 "Ellipsoid" "Lindenberg" 0.15 20 9 3181587538.24831
+2169 "Disk" "Croker river" 0.15 20 9 3481352194.23975
+2170 "Ellipsoid" "Croker river" 0.15 20 9 3792808403.48779
+2171 "Disk" "Phillip SW Belize" 0.1 20 9 2616100571.1229
+2172 "Ellipsoid" "Phillip SW Belize" 0.1 20 9 2713062983.46329
+2173 "Disk" "Lake Charles" 0.1 20 9 2571596499.60411
+2174 "Ellipsoid" "Lake Charles" 0.1 20 9 2709946655.40797
+2175 "Disk" "McMinnville" 0.1 20 9 3046969044.41662
+2176 "Ellipsoid" "McMinnville" 0.1 20 9 3267129673.48279
+2177 "Disk" "Lindenberg" 0.1 20 9 2743943961.42582
+2178 "Ellipsoid" "Lindenberg" 0.1 20 9 2978680055.48207
+2179 "Disk" "Croker river" 0.1 20 9 3221459140.25054
+2180 "Ellipsoid" "Croker river" 0.1 20 9 3540541146.23631
+2181 "Disk" "Phillip SW Belize" 0.05 20 9 2448985257.95445
+2182 "Ellipsoid" "Phillip SW Belize" 0.05 20 9 2548140157.37363
+2183 "Disk" "Lake Charles" 0.05 20 9 2399975133.77351
+2184 "Ellipsoid" "Lake Charles" 0.05 20 9 2542407880.73399
+2185 "Disk" "McMinnville" 0.05 20 9 2834972811.25303
+2186 "Ellipsoid" "McMinnville" 0.05 20 9 3061052277.58955
+2187 "Disk" "Lindenberg" 0.05 20 9 2550460975.80026
+2188 "Ellipsoid" "Lindenberg" 0.05 20 9 2791408619.6838
+2189 "Disk" "Croker river" 0.05 20 9 2981753437.25043
+2190 "Ellipsoid" "Croker river" 0.05 20 9 3307157447.7863
+2191 "Disk" "Phillip SW Belize" 0 20 9 2295363975.12504
+2192 "Ellipsoid" "Phillip SW Belize" 0 20 9 2396268176.391
+2193 "Disk" "Lake Charles" 0 20 9 2242208941.90002
+2194 "Ellipsoid" "Lake Charles" 0 20 9 2388257731.22342
+2195 "Disk" "McMinnville" 0 20 9 2640188792.30059
+2196 "Ellipsoid" "McMinnville" 0 20 9 2871256101.77367
+2197 "Disk" "Lindenberg" 0 20 9 2372630030.1444
+2198 "Ellipsoid" "Lindenberg" 0 20 9 2618746190.96009
+2199 "Disk" "Croker river" 0 20 9 2760886738.70976
+2200 "Ellipsoid" "Croker river" 0 20 9 3091329519.29087
+2201 "Disk" "Phillip SW Belize" 0.2 25 9 3476730027.27975
+2202 "Ellipsoid" "Phillip SW Belize" 0.2 25 9 3603299128.64366
+2203 "Disk" "Lake Charles" 0.2 25 9 3439737361.04714
+2204 "Ellipsoid" "Lake Charles" 0.2 25 9 3604826202.88394
+2205 "Disk" "McMinnville" 0.2 25 9 4043822472.38901
+2206 "Ellipsoid" "McMinnville" 0.2 25 9 4315165935.17964
+2207 "Disk" "Lindenberg" 0.2 25 9 3624001935.65454
+2208 "Ellipsoid" "Lindenberg" 0.2 25 9 3920638522.40622
+2209 "Disk" "Croker river" 0.2 25 9 4047726570.04117
+2210 "Ellipsoid" "Croker river" 0.2 25 9 4510845915.7412
+2211 "Disk" "Phillip SW Belize" 0.15 25 9 3291307904.14142
+2212 "Ellipsoid" "Phillip SW Belize" 0.15 25 9 3421796975.34092
+2213 "Disk" "Lake Charles" 0.15 25 9 3249171260.76802
+2214 "Ellipsoid" "Lake Charles" 0.15 25 9 3419745202.92887
+2215 "Disk" "McMinnville" 0.15 25 9 3806122185.54038
+2216 "Ellipsoid" "McMinnville" 0.15 25 9 4086066721.57239
+2217 "Disk" "Lindenberg" 0.15 25 9 3406162642.81627
+2218 "Ellipsoid" "Lindenberg" 0.15 25 9 3712501003.07128
+2219 "Disk" "Croker river" 0.15 25 9 3771372699.21474
+2220 "Ellipsoid" "Croker river" 0.15 25 9 4247788849.66419
+2221 "Disk" "Phillip SW Belize" 0.1 25 9 3119807185.28731
+2222 "Ellipsoid" "Phillip SW Belize" 0.1 25 9 3253700849.7611
+2223 "Disk" "Lake Charles" 0.1 25 9 3072992228.58964
+2224 "Ellipsoid" "Lake Charles" 0.1 25 9 3248458844.20749
+2225 "Disk" "McMinnville" 0.1 25 9 3586525159.19006
+2226 "Ellipsoid" "McMinnville" 0.1 25 9 3873947759.82966
+2227 "Disk" "Lindenberg" 0.1 25 9 3204845766.81727
+2228 "Ellipsoid" "Lindenberg" 0.1 25 9 3519646672.42711
+2229 "Disk" "Croker river" 0.1 25 9 3515832848.82096
+2230 "Ellipsoid" "Croker river" 0.1 25 9 4003815481.34624
+2231 "Disk" "Phillip SW Belize" 0.05 25 9 2961447406.72538
+2232 "Ellipsoid" "Phillip SW Belize" 0.05 25 9 3098225972.34577
+2233 "Disk" "Lake Charles" 0.05 25 9 2910387651.15283
+2234 "Ellipsoid" "Lake Charles" 0.05 25 9 3090156840.23603
+2235 "Disk" "McMinnville" 0.05 25 9 3383984047.84519
+2236 "Ellipsoid" "McMinnville" 0.05 25 9 3677754174.94545
+2237 "Disk" "Lindenberg" 0.05 25 9 3019092507.53409
+2238 "Ellipsoid" "Lindenberg" 0.05 25 9 3341103778.21259
+2239 "Disk" "Croker river" 0.05 25 9 3279750686.50338
+2240 "Ellipsoid" "Croker river" 0.05 25 9 3777612072.86645
+2241 "Disk" "Phillip SW Belize" 0 25 9 2815484525.40462
+2242 "Ellipsoid" "Phillip SW Belize" 0 25 9 2954624370.11468
+2243 "Disk" "Lake Charles" 0 25 9 2760582613.62422
+2244 "Ellipsoid" "Lake Charles" 0 25 9 2944067805.93431
+2245 "Disk" "McMinnville" 0 25 9 3197505140.00915
+2246 "Ellipsoid" "McMinnville" 0 25 9 3496487521.14455
+2247 "Disk" "Lindenberg" 0 25 9 2847994232.88096
+2248 "Ellipsoid" "Lindenberg" 0 25 9 3175954099.21099
+2249 "Disk" "Croker river" 0 25 9 3061849957.73318
+2250 "Ellipsoid" "Croker river" 0 25 9 3567947710.31731
+2251 "Disk" "Phillip SW Belize" 0.2 5 10 1898941675.15004
+2252 "Ellipsoid" "Phillip SW Belize" 0.2 5 10 1934364344.67901
+2253 "Disk" "Lake Charles" 0.2 5 10 1861968915.3369
+2254 "Ellipsoid" "Lake Charles" 0.2 5 10 1915968836.65268
+2255 "Disk" "McMinnville" 0.2 5 10 2330409550.55075
+2256 "Ellipsoid" "McMinnville" 0.2 5 10 2402691282.50171
+2257 "Disk" "Lindenberg" 0.2 5 10 2161507715.66473
+2258 "Ellipsoid" "Lindenberg" 0.2 5 10 2206066503.86873
+2259 "Disk" "Croker river" 0.2 5 10 2973246861.10587
+2260 "Ellipsoid" "Croker river" 0.2 5 10 2997326288.41694
+2261 "Disk" "Phillip SW Belize" 0.15 5 10 1692370384.75081
+2262 "Ellipsoid" "Phillip SW Belize" 0.15 5 10 1729784185.73212
+2263 "Disk" "Lake Charles" 0.15 5 10 1651654437.8021
+2264 "Ellipsoid" "Lake Charles" 0.15 5 10 1708436149.18393
+2265 "Disk" "McMinnville" 0.15 5 10 2073188127.39762
+2266 "Ellipsoid" "McMinnville" 0.15 5 10 2150135563.47332
+2267 "Disk" "Lindenberg" 0.15 5 10 1928698195.14817
+2268 "Ellipsoid" "Lindenberg" 0.15 5 10 1977762450.14883
+2269 "Disk" "Croker river" 0.15 5 10 2692267318.95546
+2270 "Ellipsoid" "Croker river" 0.15 5 10 2719805175.74813
+2271 "Disk" "Phillip SW Belize" 0.1 5 10 1504699633.06289
+2272 "Ellipsoid" "Phillip SW Belize" 0.1 5 10 1543728308.18305
+2273 "Disk" "Lake Charles" 0.1 5 10 1460835564.11565
+2274 "Ellipsoid" "Lake Charles" 0.1 5 10 1519901236.87006
+2275 "Disk" "McMinnville" 0.1 5 10 1839428678.87558
+2276 "Ellipsoid" "McMinnville" 0.1 5 10 1920476238.03321
+2277 "Disk" "Lindenberg" 0.1 5 10 1716928783.04689
+2278 "Ellipsoid" "Lindenberg" 0.1 5 10 1770048104.99544
+2279 "Disk" "Croker river" 0.1 5 10 2435534603.13607
+2280 "Ellipsoid" "Croker river" 0.1 5 10 2466093318.23268
+2281 "Disk" "Phillip SW Belize" 0.05 5 10 1334598876.87153
+2282 "Ellipsoid" "Phillip SW Belize" 0.05 5 10 1374864443.26673
+2283 "Disk" "Lake Charles" 0.05 5 10 1288146680.41252
+2284 "Ellipsoid" "Lake Charles" 0.05 5 10 1348993862.3425
+2285 "Disk" "McMinnville" 0.05 5 10 1627451772.87111
+2286 "Ellipsoid" "McMinnville" 0.05 5 10 1712012115.32896
+2287 "Disk" "Lindenberg" 0.05 5 10 1524682111.94692
+2288 "Ellipsoid" "Lindenberg" 0.05 5 10 1581371225.65859
+2289 "Disk" "Croker river" 0.05 5 10 2201261641.02188
+2290 "Ellipsoid" "Croker river" 0.05 5 10 2234359626.2238
+2291 "Disk" "Phillip SW Belize" 0 5 10 1180799229.48994
+2292 "Ellipsoid" "Phillip SW Belize" 0 5 10 1221930310.47081
+2293 "Disk" "Lake Charles" 0 5 10 1132285361.58229
+2294 "Ellipsoid" "Lake Charles" 0 5 10 1194417323.10731
+2295 "Disk" "McMinnville" 0 5 10 1435665122.93104
+2296 "Ellipsoid" "McMinnville" 0 5 10 1523140900.99028
+2297 "Disk" "Lindenberg" 0 5 10 1350523180.80974
+2298 "Ellipsoid" "Lindenberg" 0 5 10 1410273492.59727
+2299 "Disk" "Croker river" 0 5 10 1987775924.19957
+2300 "Ellipsoid" "Croker river" 0 5 10 2022897913.32666
+2301 "Disk" "Phillip SW Belize" 0.2 10 10 2073127458.52894
+2302 "Ellipsoid" "Phillip SW Belize" 0.2 10 10 2107834110.96413
+2303 "Disk" "Lake Charles" 0.2 10 10 2036827430.97647
+2304 "Ellipsoid" "Lake Charles" 0.2 10 10 2091087330.08251
+2305 "Disk" "McMinnville" 0.2 10 10 2525212506.38388
+2306 "Ellipsoid" "McMinnville" 0.2 10 10 2596847622.63206
+2307 "Disk" "Lindenberg" 0.2 10 10 2333030184.12481
+2308 "Ellipsoid" "Lindenberg" 0.2 10 10 2377221234.13827
+2309 "Disk" "Croker river" 0.2 10 10 3103398263.92583
+2310 "Ellipsoid" "Croker river" 0.2 10 10 3143943602.23809
+2311 "Disk" "Phillip SW Belize" 0.15 10 10 1869997942.5804
+2312 "Ellipsoid" "Phillip SW Belize" 0.15 10 10 1906381946.03808
+2313 "Disk" "Lake Charles" 0.15 10 10 1829720112.80784
+2314 "Ellipsoid" "Lake Charles" 0.15 10 10 1886347236.61127
+2315 "Disk" "McMinnville" 0.15 10 10 2270893052.21217
+2316 "Ellipsoid" "McMinnville" 0.15 10 10 2346388769.88067
+2317 "Disk" "Lindenberg" 0.15 10 10 2102411572.19715
+2318 "Ellipsoid" "Lindenberg" 0.15 10 10 2150251844.98883
+2319 "Disk" "Croker river" 0.15 10 10 2823038119.45543
+2320 "Ellipsoid" "Croker river" 0.15 10 10 2866293738.67942
+2321 "Disk" "Phillip SW Belize" 0.1 10 10 1685233294.65308
+2322 "Ellipsoid" "Phillip SW Belize" 0.1 10 10 1722959768.51615
+2323 "Disk" "Lake Charles" 0.1 10 10 1641491786.68714
+2324 "Ellipsoid" "Lake Charles" 0.1 10 10 1700047284.49729
+2325 "Disk" "McMinnville" 0.1 10 10 2039244879.89383
+2326 "Ellipsoid" "McMinnville" 0.1 10 10 2118113348.79497
+2327 "Disk" "Lindenberg" 0.1 10 10 1892106107.08816
+2328 "Ellipsoid" "Lindenberg" 0.1 10 10 1943214457.87735
+2329 "Disk" "Croker river" 0.1 10 10 2566328502.5401
+2330 "Ellipsoid" "Croker river" 0.1 10 10 2611869783.41374
+2331 "Disk" "Phillip SW Belize" 0.05 10 10 1517552526.43406
+2332 "Ellipsoid" "Phillip SW Belize" 0.05 10 10 1556288866.52234
+2333 "Disk" "Lake Charles" 0.05 10 10 1470819549.26518
+2334 "Ellipsoid" "Lake Charles" 0.05 10 10 1530870181.61555
+2335 "Disk" "McMinnville" 0.05 10 10 1828631323.64021
+2336 "Ellipsoid" "McMinnville" 0.05 10 10 1910381298.77827
+2337 "Disk" "Lindenberg" 0.05 10 10 1700634984.54544
+2338 "Ellipsoid" "Lindenberg" 0.05 10 10 1754614074.52178
+2339 "Disk" "Croker river" 0.05 10 10 2331520254.79547
+2340 "Ellipsoid" "Croker river" 0.05 10 10 2378901796.31893
+2341 "Disk" "Phillip SW Belize" 0 10 10 1365734863.15857
+2342 "Ellipsoid" "Phillip SW Belize" 0 10 10 1405157781.369
+2343 "Disk" "Lake Charles" 0 10 10 1316442548.81238
+2344 "Ellipsoid" "Lake Charles" 0 10 10 1377569702.40134
+2345 "Disk" "McMinnville" 0 10 10 1637501568.76816
+2346 "Ellipsoid" "McMinnville" 0 10 10 1721648542.42235
+2347 "Disk" "Lindenberg" 0 10 10 1526600438.63782
+2348 "Ellipsoid" "Lindenberg" 0 10 10 1583046740.99031
+2349 "Disk" "Croker river" 0 10 10 2116977098.17397
+2350 "Ellipsoid" "Croker river" 0 10 10 2165740750.43501
+2351 "Disk" "Phillip SW Belize" 0.2 15 10 2388573946.18856
+2352 "Ellipsoid" "Phillip SW Belize" 0.2 15 10 2424279253.06852
+2353 "Disk" "Lake Charles" 0.2 15 10 2366682499.73117
+2354 "Ellipsoid" "Lake Charles" 0.2 15 10 2419272187.23973
+2355 "Disk" "McMinnville" 0.2 15 10 2902760371.68947
+2356 "Ellipsoid" "McMinnville" 0.2 15 10 2975927335.63219
+2357 "Disk" "Lindenberg" 0.2 15 10 2668112888.30096
+2358 "Ellipsoid" "Lindenberg" 0.2 15 10 2718126985.19796
+2359 "Disk" "Croker river" 0.2 15 10 3359319629.00423
+2360 "Ellipsoid" "Croker river" 0.2 15 10 3442562184.03416
+2361 "Disk" "Phillip SW Belize" 0.15 15 10 2193214771.72894
+2362 "Ellipsoid" "Phillip SW Belize" 0.15 15 10 2229049915.93556
+2363 "Disk" "Lake Charles" 0.15 15 10 2168597193.34956
+2364 "Ellipsoid" "Lake Charles" 0.15 15 10 2221730703.02214
+2365 "Disk" "McMinnville" 0.15 15 10 2659758525.6204
+2366 "Ellipsoid" "McMinnville" 0.15 15 10 2734244307.1251
+2367 "Disk" "Lindenberg" 0.15 15 10 2447769225.37739
+2368 "Ellipsoid" "Lindenberg" 0.15 15 10 2498972486.31348
+2369 "Disk" "Croker river" 0.15 15 10 3086885380.61188
+2370 "Ellipsoid" "Croker river" 0.15 15 10 3170668293.22894
+2371 "Disk" "Phillip SW Belize" 0.1 15 10 2015310573.91803
+2372 "Ellipsoid" "Phillip SW Belize" 0.1 15 10 2050853218.39221
+2373 "Disk" "Lake Charles" 0.1 15 10 1988516169.89121
+2374 "Ellipsoid" "Lake Charles" 0.1 15 10 2041656104.15448
+2375 "Disk" "McMinnville" 0.1 15 10 2438549663.91274
+2376 "Ellipsoid" "McMinnville" 0.1 15 10 2513695668.54786
+2377 "Disk" "Lindenberg" 0.1 15 10 2246991885.72876
+2378 "Ellipsoid" "Lindenberg" 0.1 15 10 2298819550.78229
+2379 "Disk" "Croker river" 0.1 15 10 2837584827.0836
+2380 "Ellipsoid" "Croker river" 0.1 15 10 2921165625.0669
+2381 "Disk" "Phillip SW Belize" 0.05 15 10 1853649312.71086
+2382 "Ellipsoid" "Phillip SW Belize" 0.05 15 10 1888486023.67509
+2383 "Disk" "Lake Charles" 0.05 15 10 1825185121.56714
+2384 "Ellipsoid" "Lake Charles" 0.05 15 10 1877805972.28215
+2385 "Disk" "McMinnville" 0.05 15 10 2237575190.86094
+2386 "Ellipsoid" "McMinnville" 0.05 15 10 2312726961.24971
+2387 "Disk" "Lindenberg" 0.05 15 10 2064370539.08669
+2388 "Ellipsoid" "Lindenberg" 0.05 15 10 2116250617.84796
+2389 "Disk" "Croker river" 0.05 15 10 2609720404.2907
+2390 "Ellipsoid" "Croker river" 0.05 15 10 2692360391.97019
+2391 "Disk" "Phillip SW Belize" 0 15 10 1707076458.12575
+2392 "Ellipsoid" "Phillip SW Belize" 0 15 10 1740808326.76231
+2393 "Disk" "Lake Charles" 0 15 10 1677409180.76195
+2394 "Ellipsoid" "Lake Charles" 0 15 10 1729004890.65174
+2395 "Disk" "McMinnville" 0 15 10 2055359196.75834
+2396 "Ellipsoid" "McMinnville" 0 15 10 2129874373.70343
+2397 "Disk" "Lindenberg" 0 15 10 1898572880.79997
+2398 "Ellipsoid" "Lindenberg" 0 15 10 1949933889.61279
+2399 "Disk" "Croker river" 0 15 10 2401703981.64121
+2400 "Ellipsoid" "Croker river" 0 15 10 2482673705.97759
+2401 "Disk" "Phillip SW Belize" 0.2 20 10 2633974073.16154
+2402 "Ellipsoid" "Phillip SW Belize" 0.2 20 10 2694185359.92188
+2403 "Disk" "Lake Charles" 0.2 20 10 2615759429.99775
+2404 "Ellipsoid" "Lake Charles" 0.2 20 10 2694008720.17868
+2405 "Disk" "McMinnville" 0.2 20 10 3172112030.37665
+2406 "Ellipsoid" "McMinnville" 0.2 20 10 3287296630.87699
+2407 "Disk" "Lindenberg" 0.2 20 10 2900025894.33981
+2408 "Ellipsoid" "Lindenberg" 0.2 20 10 2996845027.26936
+2409 "Disk" "Croker river" 0.2 20 10 3522910778.63257
+2410 "Ellipsoid" "Croker river" 0.2 20 10 3694773244.6763
+2411 "Disk" "Phillip SW Belize" 0.15 20 10 2443084038.72225
+2412 "Ellipsoid" "Phillip SW Belize" 0.15 20 10 2504169371.34371
+2413 "Disk" "Lake Charles" 0.15 20 10 2422210640.24398
+2414 "Ellipsoid" "Lake Charles" 0.15 20 10 2501899021.20105
+2415 "Disk" "McMinnville" 0.15 20 10 2933189604.87895
+2416 "Ellipsoid" "McMinnville" 0.15 20 10 3051289437.63176
+2417 "Disk" "Lindenberg" 0.15 20 10 2682567584.89049
+2418 "Ellipsoid" "Lindenberg" 0.15 20 10 2782529794.3335
+2419 "Disk" "Croker river" 0.15 20 10 3250689712.2274
+2420 "Ellipsoid" "Croker river" 0.15 20 10 3426615144.89416
+2421 "Disk" "Phillip SW Belize" 0.1 20 10 2268983947.63482
+2422 "Ellipsoid" "Phillip SW Belize" 0.1 20 10 2330406355.77367
+2423 "Disk" "Lake Charles" 0.1 20 10 2245964040.05321
+2424 "Ellipsoid" "Lake Charles" 0.1 20 10 2326458954.12566
+2425 "Disk" "McMinnville" 0.1 20 10 2715232720.74868
+2426 "Ellipsoid" "McMinnville" 0.1 20 10 2835489620.56235
+2427 "Disk" "Lindenberg" 0.1 20 10 2483923046.28969
+2428 "Ellipsoid" "Lindenberg" 0.1 20 10 2586378157.47366
+2429 "Disk" "Croker river" 0.1 20 10 3000998814.9716
+2430 "Ellipsoid" "Croker river" 0.1 20 10 3180080744.26063
+2431 "Disk" "Phillip SW Belize" 0.05 20 10 2110543207.9575
+2432 "Ellipsoid" "Phillip SW Belize" 0.05 20 10 2171768755.25624
+2433 "Disk" "Lake Charles" 0.05 20 10 2085844567.96345
+2434 "Ellipsoid" "Lake Charles" 0.05 20 10 2166520785.70106
+2435 "Disk" "McMinnville" 0.05 20 10 2516769684.71425
+2436 "Ellipsoid" "McMinnville" 0.05 20 10 2638429055.32842
+2437 "Disk" "Lindenberg" 0.05 20 10 2302759277.7789
+2438 "Ellipsoid" "Lindenberg" 0.05 20 10 2407050894.56794
+2439 "Disk" "Croker river" 0.05 20 10 2772208290.38697
+2440 "Ellipsoid" "Croker river" 0.05 20 10 2953550923.90838
+2441 "Disk" "Phillip SW Belize" 0 20 10 1966685039.91909
+2442 "Ellipsoid" "Phillip SW Belize" 0 20 10 2027188127.32963
+2443 "Disk" "Lake Charles" 0 20 10 1940733060.18043
+2444 "Ellipsoid" "Lake Charles" 0 20 10 2020979848.25282
+2445 "Disk" "McMinnville" 0 20 10 2336406913.09889
+2446 "Ellipsoid" "McMinnville" 0 20 10 2458725191.54416
+2447 "Disk" "Lindenberg" 0 20 10 2137816843.06706
+2448 "Ellipsoid" "Lindenberg" 0 20 10 2243289617.10428
+2449 "Disk" "Croker river" 0 20 10 2562793033.54112
+2450 "Ellipsoid" "Croker river" 0 20 10 2745515971.82049
+2451 "Disk" "Phillip SW Belize" 0.2 25 10 3367837709.76952
+2452 "Ellipsoid" "Phillip SW Belize" 0.2 25 10 3489958887.56602
+2453 "Disk" "Lake Charles" 0.2 25 10 3343569581.98456
+2454 "Ellipsoid" "Lake Charles" 0.2 25 10 3482994385.54852
+2455 "Disk" "McMinnville" 0.2 25 10 3960558408.2089
+2456 "Ellipsoid" "McMinnville" 0.2 25 10 4171552666.17293
+2457 "Disk" "Lindenberg" 0.2 25 10 3586293784.55006
+2458 "Ellipsoid" "Lindenberg" 0.2 25 10 3786147768.4696
+2459 "Disk" "Croker river" 0.2 25 10 4040303327.46335
+2460 "Ellipsoid" "Croker river" 0.2 25 10 4385408185.14228
+2461 "Disk" "Phillip SW Belize" 0.15 25 10 3191733419.62699
+2462 "Ellipsoid" "Phillip SW Belize" 0.15 25 10 3315392587.99514
+2463 "Disk" "Lake Charles" 0.15 25 10 3163716499.69175
+2464 "Ellipsoid" "Lake Charles" 0.15 25 10 3305490328.54651
+2465 "Disk" "McMinnville" 0.15 25 10 3736050124.23991
+2466 "Ellipsoid" "McMinnville" 0.15 25 10 3951441101.51113
+2467 "Disk" "Lindenberg" 0.15 25 10 3381862271.83804
+2468 "Ellipsoid" "Lindenberg" 0.15 25 10 3586084348.67568
+2469 "Disk" "Croker river" 0.15 25 10 3778929759.08621
+2470 "Ellipsoid" "Croker river" 0.15 25 10 4130362780.91745
+2471 "Disk" "Phillip SW Belize" 0.1 25 10 3030227879.14374
+2472 "Ellipsoid" "Phillip SW Belize" 0.1 25 10 3154670585.27651
+2473 "Disk" "Lake Charles" 0.1 25 10 2998943128.7991
+2474 "Ellipsoid" "Lake Charles" 0.1 25 10 3142246087.10093
+2475 "Disk" "McMinnville" 0.1 25 10 3530034332.44995
+2476 "Ellipsoid" "McMinnville" 0.1 25 10 3748840191.67573
+2477 "Disk" "Lindenberg" 0.1 25 10 3194101189.6775
+2478 "Ellipsoid" "Lindenberg" 0.1 25 10 3401794357.39869
+2479 "Disk" "Croker river" 0.1 25 10 3538489732.07939
+2480 "Ellipsoid" "Croker river" 0.1 25 10 3894928113.97899
+2481 "Disk" "Phillip SW Belize" 0.05 25 10 2882386366.98756
+2482 "Ellipsoid" "Phillip SW Belize" 0.05 25 10 3006876505.60446
+2483 "Disk" "Lake Charles" 0.05 25 10 2848276556.12529
+2484 "Ellipsoid" "Lake Charles" 0.05 25 10 2992309704.71387
+2485 "Disk" "McMinnville" 0.05 25 10 3341251354.40201
+2486 "Ellipsoid" "McMinnville" 0.05 25 10 3562524703.01533
+2487 "Disk" "Lindenberg" 0.05 25 10 3021851896.42566
+2488 "Ellipsoid" "Lindenberg" 0.05 25 10 3232153217.90242
+2489 "Disk" "Croker river" 0.05 25 10 3317465161.81064
+2490 "Ellipsoid" "Croker river" 0.05 25 10 3677663467.52542
+2491 "Disk" "Phillip SW Belize" 0 25 10 2747319016.18413
+2492 "Ellipsoid" "Phillip SW Belize" 0 25 10 2871142348.82624
+2493 "Disk" "Lake Charles" 0 25 10 2710790481.32482
+2494 "Ellipsoid" "Lake Charles" 0 25 10 2854780968.97216
+2495 "Disk" "McMinnville" 0 25 10 3168509164.48872
+2496 "Ellipsoid" "McMinnville" 0 25 10 3391341025.70041
+2497 "Disk" "Lindenberg" 0 25 10 2864019918.18325
+2498 "Ellipsoid" "Lindenberg" 0 25 10 3076104231.5445
+2499 "Disk" "Croker river" 0 25 10 3114435687.50941
+2500 "Ellipsoid" "Croker river" 0 25 10 3477225186.94658
