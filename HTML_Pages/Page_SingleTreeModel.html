@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Side Menu Bar CSS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+        body {
+          font-family: "Roboto", sans-serif;
+        }
+    </style>
+    <link rel="icon" href="IconShade.ico" type="image/x-icon">
+</head>
+  <body>
+    <div style="height: 100%;">
+      <div class="sidebar">
+        <header><a href="../index.html">Home</a></header>
+        <ul>
+          <li><a href="Page_SingleTreeModel.html">Models</a></li>
+          <li><a href="Data.html">Data</a></li>
+          <li><a href="Data_Analysis.html">Data Analysis</a></li>
+          <li><a href="Impressum.html">Impressum</a></li>
+        </ul>
+      </div>
+    
+      <div style="max-width: 1200px; margin-left: 230px; line-height: 150%; ">
+        <div style="max-width: 1000px;">
+          <img src="Website_header.png" width=100% height = auto style="box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);">
+        </div>
+
+        <div style="margin-left: 30px; margin-top: 30px; margin-bottom: 50px;">
+          <h1>OUR MODELS</h1>
+          <p style="margin-top: 10px; margin-bottom: 20px;">
+            We want our model to be accessible and easy to use. We therefore used the programming language NetLogoWeb that brings the model directly to you! <br>
+            Our goal was to build a tool that accurately predicts the light availability on the forest floor. 
+            Light is important for photosynthesis and competition for light between trees is a key driver of biodiversity! <br>
+            In the face of climate change, we need models that can simulate the development of forest regeneration. We hope that our model can contribute to this difficult task. <br>
+            We developed two versions of our shading model: A Single-Tree-Model and a Stand-Model.
+          </p>
+          <h1>MODEL DESCRIPTION (ODD)</h1>
+          <p style="margin-top: 10px; margin-bottom: 20px;">
+            We used an ODD-Protocol (= Overview - Design Concepts - Details, after Grimm et al. 2006, Grimm et al. 2020) to describe our model. 
+            You can download the ODD <a href="MISSING_LINK" target="_blank" rel="noopener noreferrer"><b>HERE</b></a>.
+          </p>
+          <h1>SINGLE-TREE-MODEL</h1>
+          <p style="margin-top: 10px; margin-bottom: 20px;">
+            The Single-Tree-Model is here to understand the influence of a single tree on the shading patterns on the ground. <br>
+            It is quite intuitive and easy to start. Please have a look:<br>
+            <a href="OneTreeShadow_ellipsoid.html" target="_blank" rel="noopener noreferrer"><b>OUR SINGLE-TREE-MODEL</b></a>
+          </p>
+          <p style="text-align: center;">
+            <img src="Single_Tree_Model_Example.png" width=50% height = auto style="box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2); margin-top: 20px;" class="center">
+          </p>
+          <h1 style="margin-top: 30px;">STAND-MODEL</h1>
+          <p style="margin-top: 10px; margin-bottom: 20px;">
+            With our Stand-Model we want to know how forests influence light conditions on the forest floor. <br>
+            There often is not enough light below the forest canopy for the regeneration to grow. 
+            Foresters therefore cut trees and create artificial gaps inside the canopy. 
+            Inside these gaps, light availability is increased and tree saplings can grow. 
+            We wanted to know how gap size influences shading in gaps and if shading at the equator is different from shading at the arctic circle.
+            You can try for yourself:
+            <br>
+            <a href="OneTreeShadow_ellipsoid.html" target="_blank" rel="noopener noreferrer"><b>OUR STAND-MODEL</b></a>
+          </p>
+          <p style="text-align: center;">
+            <img src="Stand_Model_Example.png" width=50% height = auto style="box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2); margin-top: 20px;" class="center">
+          </p>
+          <h1 style="margin-top: 30px;">
+            NetLogo Models
+          </h1>
+          <p style="margin-top: 10px;">
+            If you want to download our NetLogo models, please check out <a href="https://github.com/JHeinermann/IBM_ShadingModel/tree/main/NetLogo" target="_blank" rel="noopener noreferrer"><b>THIS SITE</b></a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

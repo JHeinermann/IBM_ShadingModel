@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+    font-family: 'Roboto', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.content{
+    background: green;
+    text-align: center;
+}
+.myimage{
+    text-align: center;
+}
+.imagewrapper{
+    position: relative;
+    background: url("GraphicalAbstract_small.png");
+    background-size: cover;
+}
+.mywrapper{
+    margin-left: 300px;
+    margin-right: 100px;
+    padding-top: 20px;
+}
+.mytext{
+    font-size: 2rem;
+}
+h2 {
+    color: black;
+    text-align: right;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    margin: -50px 50px 0 0 ;
+}
+.container2 {
+    color: #fff;
+    width: 1200px;
+    height: auto;
+    margin: 20px auto;
+    max-width: calc(100% - 20px);
+    padding: 10px;
+    position: relative;
+}
+.mytrans{
+    background: linear-gradient(0deg, white, transparent 30%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+.card__content {
+    position: absolute;
+    /* other styles (left, top, right, and padding) */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+}  
+.sidebar{
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    width: 250px;
+    height: 200%;
+    background: #042331;
+    box-shadow: -3px 0 50px 0 #555;
+}
+.sidebar header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #063146;
+    user-select: none;
+}
+.sidebar header a{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #063146;
+    user-select: none;
+}
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+}
+ul li:hover a{
+    padding-left: 50px;
+}
+.sidebar ul a i{
+    margin-right: 16px;
+}
+li {
+    list-style-type: circle;
+}

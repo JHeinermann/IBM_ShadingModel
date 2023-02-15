@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Side Menu Bar CSS</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <style>
+            body {
+              font-family: "Roboto", sans-serif;
+            }
+        </style>
+        <link rel="icon" href="IconShade.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div style="height: 100%;">
+            <div class="sidebar">
+              <header><a href="../index.html">Home</a></header>
+              <ul>
+                <li><a href="Page_SingleTreeModel.html">Models</a></li>
+                <li><a href="Data.html">Data</a></li>
+                <li><a href="Data_Analysis.html">Data Analysis</a></li>
+                <li><a href="Impressum.html">Impressum</a></li>
+              </ul>
+            </div>
+          
+            <div style="max-width: 1200px; margin-left: 230px; line-height: 150%; ">
+              <div style="max-width: 1000px;">
+                <img src="Website_header.png" width=100% height = auto style="box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);">
+              </div>
+      
+              <div style="margin-left: 30px; margin-top: 30px; margin-bottom: 50px;">
+                <h1 style="padding-top: 20px;">DATA ANALYSIS</h1>
+                <p style="margin-top: 10px; margin-bottom: 20px;">
+                    Data preparation and analysis was done with the statistics software <b>R</b>. 
+                </p>
+                <h1>DATA PREPARATION</h1>
+                <p style="margin-top: 10px;">
+                    To initialize our Stand-Model, we need data of a forest stand or rather of individual trees. The data required includes:
+                </p>
+                <ul style="padding-left: 50px; margin-bottom: 20px;">
+                    <li>Tree position
+                        <ul style="padding-left: 50px;">
+                            <li>X-Position [m]</li>
+                            <li>Y-Position [m]</li>
+                        </ul>
+                    </li>
+                    <li>DBH (Diameter at Breast Height) [cm]</li>
+                </ul>
+                <p style="margin-bottom: 20px;">
+                    We used data that was obtained during the VERMOS project. From this stand-data we created 10 artificial stands using the <b>R</b>-Package <i>shar</i>.
+                    <br>The <b>R</b>-Script of <b>Artificial Stand Creation</b> can be found 
+                    <a href="https://github.com/JHeinermann/IBM_ShadingModel/tree/main/R_Scripts/Pattern_Reconstruction.R"  target="_blank" rel="noopener noreferrer"><b>HERE</b></a>.
+                    <br> We modified some functions of <i>shar</i> which can be downloaded 
+                    <a href="https://github.com/JHeinermann/IBM_ShadingModel/tree/main/R_Scripts/Reconstruction_Functions.R"  target="_blank" rel="noopener noreferrer"><b>HERE</b></a>.
+                </p>
+                <h1>DATA ANALYSIS</h1>
+                <h3 style="margin-top: 20px;">Single-Tree-Model</h3>
+                <p style="margin-top: 0px;">
+                    The Single-Tree-Model Analysis can be accessed 
+                    <a href="https://github.com/JHeinermann/IBM_ShadingModel/tree/main/R_Scripts/Analysis_Single_Tree_Model.R"  target="_blank" rel="noopener noreferrer"><b>HERE</b></a>.
+                </p>
+                <h3 style="margin-top: 20px;">Stand-Model</h3>
+                <p style="margin-top: 0px; margin-bottom: 20px;">
+                    The Stand-Model Analysis can be accessed 
+                    <a href="https://github.com/JHeinermann/IBM_ShadingModel/tree/main/R_Scripts/Analysis_of_Stand_Experiments.R"  target="_blank" rel="noopener noreferrer"><b>HERE</b></a>.
+                </p>
+                <h1>MODEL FUNCTIONS</h1>
+                <p style="margin-top: 10px;">
+                    All essential model functions are also available in <b>R</b> 
+                    <a href="https://github.com/JHeinermann/IBM_ShadingModel/tree/main/R_Scripts/Calc_Radiation.R"  target="_blank" rel="noopener noreferrer"><b>HERE</b></a>.
+                </p>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>
