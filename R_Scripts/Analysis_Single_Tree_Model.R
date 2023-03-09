@@ -1,23 +1,26 @@
+#################################################################################################################
+#### Used Packages ####
+#################################################################################################################
 library(ggplot2)
 library(plyr)
 library(viridis)
 library(scales)
 
+#################################################################################################################
+#### General Variables ####
+#################################################################################################################
 
 
-GetFile <- function(FileName){
-  paste0(sub(sub(".*\\/", "", rstudioapi::getSourceEditorContext()$path), "", rstudioapi::getSourceEditorContext()$path), FileName)
-}
 
 
-Textwidth <- 6.47699
-
-
+#################################################################################################################
+#### Import Data from Sensitivity Analysis ####
+#################################################################################################################
 SingleTreeData <- data.frame(pxcor = 1, pycor = 1, Latitude = 1, CrownShape = 1, Radiation = 1, CrownTansmissibility = 1)[-1, ]
 for(CS in c("Disk", "Ellipsoid")){
   for(lat in c(17.539, 30.125, 45.18, 52.217, 69.28)){
     for(CT in seq(0, 20, 5)){
-      ForData <- read.csv(GetFile(paste0(lat, "_", CS, "_", CT, ".csv")))
+      ForData <- read.csv(paste0("Data/Results_SA_SingleTree/", lat, "_", CS, "_", CT, ".csv"))
       ForData <- ForData[ForData$Radiation != 0, ]
       SingleTreeData <- rbind(SingleTreeData, ForData)
     }
@@ -25,40 +28,39 @@ for(CS in c("Disk", "Ellipsoid")){
 }
 
 
+#################################################################################################################
+#### Plot Shading Patterns ####
+#################################################################################################################
 
-
+# Plot Patterns of Disk-Shadows
 ggplot(SingleTreeData[SingleTreeData$CrownShape == "Disk", ])+
   geom_tile(aes(x = pxcor, y = pycor, fill = Radiation), height = 1, width = 1)+
+  scale_fill_viridis(name = "Blockend\nRadiation")+
   facet_grid(CrownTransmissibility ~ Latitude)+
   coord_fixed()+
   theme_bw()
 
+# Plot Patterns of Ellipsoid-Shadows
+ggplot(SingleTreeData[SingleTreeData$CrownShape == "Ellipsoid", ])+
+  geom_tile(aes(x = pxcor, y = pycor, fill = Radiation), height = 1, width = 1)+
+  scale_fill_viridis(name = "Blockend\nRadiation")+
+  facet_grid(CrownTransmissibility ~ Latitude)+
+  coord_fixed()+
+  theme_bw()
 
+#################################################################################################################
+#### Data Analysis ####
+#################################################################################################################
+# We want to know how Shading is distributed. 
+# We first highlight the top most shaded Patches. 
+# For this, we order Patches by the Amount of Radiation the Tree Blocked from each Patch.
 SingleTreeData <- SingleTreeData[order(SingleTreeData$Latitude, SingleTreeData$CrownShape, SingleTreeData$CrownTransmissibility, -SingleTreeData$Radiation), ]
+# And we calculate the cumulative sum so that we know how much is blocked by the first X Patches.
 SingleTreeData <- ddply(SingleTreeData, ~ Latitude + CrownShape + CrownTransmissibility, transform, RadProp = cumsum(Radiation) / sum(Radiation))
+# For Visualization, we round to the next 0.1.
 SingleTreeData$RadRound <- ceiling(SingleTreeData$RadProp / 0.1) * 0.1
 
-
-Ellipses <- SingleTreeData[SingleTreeData$CrownShape == "Ellipsoid", ]
-
-
-ggplot()+
-  geom_tile(data = Ellipses[Ellipses$RadProp < 0.1, ], aes(x = pxcor, y = pycor), fill = viridis(10)[1], height = 1, width = 1)+
-  geom_tile(data = Ellipses[Ellipses$RadProp >= 0.1 & Ellipses$RadProp < 0.2, ], aes(x = pxcor, y = pycor), fill = viridis(10)[2], height = 1, width = 1)+
-  geom_tile(data = Ellipses[Ellipses$RadProp >= 0.2 & Ellipses$RadProp < 0.3, ], aes(x = pxcor, y = pycor), fill = viridis(10)[3], height = 1, width = 1)+
-  geom_tile(data = Ellipses[Ellipses$RadProp >= 0.3 & Ellipses$RadProp < 0.4, ], aes(x = pxcor, y = pycor), fill = viridis(10)[4], height = 1, width = 1)+
-  geom_tile(data = Ellipses[Ellipses$RadProp >= 0.4 & Ellipses$RadProp < 0.5, ], aes(x = pxcor, y = pycor), fill = viridis(10)[5], height = 1, width = 1)+
-  geom_tile(data = Ellipses[Ellipses$RadProp >= 0.5 & Ellipses$RadProp < 0.6, ], aes(x = pxcor, y = pycor), fill = viridis(10)[6], height = 1, width = 1)+
-  geom_tile(data = Ellipses[Ellipses$RadProp >= 0.6 & Ellipses$RadProp < 0.7, ], aes(x = pxcor, y = pycor), fill = viridis(10)[7], height = 1, width = 1)+
-  geom_tile(data = Ellipses[Ellipses$RadProp >= 0.7 & Ellipses$RadProp < 0.8, ], aes(x = pxcor, y = pycor), fill = viridis(10)[8], height = 1, width = 1)+
-  geom_tile(data = Ellipses[Ellipses$RadProp >= 0.8 & Ellipses$RadProp < 0.9, ], aes(x = pxcor, y = pycor), fill = viridis(10)[9], height = 1, width = 1)+
-  geom_tile(data = Ellipses[Ellipses$RadProp >= 0.9 & Ellipses$RadProp <= 1, ], aes(x = pxcor, y = pycor), fill = viridis(10)[10], height = 1, width = 1)+
-  facet_grid(CrownTransmissibility ~ Latitude)+
-  coord_fixed()+
-  theme_bw()
-
-
-
+# Now let's see the Results (but to make it easier to compare, only use 3 Latitudes and a Crown Transmissibility of 0)
 P1 <- ggplot(SingleTreeData[SingleTreeData$Latitude %in% c(17.539, 45.18, 69.28) & 
                         SingleTreeData$CrownTransmissibility %in% c(0) &
                         SingleTreeData$CrownShape %in% c("Ellipsoid", "Disk") & SingleTreeData$pycor != -200, ])+
@@ -72,22 +74,8 @@ P1 <- ggplot(SingleTreeData[SingleTreeData$Latitude %in% c(17.539, 45.18, 69.28)
   theme_bw()+
   theme(text = element_text(size = 8)); P1
 
-ggsave(plot = P1, file = "~/GitHub/ShadingModel/Plots/SingleTree_Experiment/Shading_Lat_CrownShape.pdf", 
-       width = Textwidth, height = Textwidth / 1.8, dpi = 300)
 
-
-
-
-
-
-
-TotalShaded <- ddply(SingleTreeData, ~ Latitude + CrownShape + CrownTransmissibility, summarise, TotalRad = length(Radiation))
-ggplot(TotalShaded[TotalShaded$CrownTransmissibility == 0, ])+
-  geom_line(aes(x = Latitude, y = TotalRad))+
-  geom_point(aes(x = Latitude, y = TotalRad))+
-  facet_grid(. ~ CrownShape)
-
-
+# Now that we visualized everything, let's look at the Numbers and calculte The exact Number of Shaded Patches for each Proportion.
 RadArea <- data.frame(Proportion = 1, nPatch = 1, CrownShape = "a", CrownTransmissibility = 1, Latitude = 1)[-1, ]
 for(CS in c("Disk", "Ellipsoid")){
   for(lat in c(17.539, 30.125, 45.18, 52.217, 69.28)){
@@ -107,7 +95,7 @@ for(CS in c("Disk", "Ellipsoid")){
   }
 }
 
-
+# We see, that Ellipsoid Crowns shade more Patches.
 P3 <- ggplot(RadArea[RadArea$CrownTransmissibility == 0, ])+
   geom_line(aes(x = Proportion, y = nPatch, color = CrownShape, group = CrownShape), linewidth = 1)+
   scale_x_continuous(name = "Proportion of shaded Area from total shaded Area [-]", 
@@ -126,11 +114,9 @@ P3 <- ggplot(RadArea[RadArea$CrownTransmissibility == 0, ])+
                                               "52.217" = "Latitude 52.217",
                                               "69.28" = "Latitude 69.280"))); P3
 
-ggsave(plot = P3, file = "~/GitHub/ShadingModel/Plots/SingleTree_Experiment/Shade_Area_Lat.pdf", 
-       width = Textwidth, height = Textwidth / 2.3, dpi = 300)
 
-
-
+# Where does the Tree shade the Ground? Is Shading mostly located North or maybe East and West?
+# We define an Orientation to each Patch, relative to the Tree which is at 0/0.
 SingleTreeData$Orientation <- ifelse(SingleTreeData$pycor <= SingleTreeData$pxcor &
                                        SingleTreeData$pycor * -1 < SingleTreeData$pxcor, "East", 
                                      ifelse(SingleTreeData$pycor <= SingleTreeData$pxcor * -1 &
@@ -138,12 +124,21 @@ SingleTreeData$Orientation <- ifelse(SingleTreeData$pycor <= SingleTreeData$pxco
                                             ifelse(SingleTreeData$pycor < SingleTreeData$pxcor * -1 &
                                                      SingleTreeData$pycor >= SingleTreeData$pxcor, "West", "North")))
 
+# It looks like this:
+ggplot(SingleTreeData[SingleTreeData$Latitude %in% c(17.539) & 
+                        SingleTreeData$CrownTransmissibility %in% c(0) &
+                        SingleTreeData$CrownShape %in% c("Ellipsoid"), ])+
+  geom_tile(aes(x = pxcor, y = pycor, fill = Orientation))+
+  coord_fixed()
+
+# And for each Orientation, we calculate the Amount of Blocked Radiation.
 BlockedDirection <- ddply(SingleTreeData, ~ Latitude + CrownShape + CrownTransmissibility + Orientation, summarise, 
                           Blocked = sum(Radiation))
 BlockedDirection$Orientation <- factor(BlockedDirection$Orientation, levels = c("North", "East", "South", "West"))
 BlockedDirection$angle <- ifelse(BlockedDirection$Orientation == "East", 270, 
                                  ifelse(BlockedDirection$Orientation == "West", 90, 0))
 
+# We see that Shading occurs mostly North at high Latitudes and mostly East and West near the Equator.
 P2 <- ggplot(BlockedDirection[BlockedDirection$CrownTransmissibility == 0, ])+
   geom_col(aes(x = Orientation, y = Blocked, fill = Orientation), width = 1)+
   annotate("text", x = c("North"), y = max(BlockedDirection$Blocked) * 1.05, label = c("North"), angle = 0, vjust = 0, size = 8 / .pt)+
@@ -165,12 +160,12 @@ P2 <- ggplot(BlockedDirection[BlockedDirection$CrownTransmissibility == 0, ])+
         axis.text.x = element_blank(),
         axis.title.x = element_blank()); P2
 
-ggsave(plot = P2, file = "~/GitHub/ShadingModel/Plots/SingleTree_Experiment/Shade_Orientation.pdf", 
-       width = Textwidth, height = Textwidth / 2.3, dpi = 300)
 
 
+# We wanted to see at which distance from the Tree, Shade is falling. 
 SingleTreeData$Distance <- sqrt(SingleTreeData$pxcor^2 + SingleTreeData$pycor^2)
 
+# We calculated for the Shading inside a growing Radius.
 Distance_Shading <- data.frame(Latitude = 1, CrownShape = "A", CrownTransmissibility = 1, Distance = 1, Radiation = 1)[-1, ]
 for(CS in c("Disk", "Ellipsoid")){
   for(lat in c(17.539, 30.125, 45.18, 52.217, 69.28)){
@@ -193,6 +188,7 @@ for(CS in c("Disk", "Ellipsoid")){
   }
 }
 
+# And we see, that Shading occurs farther from the Tree at high Latitudes and closer to the Tree near the Equator.
 P4 <- ggplot(Distance_Shading[Distance_Shading$CrownTransmissibility == 0, ])+
   geom_line(aes(x = Distance, y = Radiation), lwd = 1)+
   scale_x_continuous(name = "Distance from the tree [m]", breaks = c(0, 100, 200))+
@@ -207,67 +203,8 @@ P4 <- ggplot(Distance_Shading[Distance_Shading$CrownTransmissibility == 0, ])+
   theme(text = element_text(size = 8), 
         axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)); P4
 
-ggsave(plot = P4, file = "~/GitHub/ShadingModel/Plots/SingleTree_Experiment/Shade_Distance.pdf", 
-       width = Textwidth, height = Textwidth / 2.3, dpi = 300)
-
-
-
-?scale_color_viridis
-
-ggplot(SingleTreeData[SingleTreeData$Latitude %in% c(17.539) & 
-                        SingleTreeData$CrownTransmissibility %in% c(0) &
-                        SingleTreeData$CrownShape %in% c("Ellipsoid"), ])+
-  geom_tile(aes(x = pxcor, y = pycor, fill = Orientation))+
-  coord_fixed()
-
-
-
-
-for(lat in c(17.539, 30.125, 45.18, 52.217, 69.28)){
-  for(CT in seq(0, 100, 25)){
-    for(Prop in seq(0, 1, by = 0.01)){
-      RadArea <- rbind(RadArea, 
-                       data.frame(Proportion = Prop, 
-                                  nPatch = nrow(Ellipses), CrownTransmissibility = 1, Latitude = 1)[-1, ])
-    }
-    ForData <- SingleTreeData[SingleTreeData$Latitude == lat & SingleTreeData$CrownShape == CS & SingleTreeData$CrownTransmissibility == TS, ]
-    
-    SingleTreeData <- rbind(SingleTreeData, ForData)
-  }
-}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-cumsum(c(1, 2, 3))
-
-
-for(CS in c("Disk", "Ellipsoid")){
-  for(lat in c(17.539, 30.125, 45.18, 52.217, 69.28)){
-    for(CT in seq(0, 100, 25)){
-      ForData <- SingleTreeData[SingleTreeData$Latitude == lat & SingleTreeData$CrownShape == CS & SingleTreeData$CrownTransmissibility == TS, ]
-      
-      SingleTreeData <- rbind(SingleTreeData, ForData)
-    }
-  }
-}
-
-
-
-
-dd <- data.frame(a = sample(LETTERS[1:3], size = 1000, replace = TRUE),
-                 b = sample(letters[1:3], size = 1000, replace = TRUE),
-                 c = runif(1000))
-
-
-dd[order(a, b, -c), ]

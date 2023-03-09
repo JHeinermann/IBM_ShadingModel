@@ -1,5 +1,8 @@
 # Script with Functions for Radiation and Angles
 
+# We define Solar Position Functions and Functions of the Clear-Sky-Model in here. 
+# You can use the Functions to calculate Sun Position, Sunrise and Sunset and Direct Beam Radiation for 5 Latitudes.
+
 #############################################################################################################################
 #### Selfmade Functions ####
 #############################################################################################################################
@@ -32,19 +35,20 @@ is.divisible <- function(x, by){
 
 
 #############################################################################################################################
-#### Angle Functions ####
+#### Angle Functions (Functions are equal to NetLogo-Functions) ####
 #############################################################################################################################
 
-# Calculation of Earth Declination Angle (Tilt of Earth during one Year)
+# Calculation of Earth Declination Angle (Tilt of Earth during one Year), (Naraghi, 2010)
 EarthDecAngle <- function(DOY){
   23.45 * sin(2 * pi / 365 * (DOY + 284))
 }
 
+# Position of Earth relative to sun depending on the Day of Year.
 YearAngle <- function(DOY){
   360 * (DOY / 365)
 }
 
-# Calculate the Equation of Time
+# Calculate the Equation of Time (Quaschning, 2015)
 EquationOfTime <- function(DOY){
   year_angle <- YearAngle(DOY)
   a <- 0.0066 + 7.3525 * cosdeg(year_angle + 85.9)
@@ -53,29 +57,38 @@ EquationOfTime <- function(DOY){
   a + b + c
 }
 
+# Half-Length of the Day by Day of Year and Latitude (altered after Amthor, 1997)
 Daylength <- function(DOY, Latitude){
-  acos((sin(-0.0145439) - sindeg(Latitude) * sindeg(EarthDecAngle(DOY))) /
-         (cosdeg(Latitude) * cosdeg(EarthDecAngle(DOY)))) * 12 / pi
+  # At high latitudes, the Sun never goes down. In this case...
+  ifelse(((sin(-0.0145439) - sindeg(Latitude) * sindeg(EarthDecAngle(DOY))) / (cosdeg(Latitude) * cosdeg(EarthDecAngle(DOY)))) < -1, 
+         12,    # ... set Half-Daylength to 12 hours, else calculate Half-DayLength.
+         acos((sin(-0.0145439) - sindeg(Latitude) * sindeg(EarthDecAngle(DOY))) /
+                (cosdeg(Latitude) * cosdeg(EarthDecAngle(DOY)))) * 12 / pi)
 }
-  
+
+# Calculation of the time of Sunrise [12 (solar noon) - Daylength - Elliptical Correction of Earth's Orbit] (Amthor, 1997)
 Sunrise <- function(DOY, Latitude){
   12 - Daylength(DOY, Latitude) - EquationOfTime(DOY) * pi / 180
 }
 
+# Calculation of the time of Sunset (Amthor, 1997)
 Sunset <- function(DOY, Latitude){
   12 + Daylength(DOY, Latitude) - EquationOfTime(DOY) * pi / 180
 }
 
+# At each hour, the sun moves 15° (360° / 24h). 0° is defined as noon.
 HourAngle <- function(Hour, DOY, Latitude){
   HA <- (12 - Hour) * 15
   HA[Hour < Sunrise(DOY, Latitude) | Hour > Sunset(DOY, Latitude)] <- NA
   HA
 }
 
+# Angle of Sun above Horizon (Quaschning, 2015)
 SolarAltitude <- function(Hour, DOY, Latitude){
   asindeg(cosdeg(Latitude) * cosdeg(HourAngle(Hour, DOY, Latitude)) * cosdeg(EarthDecAngle(DOY)) + sindeg(Latitude) * sindeg(EarthDecAngle(DOY)))
 }
 
+# Solar Azimuth (Sun's horizontal Position (0° = North))
 SolarAzimuth <- function(Hour, DOY, Latitude){
   SA <- NA
   for(i in 1:length(Hour)){
@@ -90,7 +103,7 @@ SolarAzimuth <- function(Hour, DOY, Latitude){
   SA
 }
 
-# Calculation of solar beam optical depths and solar diffuse optical depths
+# Calculation of solar beam optical depths and solar diffuse optical depths (Only for Lindenberg, Germany)
 calctau <- function(DOY){
   # Values taken from: http://ashrae-meteo.info/v2.0/index.php?lat=40.97&lng=28.82&place=%27%27&wmo=170600&ashrae_version=2009
   # Values for Lindenberg, Germany
@@ -100,7 +113,7 @@ calctau <- function(DOY){
        taud = taud[as.numeric(format(as.Date(paste0("2000-", DOY), "%Y-%j"), "%m"))])
 }
 
-# Calculation of solar beam optical depths and solar diffuse optical depths
+# Calculation of solar beam optical depths and solar diffuse optical depths (Depending on Latitude)
 calctauLat <- function(DOY, Latitude){
   # Values taken from: http://ashrae-meteo.info/v2.0/index.php?lat=40.97&lng=28.82&place=%27%27&wmo=170600&ashrae_version=2009
   # Values for Lindenberg, Germany
@@ -119,6 +132,7 @@ calctauLat <- function(DOY, Latitude){
        taud = taud[[MyInd]][as.numeric(format(as.Date(paste0("2000-", DOY), "%Y-%j"), "%m"))])
 }
 
+# Calculation of Direct Beam Radiation after Naraghi (2010)
 DirectBeam <- function(Hour, DOY, Latitude){
   m <- 1 / (sindeg(SolarAltitude(Hour, DOY, Latitude)) + 0.50572 * ((6.07995 + SolarAltitude(Hour, DOY, Latitude)) ^ (-1.6364)))
   E0 <- 1367 * (1 + 0.033 * cosdeg(360 * ((DOY - 3) / 365)))
@@ -129,6 +143,7 @@ DirectBeam <- function(Hour, DOY, Latitude){
   E0 * exp(-1 * rb * (m ^ ab))
 }
 
+# Calculation of Direct Beam Radiation after Naraghi (2010) for different Latitudes
 DirectBeamLat <- function(Hour, DOY, Latitude){
   m <- 1 / (sindeg(SolarAltitude(Hour, DOY, Latitude)) + 0.50572 * ((6.07995 + SolarAltitude(Hour, DOY, Latitude)) ^ (-1.6364)))
   E0 <- 1367 * (1 + 0.033 * cosdeg(360 * ((DOY - 3) / 365)))
@@ -141,7 +156,7 @@ DirectBeamLat <- function(Hour, DOY, Latitude){
 
 
 
-
+# Calculation of Shading of an Ellipsoid Crown (Quesada, 2012; Somarriba et al., 2023)
 getShadow <- function(x0, y0, CrownRadius, Height, CrownHeight, Hour, DOY, Latitude, npoints = 101){
   outdata <- data.frame(x = 1, y = 1, group = 1, Rad = 1)[-1, ]
   for(i in 1:length(Hour)){
@@ -183,16 +198,14 @@ getShadow <- function(x0, y0, CrownRadius, Height, CrownHeight, Hour, DOY, Latit
 
 
 
-
-
-
-
-
-
-
-
-
-
+#############################################################################################################################
+#### References: ####
+#############################################################################################################################
+# Amthor, J. S. (1997): Calculation of daylength. In: Computer applications in the biosciences: CABIOS 13 (4), S. 479–480. DOI: 10.1093/bioinformatics/13.4.479.
+# Naraghi, Mohammed (2010). A Demand Based Optimum Solar Panel Orientation. DOI: 10.1115/IMECE2010-37918
+# Quaschning, Volker (2015): Regenerative Energiesysteme Technologie - Berechnung - Simulation. ISBN: 978-3-446-44267-2
+# Quesada, F. (2021): Derivaci ́on de las f ́ormulas de sombras de  ́arboles empleadas en el programa shademoton’. URL: http://hdl.handle.net/11554/1135
+# Somarriba, E., Quesada, F., Barrantes, J., Zamora, R., Malek, M., Vargas, E., Sinclair, F., (2023): Shademotion. URL https://www.shademotion.n
 
 
 

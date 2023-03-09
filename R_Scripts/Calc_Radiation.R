@@ -7,154 +7,29 @@
 #############################################################################################################################
 library(ggplot2)
 library(plyr)
+library(ggforce)
+library(cowplot)
 
 #############################################################################################################################
 #### Selfmade Functions ####
 #############################################################################################################################
-# Change Sin/Cos-Functions from Rad to Deg
-sindeg <- function(x){
-  sin(x * pi / 180)
-}
-
-cosdeg <- function(x){
-  cos(x * pi / 180)
-}
-
-asindeg <- function(x){
-  asin(x) * 180 / pi
-}
-
-acosdeg <- function(x){
-  acos(x) * 180 / pi
-}
-
-# Is number x divisible by another number?
-is.divisible <- function(x, by){
-  (x / by) == round(x / by)
-}
-
-# Calculation of Earth Declination Angle (Tilt of Earth during one Year)
-EarthDecAngle <- function(x){
-  23.45 * sin(2 * pi / 365 * (x + 284))
-}
-
-# Calculation of solar beam optical depths and solar diffuse optical depths
-calctau <- function(x){
-  # Values taken from: http://ashrae-meteo.info/v2.0/index.php?lat=40.97&lng=28.82&place=%27%27&wmo=170600&ashrae_version=2009
-  # Values for Lindenberg, Germany
-  taub <- c(0.359, 0.364, 0.424, 0.443, 0.451, 0.465, 0.487, 0.469, 0.400, 0.387, 0.361, 0.363)
-  taud <- c(2.191, 2.142, 1.923, 1.915, 1.927, 1.932, 1.874, 1.936, 2.160, 2.146, 2.208, 2.206)
-  list(taub = taub[as.numeric(format(as.Date(paste0("2000-", x), "%Y-%j"), "%m"))],
-       taud = taud[as.numeric(format(as.Date(paste0("2000-", x), "%Y-%j"), "%m"))])
-}
-
-# Calculate the Equation of Time (SOURCE!)
-EquationOfTime <- function(x){
-  year_angle <- 360 * (x / 365)
-  a <- 0.0066 + 7.3525 * cosdeg(year_angle + 85.9)
-  b <- 9.9359 * cosdeg(2 * year_angle + 108.9)
-  c <- 0.3387 * cosdeg(3 * year_angle + 105.2)
-  a + b + c
-}
-
-GetFile <- function(FileName){
-  paste0(sub(sub(".*\\/", "", rstudioapi::getSourceEditorContext()$path), "", rstudioapi::getSourceEditorContext()$path), FileName)
-}
-
-
+# Import Functions of Sun Position and Radiation
+source("R_Scripts/Radiation_and_Angle_Functions.R")
 
 
 #############################################################################################################################
-#### Now use input (Latitude, Hour and Day of Year) to calculate the clearsky radiation ####
+#### Clear-Sky-Model ####
 #############################################################################################################################
-# This is how we do it:
-# 1. Calculate Sunrise and Sunset. -> Calculate only for the Hours between Sunrise and Sunset:
-# 2. Calculate Extraterrestrial Solar Radiation.
-# 3. Reduce Extraterrestrial Solar Radiation by Air Mass (Radiation is reduced by Particles in the Air)
-lat <- 55   # Latitude
-h <- 1:24   # Hour
-doy <- 304  # Day of Year
+# Let's look at the Clear-Sky-Model. First, we pick a Latitude and then look at the incoming Radiation Energy throughout the Year
+lat <- 55
 
-# Calculate the daylength (half of it) after Amthor 1997
-Daylength <- acos((sin(-0.0145439) - sindeg(lat) * sindeg(EarthDecAngle(doy))) /
-                    (cosdeg(lat) * cosdeg(EarthDecAngle(doy)))) * 12 / pi
-
-# Sunrise = 12 (solar noon) - Daylength - Elliptical Correction of Earth's Orbit
-sunrise <- 12 - Daylength - EquationOfTime(doy) * pi / 180
-sunset <- 12 + Daylength - EquationOfTime(doy) * pi / 180
-
-# We only need to calculate Radiation between sunrise and sunset (Values are not correct for Hours outside of Sunrise and Sunset)
-HoursWithDaylight <- h[h > sunrise & h < sunset]
-
-# Earth Declination Angle (Eq. 3)
-delta <- EarthDecAngle(doy)
-hour_angle <- (12 - HoursWithDaylight) * 15
-
-# Solar Altitude Angle (Beta, Eq. 1)
-beta <- asindeg(cosdeg(lat) * cosdeg(hour_angle) * cosdeg(delta) + sindeg(lat) * sindeg(delta))
-
-# Relative Air Mass (m, Eq. 5)
-m <- 1 / (sindeg(beta) + 0.50572 * ((6.07995 + beta) ^ (-1.6364)))
-
-# Extraterrestrial Solar Radiation (E0, Eq. 8)
-E0 <- 1367 * (1 + 0.033 * cosdeg(360 * ((doy - 3) / 365)))
-
-# Optical Depths:
-rb <- calctau(doy)[[1]] # Solar Beam Optical Depth -> Values taken from Website (see Function)
-rd <- calctau(doy)[[2]] # Diffuse Optical Depth
-# Air Mass Exponents:
-ab <- 1.219 - 0.043 * rb - 0.151 * rd - 0.204 * rb * rd  # can be found between Eq. 8 and Eq. 9
-ad <- 0.202 + 0.852 * rb - 0.007 * rd - 0.357 * rb * rd
-
-# Direct beam (Eq. 6)
-Eb <- E0 * exp(-1 * rb * (m ^ ab))
-
-
-
-# Next, we do this for all days and look at the Data.
-sundata <- data.frame(DOY = 1, HOUR = 1, RAD = 1)[-1, ]
-for(i in 1:365){
-  h <- 1:24
-  doy <- i
-
-  # Calculate the daylength (half of it) after Amthor 1997
-  Daylength <- acos((sin(-0.0145439) - sindeg(lat) * sindeg(EarthDecAngle(doy))) /
-                      (cosdeg(lat) * cosdeg(EarthDecAngle(doy)))) * 12 / pi
-
-  # Sunrise = 12 (solar noon) - Daylength - Elliptical Correction of Earth's Orbit
-  sunrise <- 12 - Daylength - EquationOfTime(doy) * pi / 180
-  sunset <- 12 + Daylength - EquationOfTime(doy) * pi / 180
-
-  # We only need to calculate Radiation between sunrise and sunset (Values are not correct for Hours outside of Sunrise and Sunset)
-  HoursWithDaylight <- h[h > sunrise & h < sunset]
-
-  # Earth Declination Angle (Eq. 3)
-  delta <- EarthDecAngle(doy)
-  hour_angle <- (12 - HoursWithDaylight) * 15
-
-  # Solar Altitude Angle (Beta, Eq. 1)
-  beta <- asindeg(cosdeg(lat) * cosdeg(hour_angle) * cosdeg(delta) + sindeg(lat) * sindeg(delta))
-
-  # Relative Air Mass (m, Eq. 5)
-  m <- 1 / (sindeg(beta) + 0.50572 * ((6.07995 + beta) ^ (-1.6364)))
-
-  # Extraterrestrial Solar Radiation (E0, Eq. 8)
-  E0 <- 1367 * (1 + 0.033 * cosdeg(360 * ((doy - 3) / 365)))
-
-  # Optical Depths:
-  rb <- calctau(doy)[[1]] # Solar Beam Optical Depth -> Values taken from Website (see Function)
-  rd <- calctau(doy)[[2]] # Diffuse Optical Depth
-  # Air Mass Exponents:
-  ab <- 1.219 - 0.043 * rb - 0.151 * rd - 0.204 * rb * rd  # can be found between Eq. 8 and Eq. 9
-  ad <- 0.202 + 0.852 * rb - 0.007 * rd - 0.357 * rb * rd
-
-  # Direct beam (Eq. 6)
-  Eb <- E0 * exp(-1 * rb * (m ^ ab))
-
-  sundata <- rbind(sundata, data.frame(DOY = i, HOUR = HoursWithDaylight, RAD = Eb))
+sundata <- data.frame(DOY = 1, HOUR = 1, RAD = 1)[-1, ] # Create empty Data Frame.
+for(i in 1:365){   # For each Day
+  h <- 1:24        # And each Hour
+  sundata <- rbind(sundata, data.frame(DOY = i, HOUR = h, RAD = DirectBeamLat(Hour = h, DOY = i, Latitude = lat))) # Calculate Radiation energy.
 }
 
-
+# If ye look at the Plot, we see that Radiation Energy changes throughout the Year.
 p <- ggplot(sundata[is.divisible(sundata$DOY, by = 10), ])+
   geom_line(aes(x = HOUR, y = RAD, group = DOY, color = DOY), size = 0.5)+
   scale_color_gradient2(name = "Day of\nYear", high = "blue", low = "blue", mid = "red", midpoint = 365 / 2)+
@@ -163,58 +38,27 @@ p <- ggplot(sundata[is.divisible(sundata$DOY, by = 10), ])+
   theme_bw(); p
 
 
-ggsave(p, file = GetFile("Plots/CalcRadiation/01_Radiation_Through_Year.png"), 
-       height = 4, width = 6)
-
-
 
 #############################################################################################################################
 #### Calculation of proportion of Radiation for different minimum Angles ####
 #############################################################################################################################
-cuts <- c(0.05, 0.1, 0.2)
+# In the Morning or Evening, if the Sun shines directly from the Horizon, Shadows are really long. 
+# We can't simulate indefinitely long Shadows. We therefore need to cut these flat Angles, at which the Sun creates long Shadows.
+# In the following, we used some Calculations to define this Minimum Angle, we use to limit Shadow-Calculation.
+
+# We first wanted to know how much Radiation Energy we ignore at which "Minimum Angle".
+cuts <- c(0.05, 0.1, 0.2)   # We define how much Radiation we ignore.
 
 AngleData <- data.frame(DOY = 1, HOUR = 1, RAD = 1, BETA = 1)[-1, ]    # Create a new data frame with Radiation and Angle Data
-
 # Iterate through all Hours and Angles
 for(day in 1:365){
   h <- 1:24
   doy <- day
-  
-  # Calculate the daylength (half of it) after Amthor 1997
-  Daylength <- acos((sin(-0.0145439) - sindeg(lat) * sindeg(EarthDecAngle(doy))) /
-                      (cosdeg(lat) * cosdeg(EarthDecAngle(doy)))) * 12 / pi
-  
-  # Sunrise = 12 (solar noon) - Daylength - Elliptical Correction of Earth's Orbit
-  sunrise <- 12 - Daylength - EquationOfTime(doy) * pi / 180
-  sunset <- 12 + Daylength - EquationOfTime(doy) * pi / 180
-  
-  # We only need to calculate Radiation between sunrise and sunset (Values are not correct for Hours outside of Sunrise and Sunset)
-  HoursWithDaylight <- h[h > sunrise & h < sunset]
-  
-  # Earth Declination Angle (Eq. 3)
-  delta <- EarthDecAngle(doy)
-  hour_angle <- (12 - HoursWithDaylight) * 15
-  
-  # Solar Altitude Angle (Beta, Eq. 1)
-  beta <- asindeg(cosdeg(lat) * cosdeg(hour_angle) * cosdeg(delta) + sindeg(lat) * sindeg(delta))
-  
-  # Relative Air Mass (m, Eq. 5)
-  m <- 1 / (sindeg(beta) + 0.50572 * ((6.07995 + beta) ^ (-1.6364)))
-  
-  # Extraterrestrial Solar Radiation (E0, Eq. 8)
-  E0 <- 1367 * (1 + 0.033 * cosdeg(360 * ((doy - 3) / 365)))
-  
-  # Optical Depths:
-  rb <- calctau(doy)[[1]] # Solar Beam Optical Depth -> Values taken from Website (see Function)
-  rd <- calctau(doy)[[2]] # Diffuse Optical Depth
-  # Air Mass Exponents:
-  ab <- 1.219 - 0.043 * rb - 0.151 * rd - 0.204 * rb * rd  # can be found between Eq. 8 and Eq. 9
-  ad <- 0.202 + 0.852 * rb - 0.007 * rd - 0.357 * rb * rd
-  
-  # Direct beam (Eq. 6)
-  Eb <- E0 * exp(-1 * rb * (m ^ ab))
-  
-  AngleData <- rbind(AngleData, data.frame(DOY = day, HOUR = HoursWithDaylight, RAD = Eb, BETA = beta))
+  AngleData <- rbind(AngleData, 
+                     data.frame(DOY = day, 
+                                HOUR = h, 
+                                RAD = DirectBeamLat(Hour = h, DOY = day, Latitude = lat), 
+                                BETA = SolarAltitude(Hour = h, DOY = day, Latitude = lat)))
 }
 
 # Define Start and End Date of the Vegetation Period and only use the data inbetween
@@ -226,10 +70,8 @@ AngleData <- AngleData[AngleData$DOY >= SeasonStart & AngleData$DOY <= SeasonEnd
 # Minimum Angles to start the calculation
 AngleCalc <- data.frame(Angle = 1, Prop = 1)[-1, ]
 for(A in seq(0, 70, 0.05)){
-  AngleCalc <- rbind(AngleCalc, data.frame(Angle = A, Prop = sum(AngleData$RAD[AngleData$BETA >= A]) / sum(AngleData$RAD)))
+  AngleCalc <- rbind(AngleCalc, data.frame(Angle = A, Prop = sum(AngleData$RAD[AngleData$BETA >= A], na.rm = TRUE) / sum(AngleData$RAD, na.rm = TRUE)))
 }
-
-
 
 # Only for Visualization
 MySegs <- data.frame(x = c(0, 0, 0,
@@ -262,8 +104,7 @@ p <- ggplot(AngleCalc)+
   theme_classic()+
   theme(axis.text = element_text(angle = 45, hjust = 1)); p
 
-ggsave(p, file = GetFile("Plots/CalcRadiation/02_MinSolarAngle_PropRad.png"), 
-       height = 4, width = 6)
+
 
 # Plot which Hours of Radiation are excluded when using  the Minimum Solar Altitude Angles
 p <- ggplot(AngleData[is.divisible(AngleData$DOY, by = 10) & AngleData$BETA > min(AngleCalc$Angle[AngleCalc$Prop < 0.9]), ])+
@@ -274,13 +115,14 @@ p <- ggplot(AngleData[is.divisible(AngleData$DOY, by = 10) & AngleData$BETA > mi
   scale_y_continuous(name = "Radiation [W / m²]", expand = c(0, 1))+
   theme_bw(); p
 
-ggsave(p, file = GetFile("Plots/CalcRadiation/03_UsedHours.png"), 
-       height = 4, width = 6)
 
 
 #############################################################################################################################
 #### Maximum Shadow Length given these Minimum Angles ####
 #############################################################################################################################
+# So using a Minimum Angle cuts off some of the Radiation Energy. We want to know, how long Shadows are, if we assume these 
+# Minimum Angles. We assume a maximum Tree Height of 30m.
+
 # Use Law of Sines to determine the Shadow-Length (a / sin(alpha) = b / sin(beta) = c / sin(gamma)) 
 TreeHeight <- 30                                      # Use a maximum Tree Height of 30 m.
 ShadowLength <- data.frame(Prop = 1, SL = 1)[-1, ]    # Create an empty data frame.
@@ -323,826 +165,50 @@ p <- ggplot(ShadowLength)+
   theme_classic()+
   theme(axis.text = element_text(angle = 45, hjust = 1)); p
 
-ggsave(p, file = GetFile("Plots/CalcRadiation/04_ShadowLength.png"), 
-       height = 4, width = 6)
-
 
 #############################################################################################################################
 #### Calculate Maximum-Shadow-Length for 5 different Locations ####
 #############################################################################################################################
 cuts <- c(0.05, 0.1, 0.2)
-
-
-
-#############################################################################################################################
-#### Lindenburg ####
-#############################################################################################################################
-lat <- 52.217
-
-calctau <- function(x){
-  # Values taken from: http://ashrae-meteo.info/index.php?lat=52.217&lng=14.117&place=''&wmo=103930&si_ip=SI&ashrae_version=2017
-  # Values for Lindenberg, Germany
-  taub <- c(0.323, 0.350, 0.390, 0.412, 0.410, 0.407, 0.427, 0.421, 0.383, 0.373, 0.348, 0.317)
-  taud <- c(2.314, 2.290, 2.199, 2.217, 2.267, 2.300, 2.254, 2.285, 2.367, 2.348, 2.352, 2.331)
-  list(taub = taub[as.numeric(format(as.Date(paste0("2001-", x), "%Y-%j"), "%m"))],
-       taud = taud[as.numeric(format(as.Date(paste0("2001-", x), "%Y-%j"), "%m"))])
-}
-
-
-AngleData <- data.frame(DOY = 1, HOUR = 1, RAD = 1, BETA = 1)[-1, ]    # Create a new data frame with Radiation and Angle Data
-# Iterate through all Hours and Angles
-for(day in 1:365){
-  h <- 1:24
-  doy <- day
-  
-  # Calculate the daylength (half of it) after Amthor 1997
-  Daylength <- acos((sin(-0.0145439) - sindeg(lat) * sindeg(EarthDecAngle(doy))) /
-                      (cosdeg(lat) * cosdeg(EarthDecAngle(doy)))) * 12 / pi
-  
-  # Sunrise = 12 (solar noon) - Daylength - Elliptical Correction of Earth's Orbit
-  sunrise <- 12 - Daylength - EquationOfTime(doy) * pi / 180
-  sunset <- 12 + Daylength - EquationOfTime(doy) * pi / 180
-  
-  # We only need to calculate Radiation between sunrise and sunset (Values are not correct for Hours outside of Sunrise and Sunset)
-  HoursWithDaylight <- h[h > sunrise & h < sunset]
-  
-  # Earth Declination Angle (Eq. 3)
-  delta <- EarthDecAngle(doy)
-  hour_angle <- (12 - HoursWithDaylight) * 15
-  
-  # Solar Altitude Angle (Beta, Eq. 1)
-  beta <- asindeg(cosdeg(lat) * cosdeg(hour_angle) * cosdeg(delta) + sindeg(lat) * sindeg(delta))
-  
-  # Relative Air Mass (m, Eq. 5)
-  m <- 1 / (sindeg(beta) + 0.50572 * ((6.07995 + beta) ^ (-1.6364)))
-  
-  # Extraterrestrial Solar Radiation (E0, Eq. 8)
-  E0 <- 1367 * (1 + 0.033 * cosdeg(360 * ((doy - 3) / 365)))
-  
-  # Optical Depths:
-  rb <- calctau(doy)[[1]] # Solar Beam Optical Depth -> Values taken from Website (see Function)
-  rd <- calctau(doy)[[2]] # Diffuse Optical Depth
-  # Air Mass Exponents:
-  ab <- 1.219 - 0.043 * rb - 0.151 * rd - 0.204 * rb * rd  # can be found between Eq. 8 and Eq. 9
-  ad <- 0.202 + 0.852 * rb - 0.007 * rd - 0.357 * rb * rd
-  
-  # Direct beam (Eq. 6)
-  Eb <- E0 * exp(-1 * rb * (m ^ ab))
-  
-  AngleData <- rbind(AngleData, data.frame(DOY = day, HOUR = HoursWithDaylight, RAD = Eb, BETA = beta))
-}
-
-# Define Start and End Date of the Vegetation Period and only use the data inbetween
 SeasonStart <- as.numeric(format(as.Date("2001-05-01"), "%j"))
 SeasonEnd <- as.numeric(format(as.Date("2001-09-30"), "%j"))
-AngleData <- AngleData[AngleData$DOY >= SeasonStart & AngleData$DOY <= SeasonEnd, ]
-
-# Create a new data frame containing Information on how much Radiation of the Total Radiation (during Vegetation Period) is included using different 
-# Minimum Angles to start the calculation
-AngleCalc <- data.frame(Angle = 1, Prop = 1)[-1, ]
-for(A in seq(0, 70, 0.05)){
-  AngleCalc <- rbind(AngleCalc, data.frame(Angle = A, Prop = sum(AngleData$RAD[AngleData$BETA >= A]) / sum(AngleData$RAD)))
-}
-
-
-
-# Only for Visualization
-MySegs <- data.frame(x = c(0, 0, 0,
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])])),
-                     xend = c(min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])])),
-                     y = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), 0, 0, 0) * 100,
-                     yend = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     color = c(1, 2, 3, 1, 2, 3))
-
-# Plot The Proportional Radiation against the related Minimum Solar Altitude Angles
-ggplot(AngleCalc)+
-  geom_hline(yintercept = seq(0, 100, 12.5), color = "grey80")+
-  geom_vline(xintercept = seq(0, 60, 10), color = "grey80")+
-  geom_segment(data = MySegs, aes(x = x, xend = xend, y = y, yend = yend, color = factor(color)), size = 1, linetype = "solid")+
-  geom_line(aes(x = Angle, y = Prop * 100), size = 1)+
-  scale_color_manual(values = c("#dca1a1", "#c25b5b", "#861010"), guide = "none")+
-  scale_x_continuous(name = "Minimum Solar Altitude Angle [°] at which Shadows are calculated", expand = c(0, 0),
-                     breaks = c(0, min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                                min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                                min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])]), 20, 40, 60))+
-  scale_y_continuous(name = "Proportion of Radiation (from total Radiation) [%]\nreceived using the Minimum Solar Altitude Angle", expand = c(0, 1),
-                     breaks = c(c(0, 25, 50, 75, 100), c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100))+
-  theme_classic()
-
-
-TreeHeight <- 30                                      # Use a maximum Tree Height of 30 m.
-ShadowLength <- data.frame(Prop = 1, SL = 1)[-1, ]    # Create an empty data frame.
-for(i in seq(0.005, 0.995, 0.005)){                   # Iterate Through all Proportions...
-  MinAngle <- min(AngleCalc$Angle[AngleCalc$Prop < i])
-  ShadowLength <- rbind(ShadowLength, data.frame(Prop = i,
-                                                 SL = TreeHeight / sindeg(MinAngle) * sindeg(180 - 90 - MinAngle)))
-}
-ShadowLength$Prop <- round(ShadowLength$Prop, digits = 3) # Round here because somehow there is an error otherwise.
-
-# This is for Visuals
-MySegs <- data.frame(x =    c(0  , 0   , 0    , (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     xend = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     y = c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])], 
-                           0, 0, 0),
-                     yend = c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])]),
-                     color = c(1, 2, 3, 1, 2, 3))
-
-
-ggplot(ShadowLength)+
-  geom_hline(yintercept = seq(0, 350, 100), color = "grey90")+
-  geom_vline(xintercept = seq(0, 100, 25), color = "grey90")+
-  geom_segment(data = MySegs, aes(x = x, xend = xend, y = y, yend = yend, color = factor(color)), size = 0.8, linetype = "dashed")+
-  geom_line(aes(x = Prop * 100, y = SL), size = 1)+
-  scale_color_manual(values = c("#dca1a1", "#c25b5b", "#861010"), guide = "none")+
-  scale_x_continuous(name = "Proportion of used Radiation from total Radiation [%]", breaks = c(c(0, 25, 50, 75, 100), c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100), expand = c(0, 0))+
-  scale_y_continuous(name = "Shadow Length given a 30m Tree", 
-                     breaks = round(c(0,  
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])], 200, 300), digits = 1), 
-                     expand = c(0, 0))+
-  theme_classic()
-
-
-Lat52 <- c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])])
-
-AngleCalc_52 <- AngleCalc
-AngleData_52 <- AngleData
-ShadowLength_52 <- ShadowLength
-
-
-
-
-
-#############################################################################################################################
-#### Belize ####
-#############################################################################################################################
-lat <- 17.539
-
-calctau <- function(x){
-  # Values taken from: http://ashrae-meteo.info/index.php?lat=17.539&lng=-88.308&place=''&wmo=785830&si_ip=SI&ashrae_version=2017
-  # Values for Lindenberg, Germany
-  taub <- c(0.373, 0.383, 0.411, 0.477, 0.511, 0.472, 0.503, 0.470, 0.437, 0.411, 0.388, 0.386)
-  taud <- c(2.555, 2.518, 2.421, 2.222, 2.143, 2.302, 2.176, 2.293, 2.392, 2.491, 2.531, 2.533)
-  list(taub = taub[as.numeric(format(as.Date(paste0("2001-", x), "%Y-%j"), "%m"))],
-       taud = taud[as.numeric(format(as.Date(paste0("2001-", x), "%Y-%j"), "%m"))])
-}
-
-
-AngleData <- data.frame(DOY = 1, HOUR = 1, RAD = 1, BETA = 1)[-1, ]    # Create a new data frame with Radiation and Angle Data
-# Iterate through all Hours and Angles
-for(day in 1:365){
-  h <- 1:24
-  doy <- day
-  
-  # Calculate the daylength (half of it) after Amthor 1997
-  Daylength <- acos((sin(-0.0145439) - sindeg(lat) * sindeg(EarthDecAngle(doy))) /
-                      (cosdeg(lat) * cosdeg(EarthDecAngle(doy)))) * 12 / pi
-  
-  # Sunrise = 12 (solar noon) - Daylength - Elliptical Correction of Earth's Orbit
-  sunrise <- 12 - Daylength - EquationOfTime(doy) * pi / 180
-  sunset <- 12 + Daylength - EquationOfTime(doy) * pi / 180
-  
-  # We only need to calculate Radiation between sunrise and sunset (Values are not correct for Hours outside of Sunrise and Sunset)
-  HoursWithDaylight <- h[h > sunrise & h < sunset]
-  
-  # Earth Declination Angle (Eq. 3)
-  delta <- EarthDecAngle(doy)
-  hour_angle <- (12 - HoursWithDaylight) * 15
-  
-  # Solar Altitude Angle (Beta, Eq. 1)
-  beta <- asindeg(cosdeg(lat) * cosdeg(hour_angle) * cosdeg(delta) + sindeg(lat) * sindeg(delta))
-  
-  # Relative Air Mass (m, Eq. 5)
-  m <- 1 / (sindeg(beta) + 0.50572 * ((6.07995 + beta) ^ (-1.6364)))
-  
-  # Extraterrestrial Solar Radiation (E0, Eq. 8)
-  E0 <- 1367 * (1 + 0.033 * cosdeg(360 * ((doy - 3) / 365)))
-  
-  # Optical Depths:
-  rb <- calctau(doy)[[1]] # Solar Beam Optical Depth -> Values taken from Website (see Function)
-  rd <- calctau(doy)[[2]] # Diffuse Optical Depth
-  # Air Mass Exponents:
-  ab <- 1.219 - 0.043 * rb - 0.151 * rd - 0.204 * rb * rd  # can be found between Eq. 8 and Eq. 9
-  ad <- 0.202 + 0.852 * rb - 0.007 * rd - 0.357 * rb * rd
-  
-  # Direct beam (Eq. 6)
-  Eb <- E0 * exp(-1 * rb * (m ^ ab))
-  
-  AngleData <- rbind(AngleData, data.frame(DOY = day, HOUR = HoursWithDaylight, RAD = Eb, BETA = beta))
-}
-
-# Define Start and End Date of the Vegetation Period and only use the data inbetween
-SeasonStart <- as.numeric(format(as.Date("2001-05-01"), "%j"))
-SeasonEnd <- as.numeric(format(as.Date("2001-09-30"), "%j"))
-AngleData <- AngleData[AngleData$DOY >= SeasonStart & AngleData$DOY <= SeasonEnd, ]
-
-# Create a new data frame containing Information on how much Radiation of the Total Radiation (during Vegetation Period) is included using different 
-# Minimum Angles to start the calculation
-AngleCalc <- data.frame(Angle = 1, Prop = 1)[-1, ]
-for(A in seq(0, 70, 0.05)){
-  AngleCalc <- rbind(AngleCalc, data.frame(Angle = A, Prop = sum(AngleData$RAD[AngleData$BETA >= A]) / sum(AngleData$RAD)))
-}
-
-
-
-# Only for Visualization
-MySegs <- data.frame(x = c(0, 0, 0,
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])])),
-                     xend = c(min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])])),
-                     y = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), 0, 0, 0) * 100,
-                     yend = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     color = c(1, 2, 3, 1, 2, 3))
-
-# Plot The Proportional Radiation against the related Minimum Solar Altitude Angles
-ggplot(AngleCalc)+
-  geom_hline(yintercept = seq(0, 100, 12.5), color = "grey80")+
-  geom_vline(xintercept = seq(0, 60, 10), color = "grey80")+
-  geom_segment(data = MySegs, aes(x = x, xend = xend, y = y, yend = yend, color = factor(color)), size = 1, linetype = "solid")+
-  geom_line(aes(x = Angle, y = Prop * 100), size = 1)+
-  scale_color_manual(values = c("#dca1a1", "#c25b5b", "#861010"), guide = "none")+
-  scale_x_continuous(name = "Minimum Solar Altitude Angle [°] at which Shadows are calculated", expand = c(0, 0),
-                     breaks = c(0, min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                                min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                                min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])]), 20, 40, 60))+
-  scale_y_continuous(name = "Proportion of Radiation (from total Radiation) [%]\nreceived using the Minimum Solar Altitude Angle", expand = c(0, 1),
-                     breaks = c(c(0, 25, 50, 75, 100), c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100))+
-  theme_classic()
-
-
-TreeHeight <- 30                                      # Use a maximum Tree Height of 30 m.
-ShadowLength <- data.frame(Prop = 1, SL = 1)[-1, ]    # Create an empty data frame.
-for(i in seq(0.005, 0.995, 0.005)){                   # Iterate Through all Proportions...
-  MinAngle <- min(AngleCalc$Angle[AngleCalc$Prop < i])
-  ShadowLength <- rbind(ShadowLength, data.frame(Prop = i,
-                                                 SL = TreeHeight / sindeg(MinAngle) * sindeg(180 - 90 - MinAngle)))
-}
-ShadowLength$Prop <- round(ShadowLength$Prop, digits = 3) # Round here because somehow there is an error otherwise.
-
-# This is for Visuals
-MySegs <- data.frame(x =    c(0  , 0   , 0    , (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     xend = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     y = c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])], 
-                           0, 0, 0),
-                     yend = c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])]),
-                     color = c(1, 2, 3, 1, 2, 3))
-
-
-ggplot(ShadowLength)+
-  geom_hline(yintercept = seq(0, 350, 100), color = "grey90")+
-  geom_vline(xintercept = seq(0, 100, 25), color = "grey90")+
-  geom_segment(data = MySegs, aes(x = x, xend = xend, y = y, yend = yend, color = factor(color)), size = 0.8, linetype = "dashed")+
-  geom_line(aes(x = Prop * 100, y = SL), size = 1)+
-  scale_color_manual(values = c("#dca1a1", "#c25b5b", "#861010"), guide = "none")+
-  scale_x_continuous(name = "Proportion of used Radiation from total Radiation [%]", breaks = c(c(0, 25, 50, 75, 100), c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100), expand = c(0, 0))+
-  scale_y_continuous(name = "Shadow Length given a 30m Tree", 
-                     breaks = round(c(0,  
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])], 200, 300), digits = 1), 
-                     expand = c(0, 0))+
-  theme_classic()
-
-
-Lat17 <- c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])])
-
-AngleCalc_17 <- AngleCalc
-AngleData_17 <- AngleData
-ShadowLength_17 <- ShadowLength
-
-
-
-
-#############################################################################################################################
-#### USA Lake Charles ####
-#############################################################################################################################
-lat <- 30.125
-
-calctau <- function(x){
-  # Values taken from: http://ashrae-meteo.info/index.php?lat=30.125&lng=-93.228&place=''&wmo=722400&si_ip=SI&ashrae_version=2017
-  # Values for Lindenberg, Germany
-  taub <- c(0.342, 0.358, 0.376, 0.431, 0.466, 0.501, 0.501, 0.488, 0.458, 0.383, 0.367, 0.352)
-  taud <- c(2.511, 2.476, 2.419, 2.263, 2.200, 2.139, 2.181, 2.218, 2.268, 2.462, 2.449, 2.484)
-  list(taub = taub[as.numeric(format(as.Date(paste0("2001-", x), "%Y-%j"), "%m"))],
-       taud = taud[as.numeric(format(as.Date(paste0("2001-", x), "%Y-%j"), "%m"))])
-}
-
-AngleData <- data.frame(DOY = 1, HOUR = 1, RAD = 1, BETA = 1)[-1, ]    # Create a new data frame with Radiation and Angle Data
-# Iterate through all Hours and Angles
-for(day in 1:365){
-  h <- 1:24
-  doy <- day
-  
-  # Calculate the daylength (half of it) after Amthor 1997
-  Daylength <- acos((sin(-0.0145439) - sindeg(lat) * sindeg(EarthDecAngle(doy))) /
-                      (cosdeg(lat) * cosdeg(EarthDecAngle(doy)))) * 12 / pi
-  
-  # Sunrise = 12 (solar noon) - Daylength - Elliptical Correction of Earth's Orbit
-  sunrise <- 12 - Daylength - EquationOfTime(doy) * pi / 180
-  sunset <- 12 + Daylength - EquationOfTime(doy) * pi / 180
-  
-  # We only need to calculate Radiation between sunrise and sunset (Values are not correct for Hours outside of Sunrise and Sunset)
-  HoursWithDaylight <- h[h > sunrise & h < sunset]
-  
-  # Earth Declination Angle (Eq. 3)
-  delta <- EarthDecAngle(doy)
-  hour_angle <- (12 - HoursWithDaylight) * 15
-  
-  # Solar Altitude Angle (Beta, Eq. 1)
-  beta <- asindeg(cosdeg(lat) * cosdeg(hour_angle) * cosdeg(delta) + sindeg(lat) * sindeg(delta))
-  
-  # Relative Air Mass (m, Eq. 5)
-  m <- 1 / (sindeg(beta) + 0.50572 * ((6.07995 + beta) ^ (-1.6364)))
-  
-  # Extraterrestrial Solar Radiation (E0, Eq. 8)
-  E0 <- 1367 * (1 + 0.033 * cosdeg(360 * ((doy - 3) / 365)))
-  
-  # Optical Depths:
-  rb <- calctau(doy)[[1]] # Solar Beam Optical Depth -> Values taken from Website (see Function)
-  rd <- calctau(doy)[[2]] # Diffuse Optical Depth
-  # Air Mass Exponents:
-  ab <- 1.219 - 0.043 * rb - 0.151 * rd - 0.204 * rb * rd  # can be found between Eq. 8 and Eq. 9
-  ad <- 0.202 + 0.852 * rb - 0.007 * rd - 0.357 * rb * rd
-  
-  # Direct beam (Eq. 6)
-  Eb <- E0 * exp(-1 * rb * (m ^ ab))
-  
-  AngleData <- rbind(AngleData, data.frame(DOY = day, HOUR = HoursWithDaylight, RAD = Eb, BETA = beta))
-}
-
-# Define Start and End Date of the Vegetation Period and only use the data inbetween
-SeasonStart <- as.numeric(format(as.Date("2001-05-01"), "%j"))
-SeasonEnd <- as.numeric(format(as.Date("2001-09-30"), "%j"))
-AngleData <- AngleData[AngleData$DOY >= SeasonStart & AngleData$DOY <= SeasonEnd, ]
-
-# Create a new data frame containing Information on how much Radiation of the Total Radiation (during Vegetation Period) is included using different 
-# Minimum Angles to start the calculation
-AngleCalc <- data.frame(Angle = 1, Prop = 1)[-1, ]
-for(A in seq(0, 70, 0.05)){
-  AngleCalc <- rbind(AngleCalc, data.frame(Angle = A, Prop = sum(AngleData$RAD[AngleData$BETA >= A]) / sum(AngleData$RAD)))
-}
-
-
-
-# Only for Visualization
-MySegs <- data.frame(x = c(0, 0, 0,
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])])),
-                     xend = c(min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])])),
-                     y = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), 0, 0, 0) * 100,
-                     yend = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     color = c(1, 2, 3, 1, 2, 3))
-
-# Plot The Proportional Radiation against the related Minimum Solar Altitude Angles
-ggplot(AngleCalc)+
-  geom_hline(yintercept = seq(0, 100, 12.5), color = "grey80")+
-  geom_vline(xintercept = seq(0, 60, 10), color = "grey80")+
-  geom_segment(data = MySegs, aes(x = x, xend = xend, y = y, yend = yend, color = factor(color)), size = 1, linetype = "solid")+
-  geom_line(aes(x = Angle, y = Prop * 100), size = 1)+
-  scale_color_manual(values = c("#dca1a1", "#c25b5b", "#861010"), guide = "none")+
-  scale_x_continuous(name = "Minimum Solar Altitude Angle [°] at which Shadows are calculated", expand = c(0, 0),
-                     breaks = c(0, min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                                min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                                min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])]), 20, 40, 60))+
-  scale_y_continuous(name = "Proportion of Radiation (from total Radiation) [%]\nreceived using the Minimum Solar Altitude Angle", expand = c(0, 1),
-                     breaks = c(c(0, 25, 50, 75, 100), c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100))+
-  theme_classic()
-
-
-TreeHeight <- 30                                      # Use a maximum Tree Height of 30 m.
-ShadowLength <- data.frame(Prop = 1, SL = 1)[-1, ]    # Create an empty data frame.
-for(i in seq(0.005, 0.995, 0.005)){                   # Iterate Through all Proportions...
-  MinAngle <- min(AngleCalc$Angle[AngleCalc$Prop < i])
-  ShadowLength <- rbind(ShadowLength, data.frame(Prop = i,
-                                                 SL = TreeHeight / sindeg(MinAngle) * sindeg(180 - 90 - MinAngle)))
-}
-ShadowLength$Prop <- round(ShadowLength$Prop, digits = 3) # Round here because somehow there is an error otherwise.
-
-# This is for Visuals
-MySegs <- data.frame(x =    c(0  , 0   , 0    , (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     xend = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     y = c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])], 
-                           0, 0, 0),
-                     yend = c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])]),
-                     color = c(1, 2, 3, 1, 2, 3))
-
-
-ggplot(ShadowLength)+
-  geom_hline(yintercept = seq(0, 350, 100), color = "grey90")+
-  geom_vline(xintercept = seq(0, 100, 25), color = "grey90")+
-  geom_segment(data = MySegs, aes(x = x, xend = xend, y = y, yend = yend, color = factor(color)), size = 0.8, linetype = "dashed")+
-  geom_line(aes(x = Prop * 100, y = SL), size = 1)+
-  scale_color_manual(values = c("#dca1a1", "#c25b5b", "#861010"), guide = "none")+
-  scale_x_continuous(name = "Proportion of used Radiation from total Radiation [%]", breaks = c(c(0, 25, 50, 75, 100), c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100), expand = c(0, 0))+
-  scale_y_continuous(name = "Shadow Length given a 30m Tree", 
-                     breaks = round(c(0,  
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])], 200, 300), digits = 1), 
-                     expand = c(0, 0))+
-  theme_classic()
-
-
-Lat30 <- c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])])
-
-AngleCalc_30 <- AngleCalc
-AngleData_30 <- AngleData
-ShadowLength_30 <- ShadowLength
-
-
-
-
-
-
-#############################################################################################################################
-#### USA McMinnville Municipal ####
-#############################################################################################################################
-lat <- 45.195
-
-calctau <- function(x){
-  # Values taken from: http://ashrae-meteo.info/index.php?lat=45.195&lng=-123.134&place=''&wmo=726881&si_ip=SI&ashrae_version=2017
-  # Values for Lindenberg, Germany
-  taub <- c(0.322, 0.319, 0.331, 0.359, 0.370, 0.362, 0.352, 0.355, 0.345, 0.334, 0.327, 0.328)
-  taud <- c(2.518, 2.535, 2.504, 2.392, 2.378, 2.411, 2.460, 2.467, 2.488, 2.527, 2.510, 2.463)
-  list(taub = taub[as.numeric(format(as.Date(paste0("2001-", x), "%Y-%j"), "%m"))],
-       taud = taud[as.numeric(format(as.Date(paste0("2001-", x), "%Y-%j"), "%m"))])
-}
-
-
-
-AngleData <- data.frame(DOY = 1, HOUR = 1, RAD = 1, BETA = 1)[-1, ]    # Create a new data frame with Radiation and Angle Data
-# Iterate through all Hours and Angles
-for(day in 1:365){
-  h <- 1:24
-  doy <- day
-  
-  # Calculate the daylength (half of it) after Amthor 1997
-  Daylength <- acos((sin(-0.0145439) - sindeg(lat) * sindeg(EarthDecAngle(doy))) /
-                      (cosdeg(lat) * cosdeg(EarthDecAngle(doy)))) * 12 / pi
-  
-  # Sunrise = 12 (solar noon) - Daylength - Elliptical Correction of Earth's Orbit
-  sunrise <- 12 - Daylength - EquationOfTime(doy) * pi / 180
-  sunset <- 12 + Daylength - EquationOfTime(doy) * pi / 180
-  
-  # We only need to calculate Radiation between sunrise and sunset (Values are not correct for Hours outside of Sunrise and Sunset)
-  HoursWithDaylight <- h[h > sunrise & h < sunset]
-  
-  # Earth Declination Angle (Eq. 3)
-  delta <- EarthDecAngle(doy)
-  hour_angle <- (12 - HoursWithDaylight) * 15
-  
-  # Solar Altitude Angle (Beta, Eq. 1)
-  beta <- asindeg(cosdeg(lat) * cosdeg(hour_angle) * cosdeg(delta) + sindeg(lat) * sindeg(delta))
-  
-  # Relative Air Mass (m, Eq. 5)
-  m <- 1 / (sindeg(beta) + 0.50572 * ((6.07995 + beta) ^ (-1.6364)))
-  
-  # Extraterrestrial Solar Radiation (E0, Eq. 8)
-  E0 <- 1367 * (1 + 0.033 * cosdeg(360 * ((doy - 3) / 365)))
-  
-  # Optical Depths:
-  rb <- calctau(doy)[[1]] # Solar Beam Optical Depth -> Values taken from Website (see Function)
-  rd <- calctau(doy)[[2]] # Diffuse Optical Depth
-  # Air Mass Exponents:
-  ab <- 1.219 - 0.043 * rb - 0.151 * rd - 0.204 * rb * rd  # can be found between Eq. 8 and Eq. 9
-  ad <- 0.202 + 0.852 * rb - 0.007 * rd - 0.357 * rb * rd
-  
-  # Direct beam (Eq. 6)
-  Eb <- E0 * exp(-1 * rb * (m ^ ab))
-  
-  AngleData <- rbind(AngleData, data.frame(DOY = day, HOUR = HoursWithDaylight, RAD = Eb, BETA = beta))
-}
-
-# Define Start and End Date of the Vegetation Period and only use the data inbetween
-SeasonStart <- as.numeric(format(as.Date("2001-05-01"), "%j"))
-SeasonEnd <- as.numeric(format(as.Date("2001-09-30"), "%j"))
-AngleData <- AngleData[AngleData$DOY >= SeasonStart & AngleData$DOY <= SeasonEnd, ]
-
-# Create a new data frame containing Information on how much Radiation of the Total Radiation (during Vegetation Period) is included using different 
-# Minimum Angles to start the calculation
-AngleCalc <- data.frame(Angle = 1, Prop = 1)[-1, ]
-for(A in seq(0, 70, 0.05)){
-  AngleCalc <- rbind(AngleCalc, data.frame(Angle = A, Prop = sum(AngleData$RAD[AngleData$BETA >= A]) / sum(AngleData$RAD)))
-}
-
-
-
-# Only for Visualization
-MySegs <- data.frame(x = c(0, 0, 0,
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])])),
-                     xend = c(min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])])),
-                     y = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), 0, 0, 0) * 100,
-                     yend = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     color = c(1, 2, 3, 1, 2, 3))
-
-# Plot The Proportional Radiation against the related Minimum Solar Altitude Angles
-ggplot(AngleCalc)+
-  geom_hline(yintercept = seq(0, 100, 12.5), color = "grey80")+
-  geom_vline(xintercept = seq(0, 60, 10), color = "grey80")+
-  geom_segment(data = MySegs, aes(x = x, xend = xend, y = y, yend = yend, color = factor(color)), size = 1, linetype = "solid")+
-  geom_line(aes(x = Angle, y = Prop * 100), size = 1)+
-  scale_color_manual(values = c("#dca1a1", "#c25b5b", "#861010"), guide = "none")+
-  scale_x_continuous(name = "Minimum Solar Altitude Angle [°] at which Shadows are calculated", expand = c(0, 0),
-                     breaks = c(0, min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                                min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                                min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])]), 20, 40, 60))+
-  scale_y_continuous(name = "Proportion of Radiation (from total Radiation) [%]\nreceived using the Minimum Solar Altitude Angle", expand = c(0, 1),
-                     breaks = c(c(0, 25, 50, 75, 100), c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100))+
-  theme_classic()
-
-
-TreeHeight <- 30                                      # Use a maximum Tree Height of 30 m.
-ShadowLength <- data.frame(Prop = 1, SL = 1)[-1, ]    # Create an empty data frame.
-for(i in seq(0.005, 0.995, 0.005)){                   # Iterate Through all Proportions...
-  MinAngle <- min(AngleCalc$Angle[AngleCalc$Prop < i])
-  ShadowLength <- rbind(ShadowLength, data.frame(Prop = i,
-                                                 SL = TreeHeight / sindeg(MinAngle) * sindeg(180 - 90 - MinAngle)))
-}
-ShadowLength$Prop <- round(ShadowLength$Prop, digits = 3) # Round here because somehow there is an error otherwise.
-
-# This is for Visuals
-MySegs <- data.frame(x =    c(0  , 0   , 0    , (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     xend = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     y = c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])], 
-                           0, 0, 0),
-                     yend = c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])]),
-                     color = c(1, 2, 3, 1, 2, 3))
-
-
-ggplot(ShadowLength)+
-  geom_hline(yintercept = seq(0, 350, 100), color = "grey90")+
-  geom_vline(xintercept = seq(0, 100, 25), color = "grey90")+
-  geom_segment(data = MySegs, aes(x = x, xend = xend, y = y, yend = yend, color = factor(color)), size = 0.8, linetype = "dashed")+
-  geom_line(aes(x = Prop * 100, y = SL), size = 1)+
-  scale_color_manual(values = c("#dca1a1", "#c25b5b", "#861010"), guide = "none")+
-  scale_x_continuous(name = "Proportion of used Radiation from total Radiation [%]", breaks = c(c(0, 25, 50, 75, 100), c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100), expand = c(0, 0))+
-  scale_y_continuous(name = "Shadow Length given a 30m Tree", 
-                     breaks = round(c(0,  
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])], 200, 300), digits = 1), 
-                     expand = c(0, 0))+
-  theme_classic()
-
-
-Lat45 <- c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])])
-
-AngleCalc_45 <- AngleCalc
-AngleData_45 <- AngleData
-ShadowLength_45 <- ShadowLength
-
-
-
-#############################################################################################################################
-#### Canada Croker River ####
-#############################################################################################################################
-lat <- 69.280
-
-calctau <- function(x){
-  # Values taken from: http://ashrae-meteo.info/index.php?lat=45.195&lng=-123.134&place=''&wmo=726881&si_ip=SI&ashrae_version=2017
-  # Values for Lindenberg, Germany
-  taub <- c(0.158, 0.207, 0.246, 0.292, 0.332, 0.328, 0.355, 0.339, 0.303, 0.232, 0.155, 0.155)
-  taud <- c(1.887, 2.049, 2.188, 2.127, 2.131, 2.357, 2.382, 2.480, 2.491, 2.170, 1.919, 1.919)
-  list(taub = taub[as.numeric(format(as.Date(paste0("2001-", x), "%Y-%j"), "%m"))],
-       taud = taud[as.numeric(format(as.Date(paste0("2001-", x), "%Y-%j"), "%m"))])
-}
-
-
-
-AngleData <- data.frame(DOY = 1, HOUR = 1, RAD = 1, BETA = 1)[-1, ]    # Create a new data frame with Radiation and Angle Data
-# Iterate through all Hours and Angles
-for(day in 1:365){
-  h <- 1:24
-  doy <- day
-  
-  # Calculate the daylength (half of it) after Amthor 1997
-  if(((sin(-0.0145439) - sindeg(lat) * sindeg(EarthDecAngle(doy))) /
-      (cosdeg(lat) * cosdeg(EarthDecAngle(doy)))) < -1){
-    Daylength <- 12
-  }else{
-    Daylength <- acos((sin(-0.0145439) - sindeg(lat) * sindeg(EarthDecAngle(doy))) /
-                        (cosdeg(lat) * cosdeg(EarthDecAngle(doy)))) * 12 / pi
+TreeHeight <- 30
+
+ShadowLengthLat <- data.frame(Prop = 1, SL = 1, Latitude = 1)[-1, ]
+for(MyLat in c(17.539, 30.125, 45.18, 52.217, 69.28)){
+  AngleData <- data.frame(DOY = 1, HOUR = 1, RAD = 1, BETA = 1)[-1, ]    # Create a new data frame with Radiation and Angle Data
+  for(day in 1:365){
+    h <- 1:24
+    doy <- day
+    AngleData <- rbind(AngleData, 
+                       data.frame(DOY = day, 
+                                  HOUR = h, 
+                                  RAD = DirectBeamLat(Hour = h, DOY = day, Latitude = MyLat), 
+                                  BETA = SolarAltitude(Hour = h, DOY = day, Latitude = MyLat)))
   }
   
-  
-  # Sunrise = 12 (solar noon) - Daylength - Elliptical Correction of Earth's Orbit
-  sunrise <- 12 - Daylength - EquationOfTime(doy) * pi / 180
-  sunset <- 12 + Daylength - EquationOfTime(doy) * pi / 180
-  
-  # We only need to calculate Radiation between sunrise and sunset (Values are not correct for Hours outside of Sunrise and Sunset)
-  HoursWithDaylight <- h[h > sunrise & h < sunset]
-  
-  # Earth Declination Angle (Eq. 3)
-  delta <- EarthDecAngle(doy)
-  hour_angle <- (12 - HoursWithDaylight) * 15
-  
-  # Solar Altitude Angle (Beta, Eq. 1)
-  beta <- asindeg(cosdeg(lat) * cosdeg(hour_angle) * cosdeg(delta) + sindeg(lat) * sindeg(delta))
-  
-  # Relative Air Mass (m, Eq. 5)
-  m <- 1 / (sindeg(beta) + 0.50572 * ((6.07995 + beta) ^ (-1.6364)))
-  
-  # Extraterrestrial Solar Radiation (E0, Eq. 8)
-  E0 <- 1367 * (1 + 0.033 * cosdeg(360 * ((doy - 3) / 365)))
-  
-  # Optical Depths:
-  rb <- calctau(doy)[[1]] # Solar Beam Optical Depth -> Values taken from Website (see Function)
-  rd <- calctau(doy)[[2]] # Diffuse Optical Depth
-  # Air Mass Exponents:
-  ab <- 1.219 - 0.043 * rb - 0.151 * rd - 0.204 * rb * rd  # can be found between Eq. 8 and Eq. 9
-  ad <- 0.202 + 0.852 * rb - 0.007 * rd - 0.357 * rb * rd
-  
-  # Direct beam (Eq. 6)
-  Eb <- E0 * exp(-1 * rb * (m ^ ab))
-  
-  AngleData <- rbind(AngleData, data.frame(DOY = day, HOUR = HoursWithDaylight, RAD = Eb, BETA = beta))
+  AngleData <- AngleData[AngleData$DOY >= SeasonStart & AngleData$DOY <= SeasonEnd, ]
+  # Create a new data frame containing Information on how much Radiation of the Total Radiation (during Vegetation Period) is included using different 
+  # Minimum Angles to start the calculation
+  AngleCalc <- data.frame(Angle = 1, Prop = 1)[-1, ]
+  for(A in seq(0, 90, 0.05)){
+    AngleCalc <- rbind(AngleCalc, data.frame(Angle = A, Prop = sum(AngleData$RAD[AngleData$BETA >= A], na.rm = TRUE) / sum(AngleData$RAD, na.rm = TRUE)))
+  }
+  ShadowLength <- data.frame(Prop = 1, SL = 1)[-1, ]    # Create an empty data frame.
+  for(i in seq(0.005, 0.995, 0.005)){                   # Iterate Through all Proportions...
+    MinAngle <- min(AngleCalc$Angle[AngleCalc$Prop < i])
+    ShadowLength <- rbind(ShadowLength, data.frame(Prop = i,
+                                                   SL = TreeHeight / sindeg(MinAngle) * sindeg(180 - 90 - MinAngle)))
+  }
+  ShadowLength$Prop <- round(ShadowLength$Prop, digits = 3) # Round here because somehow there is an error otherwise.
+  ShadowLengthLat <- rbind(ShadowLengthLat, cbind(ShadowLength, Latitude = MyLat))
 }
 
-# Define Start and End Date of the Vegetation Period and only use the data inbetween
-SeasonStart <- as.numeric(format(as.Date("2001-05-01"), "%j"))
-SeasonEnd <- as.numeric(format(as.Date("2001-09-30"), "%j"))
-AngleData <- AngleData[AngleData$DOY >= SeasonStart & AngleData$DOY <= SeasonEnd, ]
-
-# Create a new data frame containing Information on how much Radiation of the Total Radiation (during Vegetation Period) is included using different 
-# Minimum Angles to start the calculation
-AngleCalc <- data.frame(Angle = 1, Prop = 1)[-1, ]
-for(A in seq(0, 70, 0.05)){
-  AngleCalc <- rbind(AngleCalc, data.frame(Angle = A, Prop = sum(AngleData$RAD[AngleData$BETA >= A]) / sum(AngleData$RAD)))
-}
-
-
-
-# Only for Visualization
-MySegs <- data.frame(x = c(0, 0, 0,
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                           min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])])),
-                     xend = c(min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                              min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])])),
-                     y = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), 0, 0, 0) * 100,
-                     yend = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     color = c(1, 2, 3, 1, 2, 3))
-
-# Plot The Proportional Radiation against the related Minimum Solar Altitude Angles
-ggplot(AngleCalc)+
-  geom_hline(yintercept = seq(0, 100, 12.5), color = "grey80")+
-  geom_vline(xintercept = seq(0, 60, 10), color = "grey80")+
-  geom_segment(data = MySegs, aes(x = x, xend = xend, y = y, yend = yend, color = factor(color)), size = 1, linetype = "solid")+
-  geom_line(aes(x = Angle, y = Prop * 100), size = 1)+
-  scale_color_manual(values = c("#dca1a1", "#c25b5b", "#861010"), guide = "none")+
-  scale_x_continuous(name = "Minimum Solar Altitude Angle [°] at which Shadows are calculated", expand = c(0, 0),
-                     breaks = c(0, min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[3])]), 
-                                min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[2])]),
-                                min(AngleCalc$Angle[AngleCalc$Prop < (1 - cuts[1])]), 20, 40, 60))+
-  scale_y_continuous(name = "Proportion of Radiation (from total Radiation) [%]\nreceived using the Minimum Solar Altitude Angle", expand = c(0, 1),
-                     breaks = c(c(0, 25, 50, 75, 100), c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100))+
-  theme_classic()
-
-
-TreeHeight <- 30                                      # Use a maximum Tree Height of 30 m.
-ShadowLength <- data.frame(Prop = 1, SL = 1)[-1, ]    # Create an empty data frame.
-for(i in seq(0.005, 0.995, 0.005)){                   # Iterate Through all Proportions...
-  MinAngle <- min(AngleCalc$Angle[AngleCalc$Prop < i])
-  ShadowLength <- rbind(ShadowLength, data.frame(Prop = i,
-                                                 SL = TreeHeight / sindeg(MinAngle) * sindeg(180 - 90 - MinAngle)))
-}
-ShadowLength$Prop <- round(ShadowLength$Prop, digits = 3) # Round here because somehow there is an error otherwise.
-
-# This is for Visuals
-MySegs <- data.frame(x =    c(0  , 0   , 0    , (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     xend = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1]), (1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                     y = c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])], 
-                           0, 0, 0),
-                     yend = c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                              ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])]),
-                     color = c(1, 2, 3, 1, 2, 3))
-
-
-ggplot(ShadowLength)+
-  geom_hline(yintercept = seq(0, 350, 100), color = "grey90")+
-  geom_vline(xintercept = seq(0, 100, 25), color = "grey90")+
-  geom_segment(data = MySegs, aes(x = x, xend = xend, y = y, yend = yend, color = factor(color)), size = 0.8, linetype = "dashed")+
-  geom_line(aes(x = Prop * 100, y = SL), size = 1)+
-  scale_color_manual(values = c("#dca1a1", "#c25b5b", "#861010"), guide = "none")+
-  scale_x_continuous(name = "Proportion of used Radiation from total Radiation [%]", breaks = c(c(0, 25, 50, 75, 100), c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100), expand = c(0, 0))+
-  scale_y_continuous(name = "Shadow Length given a 30m Tree", 
-                     breaks = round(c(0,  
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-                                      ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])], 200, 300), digits = 1), 
-                     expand = c(0, 0))+
-  theme_classic()
-
-
-Lat69 <- c(ShadowLength$SL[ShadowLength$Prop == (1 - cuts[3])],
-           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[2])],
-           ShadowLength$SL[ShadowLength$Prop == (1 - cuts[1])])
-
-AngleCalc_69 <- AngleCalc
-AngleData_69 <- AngleData
-ShadowLength_69 <- ShadowLength
-
-#############################################################################################################################
-#### Combine Everything ####
-#############################################################################################################################
-
-
-AngleCalc <- rbind(data.frame(AngleCalc_17, "Lat" = 17),
-                   data.frame(AngleCalc_30, "Lat" = 30),
-                   data.frame(AngleCalc_45, "Lat" = 45),
-                   data.frame(AngleCalc_52, "Lat" = 52),
-                   data.frame(AngleCalc_69, "Lat" = 69))
-
-AngleData <- rbind(data.frame(AngleData_17, "Lat" = 17),
-                   data.frame(AngleData_30, "Lat" = 30),
-                   data.frame(AngleData_45, "Lat" = 45),
-                   data.frame(AngleData_52, "Lat" = 52),
-                   data.frame(AngleData_69, "Lat" = 69))
-
-ShadowLength <- rbind(data.frame(ShadowLength_17, "Lat" = 17),
-                      data.frame(ShadowLength_30, "Lat" = 30),
-                      data.frame(ShadowLength_45, "Lat" = 45),
-                      data.frame(ShadowLength_52, "Lat" = 52),
-                      data.frame(ShadowLength_69, "Lat" = 69))
-
-p <- ggplot(ShadowLength)+
+p <- ggplot(ShadowLengthLat)+
   geom_hline(yintercept = seq(0, 800, 100), color = "grey90")+
   geom_vline(xintercept = seq(0, 100, 25), color = "grey90")+
   geom_vline(xintercept = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100)+
-  geom_line(aes(x = Prop * 100, y = SL, group = Lat, color = factor(Lat)), size = 1)+
+  geom_line(aes(x = Prop * 100, y = SL, group = Latitude, color = factor(Latitude)), size = 1)+
   scale_x_continuous(name = "Proportion of used Radiation from total Radiation [%]", expand = c(0, 0), breaks = c(c(0, 25, 50, 75, 100), c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100))+
   scale_y_continuous(name = "Shadow Length given a 30m Tree", 
                      breaks = seq(0, 800, 100), 
@@ -1150,27 +216,132 @@ p <- ggplot(ShadowLength)+
   scale_color_discrete(name = "Latitude")+
   theme_classic(); p
 
-ggsave(p, file = GetFile("Plots/CalcRadiation/05_Shadow_Lengths_diff_Latitudes.png"), 
-       height = 4, width = 6)
+# We see that the Proportion of Radiation that we exclude depends on Latitude. 
+# So we can either define a fixed Minimum Angle and get Variability in the Proportion of excluded Radiation, or
+# We define a fixed Proportion and get a Minimum Angle that depends on Latitude. 
+# We went for Option Number 2, a fixed Proportion.
 
-
-MaximumShadowLengths <- data.frame(Percentage = c((1 - cuts[3]), (1 - cuts[2]), (1 - cuts[1])) * 100,
-                                   Latitude17 = Lat17, Latitude30 = Lat30, Latitude45 = Lat45, Latitude52 = Lat52, Latitude69 = Lat69); ceiling(MaximumShadowLengths)
-
-
-
-
-
-ShadLeng <- function(x){
-  sin((90 - x) * pi / 180) * 30 / sin(x * pi / 180)
+# First, get Radiation Data of all 5 Latitudes
+RadData <- data.frame(Hour = 1, DOY = 1, Latitude = 1, SolarAltitude = 1, Radiation = 1)[-1, ]
+for(lat in c(69.280, 52.217, 45.180, 30.125, 17.539)){
+  for(doy in 121:273){
+    RadData <- rbind(RadData, data.frame(Hour = 1:24, 
+                                         DOY = doy, 
+                                         Latitude = lat, 
+                                         SolarAltitude = SolarAltitude(Hour = 1:24, DOY = doy, Latitude = lat),
+                                         Radiation = DirectBeamLat(Hour = 1:24, DOY = doy, Latitude = lat)))
+  }
 }
 
-ggplot()+
-  geom_function(fun = ShadLeng, size = 0.8, n = 10001)+
-  scale_x_continuous(name = "Solar Altitude Angle [°]", limits = c(0, 90), expand = c(0, 0))+
-  scale_y_continuous(name = "Shadow Length [m] given a tree of 30m in height", limits = c(0, 1700), expand = c(0, 0))+
-  theme_classic()
+# The Curve of Radiation widens so that at higher latitudes, Radiation Energy is spread throughout a longer time span
+ggplot(RadData[RadData$DOY %in% seq(121, 273, 10), ])+
+  geom_line(aes(x = Hour, y = Radiation, color = DOY, group = DOY))+
+  facet_grid(. ~ Latitude)
 
 
+# Plot the sum per year below the previous curves.
+ggplot(ddply(RadData, ~ Hour + Latitude, summarise, TotRad = sum(Radiation, na.rm = T)))+
+  geom_rect(aes(xmin = Hour - 0.5, xmax = Hour + 0.5, ymin = 0, ymax = TotRad), color =  "black")+
+  geom_line(data = RadData[RadData$DOY %in% seq(121, 273, 10), ], aes(x = Hour, y = Radiation * 150, color = DOY, group = DOY))+
+  facet_grid(. ~ Latitude)
 
 
+# Now see how much Radiation Energy is cut, if we cut off at a certain Minimum Solar Altitude
+RadData$SolarAltitude[is.na(RadData$SolarAltitude)] <- 0; RadData$Radiation[is.na(RadData$Radiation)] <- 0
+RadData <- RadData[order(RadData$Latitude, RadData$SolarAltitude), ]
+
+# Calculate the Cumulative Curve and see the Angles below which x Percent of Radiation is ignored.
+RadCum <- data.frame(Latitude = 1, SolarAltitude = 1, Radiation = 1)[-1, ]
+for(lat in c(69.280, 52.217, 45.180, 30.125, 17.539)){
+  for(alt in seq(-0.2, 90, by = 0.1)){
+    RadCum <- rbind(RadCum, data.frame(Latitude = lat, 
+                                       SolarAltitude = alt, 
+                                       Radiation = sum(RadData$Radiation[RadData$Latitude == lat & RadData$SolarAltitude <= alt], na.rm = T)))
+  }
+}
+RadCum <- ddply(RadCum, ~ Latitude, transform, RadPerc = Radiation / max(Radiation, na.rm = T))  # Make if relaive for nicer visuals.
+
+# To compare the Curves of all 5 Latitudes, it's best to view them in a Plot and highlight only the Curve of the Latitude you are watching.
+# We therefore repeat the previous Data 5 Times. This is just for Visuals!
+RadCum2 <- data.frame(Latitude = rep(c(17.539, 30.125, 45.180, 52.217, 69.280), each = nrow(RadCum)),
+                      SolarAltitude = rep(RadCum$SolarAltitude, 5),
+                      Radiation = rep(RadCum$Radiation, 5),
+                      RadPerc = rep(RadCum$RadPerc, 5),
+                      RealLat = rep(RadCum$Latitude, 5),
+                      isReal = c(rep(17.539, nrow(RadCum) / 5), rep("unreal", nrow(RadCum) * 5 / 5),
+                                 rep(30.125, nrow(RadCum) / 5), rep("unreal", nrow(RadCum) * 5 / 5),
+                                 rep(45.180, nrow(RadCum) / 5), rep("unreal", nrow(RadCum) * 5 / 5),
+                                 rep(52.217, nrow(RadCum) / 5), rep("unreal", nrow(RadCum) * 5 / 5),
+                                 rep(69.280, nrow(RadCum) / 5)))
+
+
+PercLines <- data.frame(Latitude = 1, Percentage = 1, p5 = 1, p10 = 1, p25 = 1, p50 = 1)[-1, ]
+for(lat in c(69.280, 52.217, 45.180, 30.125, 17.539)){
+  PercLines <- rbind(PercLines, data.frame(Latitude = lat, Percentage = c(5, 10, 20, 50),
+                                           SolarAltitude = c(max(RadCum$SolarAltitude[RadCum$Latitude == lat & RadCum$RadPerc <= 0.05], na.rm = T),
+                                                             max(RadCum$SolarAltitude[RadCum$Latitude == lat & RadCum$RadPerc <= 0.1], na.rm = T),
+                                                             max(RadCum$SolarAltitude[RadCum$Latitude == lat & RadCum$RadPerc <= 0.2], na.rm = T),
+                                                             max(RadCum$SolarAltitude[RadCum$Latitude == lat & RadCum$RadPerc <= 0.5], na.rm = T))))
+}
+
+LatColors <- c("17.539" = "#cc0000", "30.125" = "#e69138", "45.18" = "#6aa84f", "52.217" = "#45818e", "69.28" = "#3d85c6", "unreal" = "grey80")
+
+p <- ggplot()+
+  geom_line(data = RadCum2[RadCum2$isReal == "unreal", ], aes(x = SolarAltitude, y = RadPerc, group = paste0(isReal, RealLat), color = isReal))+
+  geom_line(data = RadCum2[RadCum2$isReal != "unreal", ], aes(x = SolarAltitude, y = RadPerc, group = paste0(isReal, RealLat), color = isReal), size = 2)+
+  geom_segment(data = PercLines, aes(x = SolarAltitude, xend = SolarAltitude, y = 0, yend = Percentage / 100), linetype = "dashed")+
+  geom_segment(data = PercLines, aes(x = 0, xend = SolarAltitude, y = Percentage / 100, yend = Percentage / 100), linetype = "dashed")+
+  scale_x_continuous(name = "Solar Altitude [°]", limits = c(0, 95), expand = c(0, 0), breaks = c(0, 30, 60, 90), labels = c("   0", 30, 60, "90    "))+
+  scale_y_continuous(name = "Cumulative ratio of Radiation Energy\nbelow a given Solar Altitude [-]", breaks = c(0.05, 0.1, 0.2, 0.25, 0.5, 0.75, 1),
+                     minor_breaks = c(seq(0.125, 0.875, by = 0.25)), limits = c(0, 1.01), expand = c(0, 0))+
+  scale_color_manual(values = LatColors, guide = "none")+
+  theme_bw()+
+  # theme(axis.text.x = element_text(angle = 1:4))+
+  facet_grid(. ~ Latitude, labeller = labeller(Latitude = c("17.539" = "Latitude 17", 
+                                                            "30.125" = "Latitude 30", 
+                                                            "45.18" = "Latitude 45", 
+                                                            "52.217" = "Latitude 52",
+                                                            "69.28" = "Latitude 69"))); p
+
+
+# It's easier to read a number. So we made "Pie Charts", that show the Minimum Angle as Arcs.
+Arcs <- PercLines
+Arcs$x0 <- rep(5:1, each = 4); Arcs$y0 <- 0; Arcs$r0 <- 0; Arcs$r <- rep(seq(0.8, 0.4, length.out = 4), 5); Arcs$end <- 90 * pi / 180
+Arcs$start <- (90 - Arcs$SolarAltitude) * pi / 180
+Arcs <- ddply(Arcs, ~ Latitude, transform, Diff = c(0, SolarAltitude[1:3]) + diff(c(0, SolarAltitude)) / 2)
+
+
+ArcLabels <- data.frame(Latitude = rep(rev(c(69.280, 52.217, 45.180, 30.125, 17.539)), each = 4),
+                        Percentage = rep(c(5, 10, 20, 50), 5),
+                        SolarAltitude = Arcs$SolarAltitude,
+                        x = cos(Arcs$Diff * pi / 180) * (rep(seq(0.8, 0.4, length.out = 4), 5) + 0.03),
+                        y = sin(Arcs$Diff * pi / 180) * (rep(seq(0.8, 0.4, length.out = 4), 5) + 0.03),
+                        label = rep(c("5 %", "10 %", "20 %", "50 %"), 5))
+
+
+p2 <- ggplot()+
+  geom_arc_bar(data = Arcs[Arcs$Percentage == 50, ], aes(x0 = 0, y0 = y0, r0 = r0, r = r, start = start, end = end, fill = factor(Latitude)))+
+  geom_arc_bar(data = Arcs[Arcs$Percentage == 20, ], aes(x0 = 0, y0 = y0, r0 = r0, r = r, start = start, end = end, fill = factor(Latitude)))+
+  geom_arc_bar(data = Arcs[Arcs$Percentage == 10, ], aes(x0 = 0, y0 = y0, r0 = r0, r = r, start = start, end = end, fill = factor(Latitude)))+
+  geom_arc_bar(data = Arcs[Arcs$Percentage ==  5, ], aes(x0 = 0, y0 = y0, r0 = r0, r = r, start = start, end = end, fill = factor(Latitude)))+
+  geom_text(data = ArcLabels, aes(x = x, y = y, label = round(SolarAltitude, digits = 1), angle = SolarAltitude), hjust = 0)+
+  scale_fill_manual(values = LatColors, guide = "none")+
+  scale_x_continuous(limits = c(0, 1))+
+  scale_y_continuous(limits = c(0, 0.6), name = "Solar Altitude [-]")+
+  coord_fixed()+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank())+
+  facet_grid(. ~ Latitude, switch = "x",
+             labeller = labeller(Latitude = c("17.539" = "Latitude 17", 
+                                              "30.125" = "Latitude 30", 
+                                              "45.18" = "Latitude 45", 
+                                              "52.217" = "Latitude 52",
+                                              "69.28" = "Latitude 69"))); p2
+
+
+p_all <- plot_grid(p, p2, align = "v", ncol = 1, rel_heights = c(0.7, 0.3)); p_all
+
+# What you see here is the the Curve for each Latitude that shows the Solar Altitude on the X-Axis and the Proportion of Radiation we would lose, if we would cut at the respective
+# Angle. Down below, the Angles of 5, 10, 20 and 50 Percent of Loss are visualised. We decided to cut at 5% Loss.
