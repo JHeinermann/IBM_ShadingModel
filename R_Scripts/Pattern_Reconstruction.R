@@ -8,6 +8,7 @@ library(ggforce)    # Make circles of exact size
 library(spatstat)   # Spatial Analysis
 library(shar)       # Reconstructions of Point Patterns
 
+
 #################################################################################################################
 #### Decide if you want to recalculate everything ####
 #################################################################################################################
@@ -18,18 +19,10 @@ CalcAll <- FALSE
 #################################################################################################################
 #### Selfmade Functions ####
 #################################################################################################################
-# Get path of this script. Used for github if you don't work with projects.
-GetFile <- function(FileName){
-  paste0(sub(sub(".*\\/", "", rstudioapi::getSourceEditorContext()$path), "", rstudioapi::getSourceEditorContext()$path), FileName)
-}
-
 # Altered reconstruction-function of reconstruct_pattern_homo of "shar"-Package.
 # A Variable "r" is included that defines the maximum limit of the radius-input for Pair-Correlation-Function.
-source(GetFile("Reconstruction_Functions.R"))
+source("R_Scripts/Reconstruction_Functions.R")
 
-
-# Function made by Chris. This is not yet published:
-source(GetFile("Chris_Funktion.R"))
 
 
 #################################################################################################################
@@ -77,8 +70,6 @@ p <- ggplot(TreeData)+
   scale_y_continuous(name = "Y-Coordinate")+
   coord_fixed(); p
 
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/01_Original_Plot_Tree_Positions.png"), 
-       height = 4, width = 5)
 
 # For the Reconstruction of the forest, we use marked-point-patterns. But we can only use one mark in the process.
 # For the model, we need DBH, Height and Crown Radius. We reconstruct the DBH and calculate Height and CrownRadius using
@@ -103,9 +94,6 @@ p <- ggplot(TreeData)+
   scale_x_continuous(name = "DBH [cm]", limits = c(25, 55), expand = c(0, 0))+
   scale_y_continuous(name = "Height [m]", limits = c(21.5, 32.5), expand = c(0, 0)); p
 
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/02_nls_DBH_Height.png"), 
-       height = 4, width = 5)
-
 # For the Relationship between DBH and Crown Radius we use this model.
 # Because Stem Area might be better correlated with Crown Area, we use these parameters and then calculate Crown Radius later.
 DBH_Crown_Area_Model <- nls((pi * CrownRadius^2) ~ B * (pi * DBH^2) ^ C, start = list(B = 1, C = 2), data = TreeData)
@@ -127,8 +115,6 @@ p <- ggplot(TreeData)+
   scale_x_continuous(name = "Stem area [cm²]", limits = c(0, 10000), expand = c(0, 0))+
   scale_y_continuous(name = "Crown area [m²]", limits = c(0, 50), expand = c(0, 0)); p
 
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/03_nls_DBH_r_crown.png"), 
-       height = 4, width = 5)
 
 
 #Point Pattern Analysis:
@@ -203,10 +189,8 @@ if(CalcAll){
   AllInOne <- data.frame(x = Tree.recon$x, y = Tree.recon$y)
 }else{
   # Reconstructed Data, Resized to 800 x 800m
-  AllInOne <- read.csv("https://raw.githubusercontent.com/JHeinermann/ShadingModelOpen/main/AllInOne.csv")
+  AllInOne <- read.csv("Data/Reconstruction_PointPatterns/AllInOne.csv")
 }
-
-
 
 
 # 2. Reconstruct data in windows of original size and put them together.
@@ -240,11 +224,10 @@ if(CalcAll){
   }
   Merged <- Merged[, c("x", "y")]
 }else{
-  Merged <- read.csv("https://raw.githubusercontent.com/JHeinermann/ShadingModelOpen/main/Merged.csv")
+  Merged <- read.csv("Data/Reconstruction_PointPatterns/Merged.csv")
 }
-write.table(Merged, file = "C:/Users/heinermann/Documents/GitHub/ShadingModelOpen/Merged.csv", sep = ",", row.names = FALSE)
 
-
+# 3. Reconstruct data and adjust the radius of Pair-Correlation-Function.
 if(CalcAll){
   # Reconstruct data here again:
   # Set World Size and calculate the number of Trees on the bigger Plot.
@@ -265,9 +248,16 @@ if(CalcAll){
   Adjusted_r <- data.frame(x = Tree.recon$x, y = Tree.recon$y)
 }else{
   # Reconstructed Data, Resized to 800 x 800m
-  Adjusted_r <- read.csv("https://raw.githubusercontent.com/JHeinermann/ShadingModelOpen/main/Adjusted_r.csv")
+  Adjusted_r <- read.csv("Data/Reconstruction_PointPatterns/Adjusted_r.csv")
 }
 
+
+# We found that the third Option of Reconstruction resulted in good Fit of the Pair-Correlation-Function in general but 
+# Trees were sometimes too close to each other. So we tried multiple things to have a better fit especially at 
+# small distances. We found that ignoring edge-correction makes the process a lot faster and thus we
+# could increase the runs of the function. This resulted in a better fit at small distances but worse fit 
+# at bigger distances. We therefore increased the number of runs once more and then combined runs without
+# edge correction with runs with edge correction which gave us the best fit.
 
 
 # Reconstruct Pattern without edge correction with 50.000 runs
@@ -288,12 +278,12 @@ if(CalcAll){
   No_Edge <- data.frame(x = Tree.recon$x, y = Tree.recon$y)
 }else{
   # Reconstructed Data, Resized to 800 x 800m
-  No_Edge <- read.csv("https://raw.githubusercontent.com/JHeinermann/ShadingModelOpen/main/No_Edge.csv")
+  No_Edge <- read.csv("Data/Reconstruction_PointPatterns/No_Edge.csv")
 }
 
 
 
-# Reconstruct Pattern without edge correction with 50.000 runs
+# Reconstruct Pattern without edge correction with 200.000 runs
 if(CalcAll){
   # Now we reconstruct the point positions.
   # This is done using the Shar-Package. It reconstructs the Pair-Correlation-function.
@@ -312,7 +302,7 @@ if(CalcAll){
   No_Edge_4 <- data.frame(x = Tree.recon$x, y = Tree.recon$y)
 }else{
   # Reconstructed Data, Resized to 800 x 800m
-  No_Edge_4 <- read.csv("https://raw.githubusercontent.com/JHeinermann/ShadingModelOpen/main/No_Edge_4.csv")
+  No_Edge_4 <- read.csv("Data/Reconstruction_PointPatterns/No_Edge_4.csv")
 }
 
 
@@ -336,10 +326,8 @@ if(CalcAll){
   Edge_NoEdge <- data.frame(x = Tree.recon$x, y = Tree.recon$y)
 } else {
   # Reconstructed Data, Resized to 800 x 800m
-  Edge_NoEdge <- read.csv("https://raw.githubusercontent.com/JHeinermann/ShadingModelOpen/main/Edge_NoEdge.csv")
+  Edge_NoEdge <- read.csv("Data/Reconstruction_PointPatterns/Edge_NoEdge.csv")
 }
-
-
 
 
 
@@ -389,8 +377,6 @@ p <- ggplot(pcf.All)+
   scale_linetype_manual(name = "Edge Correction", values = Linetypes, labels = Labels)+
   coord_cartesian(ylim = c(0, 1.25)); p
 
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/04_PCF_Pattern_in_One_r_100.png"), 
-       height = 4, width = 8)
 
 # Now look at the PCF for r = 0 to 12.5:
 Tree.pcf <- data.frame(pcf(Tree.ppp, r = seq(0, 12.5, length.out = 250)))[-1, ]
@@ -419,8 +405,6 @@ p <- ggplot(pcf.All)+
   scale_linetype_manual(name = "Edge Correction", values = Linetypes, labels = Labels)+
   coord_cartesian(ylim = c(0, 1.25)); p
 
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/05_PCF_Pattern_in_One_r_12_5.png"), 
-       height = 4, width = 8)
 
 # The merged Data looks much closer to the PCF than the data reconstructed with 800x800m. We can now look at the distribution of trees.
 # For this we count Trees in squares and see, if we can see anything unusual.
@@ -466,62 +450,14 @@ p <- ggplot(TileData)+
         panel.spacing = unit(15, "pt"))+
   coord_fixed(); p
 
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/06_Reconstruct_Patter_in_One.png"), 
-       height = 4, width = 10)
 
 # Plot Density of Tile-Numbers.
 p <- ggplot(TileData)+
   geom_density(aes(x = nTrees, color = method))+
   scale_color_manual(name = "Analysed data", values = Colors[3:8], labels = Labels); p
 
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/07_Tile_Density.png"), 
-       height = 4, width = 8)
 # As we see above, when we calculate all in one go, then we end up with a plot where all Trees are placed at the Edges of the plot. 
 # This does not seem desirable. We should therefore continue with the merged Plots.
-
-
-
-
-# Now look at the PCF for r = 0 to 12.5:
-Tree.pcf <- data.frame(estimate_pcf_fast(Tree.ppp, correction = "none", method = "c", spar = 0.5, r = seq(0, 12.5, length.out = 250)))[-1, ]
-AllInOne.pcf <- data.frame(estimate_pcf_fast(as.ppp(AllInOne, W = owin(WorldSize, WorldSize)), correction = "none", method = "c", spar = 0.5, r = seq(0, 12.5, length.out = 250)))[-1, ]
-Merged.pcf <- data.frame(estimate_pcf_fast(as.ppp(Merged, W = owin(WorldSize, WorldSize)), correction = "none", method = "c", spar = 0.5, r = seq(0, 12.5, length.out = 250)))[-1, ]
-Adjusted.pcf <- data.frame(estimate_pcf_fast(as.ppp(Adjusted_r, W = owin(WorldSize, WorldSize)), correction = "none", method = "c", spar = 0.5, r = seq(0, 12.5, length.out = 250)))[-1, ]
-No_Edge.pcf <- data.frame(estimate_pcf_fast(as.ppp(No_Edge, W = owin(WorldSize, WorldSize)), correction = "none", method = "c", spar = 0.5, r = seq(0, 12.5, length.out = 250)))[-1, ]
-No_Edge_4.pcf <- data.frame(estimate_pcf_fast(as.ppp(No_Edge_4, W = owin(WorldSize, WorldSize)), correction = "none", method = "c", spar = 0.5, r = seq(0, 12.5, length.out = 250)))[-1, ]
-Edge_NoEdge.pcf <- data.frame(estimate_pcf_fast(as.ppp(Edge_NoEdge, W = owin(WorldSize, WorldSize)), correction = "none", method = "c", spar = 0.5, r = seq(0, 12.5, length.out = 250)))[-1, ]
-
-pcf.All <- rbind(Tree.pcf, AllInOne.pcf, Merged.pcf, Adjusted.pcf, No_Edge.pcf, No_Edge_4.pcf, Edge_NoEdge.pcf)
-pcf.All$data <- rep(c("Original", "At Once", "Merging", "Adjusted r", "No Edge", "No Edge, increased iterations", "Mix Edge"), each = 249)
-
-pcf.All <- data.frame(r = seq(0, 12.5, length.out = 250),
-                      data = rep(c("Original", "At Once", "Merging", "Adjusted r", "No Edge", "No Edge, increased iterations", "Mix Edge"), each = 500), 
-                      method = rep(rep(c("iso", "trans"), each = 250), 7),
-                      value = c(0, Tree.pcf$iso, 0, Tree.pcf$trans, 0, AllInOne.pcf$iso, 0, AllInOne.pcf$trans, 0, 
-                                Merged.pcf$iso, 0, Merged.pcf$trans, 0, Adjusted.pcf$iso, 0, Adjusted.pcf$trans,
-                                0, No_Edge.pcf$iso, 0, No_Edge.pcf$trans, 0, No_Edge_4.pcf$iso, 0, No_Edge_4.pcf$trans,
-                                0, Edge_NoEdge.pcf$iso, 0, Edge_NoEdge.pcf$trans))
-
-p <- ggplot(pcf.All)+
-  geom_line(aes(x = r, y = pcf, group = data, color = data), size = 1)+
-  geom_hline(data = data.frame(y = c(1), col = c("Pois")),
-             aes(yintercept = y, color = col, linetype = col))+
-  scale_x_continuous(name = "r")+
-  scale_y_continuous(name = "Pair Correlation Function [g(r)]")+
-  scale_color_manual(name = "Analysed data", values = Colors, labels = Labels)+
-  scale_linetype_manual(name = "Edge Correction", values = Linetypes, labels = Labels)+
-  coord_cartesian(ylim = c(0, 1.25)); p
-
-
-estimate_pcf_fast(relocated, 
-                  correction = "none", method = "c", 
-                  spar = 0.5, r = r)
-
-
-
-
-
-
 
 
 
@@ -532,7 +468,7 @@ estimate_pcf_fast(relocated,
 WorldSize <- c(-400, 400)
 Edge_NoEdge.ppp <- as.ppp(Edge_NoEdge, W = owin(WorldSize, WorldSize))
 
-
+# Reconstruct marks using shar and the previously reconstructed Point Pattern "Edge_noEdge".
 if(CalcAll){
   # Reconstruct data here again:
   # Set World Size and calculate the number of Trees on the bigger Plot.
@@ -551,125 +487,23 @@ if(CalcAll){
                                   DBH = marks_recon$randomized$randomized_1$marks)
 } else {
   # Reconstructed Data, Resized to 800 x 800m
-  Edge_NoEdge.marks <- read.csv("https://raw.githubusercontent.com/JHeinermann/ShadingModelOpen/main/Edge_NoEdge_marks.csv")
+  Edge_NoEdge.marks <- read.csv("Data/Reconstruction_PointPatterns/Edge_NoEdge_marks.csv")
 }
 
-
-if(CalcAll){
-  Tree.Chris <- cbind(TreeData[, c("x", "y", "DBH")], Species = c(rep("A", nrow(TreeData) - 1), "B"))
-  Tree.Chris$Species <- factor(Tree.Chris$Species)
-  Tree.Chris[, 1:2] <- Tree.Chris[, 1:2] + 25
-  Tree.Chris <- Tree.Chris[Tree.Chris$x > 0 & Tree.Chris$x < 50 & Tree.Chris$y > 0 & Tree.Chris$y < 50, ]
-  Tree.Chris <- as.ppp(Tree.Chris, W = owin(c(0, 50), c(0, 50)))
-  
-  reconstruction <- Pattern_reconstruction_with_two_marks(Tree.Chris,          # Markiertes Pattern
-                                                          n_repetitions  = 1,  # Anzahl der rekonstruierten Flächen
-                                                          max_runs = 230000,   # Anzahl der Runs
-                                                          no_changes = 200,    # Wie viele Durchläufe ohne Ändernung?
-                                                          rcount = 250,        # Wie fein Paarkorrelationsfunktion aufgelöst?
-                                                          rmax = 12.5,         # Radius um den Baum für Berechnung G-Funktion, ...
-                                                          issue = 1000,        # Wie oft wird eine Änderung angezeigt (als Message)?
-                                                          use.g_func = TRUE,   # Mitberücksichtigung der G-Funktion
-                                                          divisor = "r",       # Divisor der Kerne-Dichte (r oder d) # Lieber r
-                                                          timing = TRUE,       # Abspeicherung der Simulationslänge
-                                                          energy_evaluation = TRUE, # Genaue Auswertung der Energieanteile Paarkorrelationsfunktion etc.
-                                                          show_graphic = FALSE, # Grafik während der Berechnung?
-                                                          bw = 0.5,            # Kernelbreite
-                                                          obs_window = owin(c(0, 800), c(0, 800)))
-  
-  ChrisData <- data.frame(x = reconstruction$reconstructed$x, 
-                          y = reconstruction$reconstructed$y,
-                          DBH = reconstruction$reconstructed$marks$diameter * 1000)
-} else {
-  # Reconstructed Data, Resized to 800 x 800m
-  ChrisData <- read.csv("https://raw.githubusercontent.com/JHeinermann/ShadingModelOpen/main/ChrisData.csv")
-}
-
-
-ChrisData.pcf <- data.frame(pcf(as.ppp(ChrisData, W = owin(c(0, 800), c(0, 800))), 
-                                r = seq(0, 12.5, length.out = 250)))
-
-PCFData <- data.frame(r = seq(0, 12.5, length.out = 250),
-                      data = rep(c("Original", "Reconstructed", "Chris Function"), each = 500),
-                      method = rep(rep(c("iso", "trans"), each = 250), 3),
-                      value = c(0, Tree.pcf$iso, 0, Tree.pcf$trans, 0, Edge_NoEdge.pcf$iso, 0, Edge_NoEdge.pcf$trans,
-                                ChrisData.pcf$iso, ChrisData.pcf$trans))
-
-Colors <- c("Pois" = 3, "Original" = 1, "Reconstructed" = 2, "Chris Function" = 6)
-Labels <- expression("Pois" = g[Pois](r), "Original" = "Original Data", "Reconstructed" = "Reconstructed Data",
-                     "Chris Function" = "Reconstructed with Chris Function",
-                     "iso" = g[Ripley](r), "trans" = g[Trans](r))
-Linetypes = c("Pois" = "dashed", "iso" = "solid", "trans" = "dotted")
-
-p <- ggplot(PCFData)+
-  geom_line(aes(x = r, y = value, color = data, linetype = method), size = 1)+
-  geom_hline(data = data.frame(y = c(1), col = c("Pois")),
-             aes(yintercept = y, color = col, linetype = col), size = 1)+
-  scale_x_continuous(name = "r [m]")+
-  scale_y_continuous(name = "Pair Correlation Function [g(r)]")+
-  scale_color_manual(name = "Analysed data", values = Colors, labels = Labels)+
-  scale_linetype_manual(name = "Edge Correction", values = Linetypes, labels = Labels)+
-  coord_cartesian(ylim = c(0, 1.25)); p
-
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/08_PairCorr_Chris_Shar.png"), 
-       height = 4, width = 8)
-
-
-
-# 
-Tree.pcf <-  data.frame(pcf(as.ppp(TreeData, W = owin(c(-25, 25), c(-25, 25))), 
-                                 bw = 0.5, r = seq(0, 12.5, length.out = 250), 
-                                 kernel = "epanechnikov", stoyan = 0, correction = "none", divisor = "d"))
-Edge_NoEdge.pcf <-  data.frame(pcf(as.ppp(Edge_NoEdge, W = owin(c(-400, 400), c(-400, 400))), 
-                                 bw = 0.5, r = seq(0, 12.5, length.out = 250), 
-                                 kernel = "epanechnikov", stoyan = 0, correction = "none", divisor = "d"))
-ChrisData.pcf <-  data.frame(pcf(as.ppp(ChrisData, W = owin(c(0, 800), c(0, 800))), 
-                                 bw = 0.5, r = seq(0, 12.5, length.out = 250), 
-                                 kernel = "epanechnikov", stoyan = 0, correction = "none", divisor = "d"))
-
-PCFData <- data.frame(r = seq(0, 12.5, length.out = 250),
-                      data = rep(c("Original", "Reconstructed", "Chris Function"), each = 250),
-                      method = "un",
-                      value = c(Tree.pcf$un, Edge_NoEdge.pcf$un, ChrisData.pcf$un))
-
-Colors <- c("Pois" = 3, "Original" = 1, "Reconstructed" = 2, "Chris Function" = 6)
-Labels <- expression("Pois" = g[Pois](r), "Original" = "Original Data", "Reconstructed" = "Reconstructed Data",
-                     "Chris Function" = "Reconstructed with Chris Function",
-                     "un" = "No Edge Correction")
-Linetypes = c("Pois" = "dashed", "un" = "solid")
-
-p <- ggplot(PCFData)+
-  geom_line(aes(x = r, y = value, color = data, linetype = method), size = 1)+
-  geom_hline(data = data.frame(y = c(1), col = c("Pois")),
-             aes(yintercept = y, color = col, linetype = col), size = 1)+
-  scale_x_continuous(name = "r [m]")+
-  scale_y_continuous(name = "Pair Correlation Function [g(r)]")+
-  scale_color_manual(name = "Analysed data", values = Colors, labels = Labels)+
-  scale_linetype_manual(name = "Edge Correction", values = Linetypes, labels = Labels); p
-  coord_cartesian(ylim = c(0, 1.25)); p
-
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/09_PairCorr_noEdgeCorrection.png"), 
-       height = 4, width = 8)
-
-
-
-
+# Now we want to see how the reconstructed Data looks like.
+# We calculate Mark-Correlation-Functions of the Original and the Reconstructed Plot.
 
 Tree.m <- data.frame(markcorr(subset(Tree.ppp, select = DBH), r = seq(0, 12.5, length.out = 250)))
 Edge_NoEdge.m <- data.frame(markcorr(as.ppp(Edge_NoEdge.marks, W = owin(c(-400, 400), c(-400, 400))), 
                                      r = seq(0, 12.5, length.out = 250)))
-ChrisData.m <- data.frame(markcorr(as.ppp(ChrisData, W = owin(c(0, 800), c(0, 800))), 
-                                     r = seq(0, 12.5, length.out = 250)))
 
 MarkCorrData <- data.frame(r = seq(0, 12.5, length.out = 250),
-                           data = rep(c("Original", "Reconstructed", "Chris Function"), each = 500),
-                           method = rep(rep(c("iso", "trans"), each = 250), 3),
-                           value = c(Tree.m$iso, Tree.m$trans, Edge_NoEdge.m$iso, Edge_NoEdge.m$trans,
-                                     ChrisData.m$iso, ChrisData.m$trans))
+                           data = rep(c("Original", "Reconstructed"), each = 500),
+                           method = rep(rep(c("iso", "trans"), each = 250), 2),
+                           value = c(Tree.m$iso, Tree.m$trans, Edge_NoEdge.m$iso, Edge_NoEdge.m$trans))
 
-Colors <- c("Pois" = 3, "Original" = 1, "Reconstructed" = 2, "Chris Function" = 6)
+Colors <- c("Pois" = 3, "Original" = 1, "Reconstructed" = 2)
 Labels <- expression("Pois" = g[Pois](r), "Original" = "Original Data", "Reconstructed" = "Reconstructed Data",
-                     "Chris Function" = "Reconstructed with Chris Function",
                      "iso" = g[Ripley](r), "trans" = g[Trans](r))
 Linetypes = c("Pois" = "dashed", "iso" = "solid", "trans" = "dotted")
 
@@ -683,67 +517,23 @@ p <- ggplot(MarkCorrData)+
   scale_linetype_manual(name = "Edge Correction", values = Linetypes, labels = Labels)+
   coord_cartesian(ylim = c(0.74, 1.05)); p
 
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/10_MarkCorr_Chris_Shar.png"), 
-       height = 4, width = 8)
 
-
-
-
-
-
-
-markcrosscorr(ppp_p, r=r, correction="none",        # spatstat computation
-              bw=bw, kernel="gaussian",
-              normalise=FALSE)
-
-Tree.m <- data.frame(markcrosscorr(subset(Tree.ppp, select = DBH), r = seq(0, 12.5, length.out = 250),
-                                   correction = "none", bw = 0.5, normalise = TRUE)[[1]])
-Edge_NoEdge.m <- data.frame(markcrosscorr(as.ppp(Edge_NoEdge.marks, W = owin(c(-400, 400), c(-400, 400))), 
-                                          r = seq(0, 12.5, length.out = 250),
-                                          correction = "none", bw = 0.5, normalise = TRUE)[[1]])
-ChrisData.m <- data.frame(markcrosscorr(as.ppp(ChrisData, W = owin(c(0, 800), c(0, 800))), 
-                                        r = seq(0, 12.5, length.out = 250),
-                                        correction = "none", bw = 0.5, normalise = TRUE)[[1]])
-
-MarkData <- rbind(cbind(Tree.m, Method = "Shar"), 
-                  cbind(Edge_NoEdge.m, Method = "Chris"),
-                  cbind(ChrisData.m, Method = "Original"))
-
-
-Colors <- c("Pois" = 3, "Original" = 1, "Shar" = 2, "Chris" = 5)
-Labels <- expression("Pois" = g[Pois](r), "Original" = "Original Data", "Shar" = "Reconstructed Data with shar",
-                     "Chris" = "Reconstructed with Chris Function",
-                     "un" = "No Edge Correction")
-Linetypes = c("Pois" = "dashed", "un" = "solid")
-
-p <- ggplot(MarkData)+
-  geom_line(aes(x = r, y = un, color = Method), size = 1)+
-  geom_hline(data = data.frame(y = c(1), col = c("Pois")),
-             aes(yintercept = y, color = col), linetype = "dashed", size = 1)+
-  scale_x_continuous(name = "r [m]")+
-  scale_y_continuous(name = "Mark Correlation Function [kmm(r)]")+
-  scale_color_manual(name = "Analysed data", values = Colors, labels = Labels)+
-  coord_cartesian(ylim = c(0.74, 1.05)); p
-
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/11_MarkCorr_noEdge.png"), 
-       height = 4, width = 8)
-
-
-
+# The reconstructed Function looks really good. Let's look at the distribution of DBH's to see if the reconstructed DBH's are representative of the Original Plot.
+MarkData <- rbind(cbind(TreeData[, 1:3], Method = "Original"), 
+                  cbind(Edge_NoEdge.marks, Method = "Shar"))
 
 
 bins <- seq(from = min(MarkData$DBH, na.rm = T), to = max(MarkData$DBH, na.rm = T), length.out = 31)
 HistData <- data.frame(Method = "A", BinValue = 1, Count = 1)[-1, ]
 for(i in 1:30){
   HistData <- rbind(HistData,
-                    data.frame(Method = c("Original", "Shar", "Chris"),
+                    data.frame(Method = c("Original", "Shar"),
                                BinValue = (bins[i] + bins[i + 1]) / 2,
                                Count = c(nrow(MarkData[MarkData$Method == "Original" & MarkData$DBH >= bins[i] & MarkData$DBH < bins[i + 1] + 0.000001, ]) / nrow(MarkData[MarkData$Method == "Original", ]),
-                                         nrow(MarkData[MarkData$Method == "Shar" & MarkData$DBH >= bins[i] & MarkData$DBH < bins[i + 1] + 0.000001, ]) / nrow(MarkData[MarkData$Method == "Shar", ]),
-                                         nrow(MarkData[MarkData$Method == "Chris" & MarkData$DBH >= bins[i] & MarkData$DBH < bins[i + 1] + 0.000001, ]) / nrow(MarkData[MarkData$Method == "Chris", ]))))
+                                         nrow(MarkData[MarkData$Method == "Shar" & MarkData$DBH >= bins[i] & MarkData$DBH < bins[i + 1] + 0.000001, ]) / nrow(MarkData[MarkData$Method == "Shar", ]))))
 }
-
-HistData$Method <- factor(HistData$Method, levels = c("Original", "Shar", "Chris"))
+HistData$Method <- ifelse(HistData$Method == "Original", "Original Data", "Reconstructed with Shar")
+HistData$Method <- factor(HistData$Method, levels = c("Original Data", "Reconstructed with Shar"))
 
 p <- ggplot(HistData)+
   geom_rect(aes(xmin = BinValue - (bins[2] - bins[1]) / 2,
@@ -753,629 +543,7 @@ p <- ggplot(HistData)+
   scale_y_continuous(name = "relative Count [%]")+
   facet_grid(Method ~ .); p
 
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/12_MarkHist.png"), 
-       height = 4, width = 8)
-
-
-
-
-
-
-
-
-
-
-
-write.table(ChrisData, file = "C:/Users/heinermann/Documents/GitHub/ShadingModelOpen/ChrisData.csv", sep = ",", row.names = FALSE)
-
-
-
-
-x <- Edge_NoEdge.marks$x
-myx <- ""
-for(i in 1:length(x)){
-  myx <- paste(myx, round(x[i], digits = 2), sep = " ")
-}; myx
-
-write.table(myx, file = "C:/Users/heinermann/Documents/GitHub/ShadingModelOpen/x_Coords.txt", row.names = FALSE)
-
-
-x <- Edge_NoEdge.marks$y
-myx <- ""
-for(i in 1:length(x)){
-  myx <- paste(myx, round(x[i], digits = 2), sep = " ")
-}; myx
-
-write.table(myx, file = "C:/Users/heinermann/Documents/GitHub/ShadingModelOpen/y_Coords.txt", row.names = FALSE)
-
-
-x <- Edge_NoEdge.marks$DBH
-myx <- ""
-for(i in 1:length(x)){
-  myx <- paste(myx, round(x[i], digits = 2), sep = " ")
-}; myx
-
-write.table(myx, file = "C:/Users/heinermann/Documents/GitHub/ShadingModelOpen/DBH.txt", row.names = FALSE)
-
-
-
-
-
-
-
-
-
-paste("a", "b", sep = "\t")
-
-myx <- ""
-curx <- ""
-maxi <- 11
-for(i in 1:maxi){
-  curx <- paste0(curx, " ", LETTERS[i])
-  if(nchar(curx) > 5 | i == maxi){
-    myx <- paste0(myx, "\n", curx)
-    curx <- ""
-  }
-}; writeLines(myx)
-
-writeLines(paste("a", "b", sep = "\n"))
-nchar("absf sf")
-
-
-
-
-myx <- ""
-curx <- ""
-maxi <- length(Edge_NoEdge.marks$x)
-for(i in 1:maxi){
-  curx <- paste0(curx, " ", Edge_NoEdge.marks$x[i])
-  if(nchar(curx) > 180 | i == maxi){
-    myx <- paste0(myx, "\n", curx)
-    curx <- ""
-  }
-}
-
-writeLines(myx)
-
-
-
-
-
-
-
-
-
-
-
-
-#################################################################################################################
-#### This can be deleted WHEN finished. ####
-#################################################################################################################
-
-if(CalcAll){
-  # Create an empty data frame.
-  Merged <- data.frame(x = 0, y = 0, iteration = 0)[-1, ]
-  WorldSize <- c(-400, 400)   # Set the extended World Size.
-  NNew <- ((WorldSize[2] - WorldSize[1]) ^ 2) / (50 ^ 2)  # How many original Sites fit in the new World?
-  # Iterate the process of creating a new world with the size of the original World.
-  for(i in 1:NNew){
-    Tree.recon <- reconstruct_pattern(Tree.ppp, 
-                                      n_random = 1, 
-                                      max_runs = 1000,
-                                      simplify = TRUE, 
-                                      window = owin(c(-25, 25), c(-25, 25)),
-                                      n_points = nrow(TreeData),
-                                      return_input = FALSE,
-                                      plot = TRUE)
-    Merged <- rbind(Merged, data.frame(x = Tree.recon$x, y = Tree.recon$y, iteration = i))
-  }
-  # Now merge them together.
-  x <- 1
-  y <- 1
-  for(i in 1:NNew){
-    Merged$x[Merged$iteration == i] <- Merged$x[Merged$iteration == i] + x * 50 - 425
-    Merged$y[Merged$iteration == i] <- Merged$y[Merged$iteration == i] + y * 50 - 425
-    x <- x + 1
-    if(x > sqrt(NNew)){
-      x <- 1
-      y <- y + 1
-    }
-  }
-  Merged <- Merged[, c("x", "y")]
-}else{
-  Merged <- read.csv("https://raw.githubusercontent.com/JHeinermann/ShadingModelOpen/main/Merged.csv")
-}
-
-
-WorldSize <- c(-400, 400)
-NNew <- ((WorldSize[2] - WorldSize[1]) ^ 2) / (50 ^ 2) * nrow(TreeData)
-Tree.recon <- reconstruct_pattern_rcustom(Tree.ppp, 
-                                  n_random = 1, 
-                                  max_runs = 50000,
-                                  simplify = TRUE, 
-                                  window = owin(WorldSize, WorldSize),
-                                  n_points = NNew,
-                                  comp_fast = NNew,
-                                  return_input = FALSE,
-                                  r = 12.5,
-                                  plot = TRUE)
-
-
-Adjusted_r <- data.frame(x = Tree.recon$x, y = Tree.recon$y)
-
-
-write.table(Edge_NoEdge, file = "C:/Users/heinermann/Documents/GitHub/ShadingModelOpen/Edge_NoEdge.csv", 
-            sep = ",", row.names = FALSE)
-
-
-
-Adjusted_r <- read.csv("https://raw.githubusercontent.com/JHeinermann/ShadingModelOpen/main/Adjusted_r.csv")
-
-
-
-
-Adjusted_r <- 1
-
-
-
-if(CalcAll){
-  # Reconstruct data here again:
-  # Set World Size and calculate the number of Trees on the bigger Plot.
-  WorldSize <- c(-400, 400)
-  NNew <- ((WorldSize[2] - WorldSize[1]) ^ 2) / (50 ^ 2) * nrow(TreeData)
-  # Now we reconstruct the point positions.
-  # This is done using the Shar-Package. It reconstructs the Pair-Correlation-function.
-  Tree.recon <- reconstruct_pattern_rcustom(Tree.ppp, 
-                                            n_random = 1, 
-                                            max_runs = 50000,
-                                            simplify = TRUE, 
-                                            window = owin(WorldSize, WorldSize),
-                                            n_points = NNew,
-                                            comp_fast = NNew,
-                                            return_input = FALSE,
-                                            r = 12.5,
-                                            plot = TRUE)
-  Adjusted_r <- data.frame(x = Tree.recon$x, y = Tree.recon$y)
-}else{
-  # Reconstructed Data, Resized to 800 x 800m
-  Adjusted_r <- read.csv("https://raw.githubusercontent.com/JHeinermann/ShadingModelOpen/main/Adjusted_r.csv")
-}
-
-
-
-
-
-
-
-
-write.table(TreeData, file = "C:/Users/heinermann/Documents/GitHub/ShadingModelOpen/TreeData.csv", sep = ",", row.names = FALSE)
-
-
-
-
-
-write.table(data.frame(x = 1:10, y = LETTERS[1:10]), file = "C:/Users/heinermann/Documents/GitHub/ShadingModelOpen/FetchData.csv", sep = ",", row.names = FALSE)
-
-
-write.table(data.frame(x = 1:10, y = LETTERS[1:10]), 
-            file = "C:/Users/heinermann/Documents/GitHub/ShadingModelOpen/FetchData.txt", 
-            row.names = FALSE,
-            quote = FALSE, fileEncoding = "UTF-8")
-
-
-
-
-
-fileConn<-file("C:/Users/heinermann/Documents/GitHub/ShadingModelOpen/Fetch2.txt")
-writeLines(c("x","y"), fileConn)
-close(fileConn)
-
-
-
-
-
-
-
-
-ggplot(Merged)+
-  geom_point(aes(x = x, y = y))
-
-
-
-# How many different point patterns do we want to construct?
-n_pattern <- 1
-
-# Set World Size and calculate the number of Trees on the bigger Plot.
-WorldSize <- c(-50, 50)
-NNew <- ((WorldSize[2] - WorldSize[1]) ^ 2) / (50 ^ 2) * nrow(TreeData)
-# Now we reconstruct the point positions.
-# This is done using the Shar-Package. It reconstructs the Pair-Correlation-function.
-Tree.recon <- reconstruct_pattern(Tree.ppp, 
-                                  n_random = 1, 
-                                  max_runs = 1000,
-                                  simplify = TRUE, 
-                                  window = owin(WorldSize, WorldSize),
-                                  n_points = NNew,
-                                  return_input = FALSE,
-                                  # method = "cluster",
-                                  # r_length = 250,
-                                  plot = TRUE)
-
-# Show the Pair-Correlation-Function for the original and the reconstructed pattern.
-pcf_Org <- data.frame(pcf(Tree.ppp, r = seq(0, 25, length.out = 250)))[-1, ]
-pcf_recon <- data.frame(pcf(Tree.recon, r = seq(0, 25, length.out = 250)))[-1, ]
-ggplot(pcf_Org)+
-  geom_line(aes(x = r, y = iso))+
-  geom_line(data = pcf_recon, aes(x = r, y = iso), color = "red")
-
-
-marks_sub <- spatstat.geom::subset.ppp(Tree.ppp, select = DBH)
-marks_recon <- reconstruct_pattern_marks(Tree.recon, 
-                                         marks_sub,
-                                         n_random = 1, 
-                                         max_runs = 10000,
-                                         e_threshold = 0.002,
-                                         plot = TRUE)
-
-# Save x, y and DBH of reconstructed data.
-Tree.marks <- data.frame(x = marks_recon$randomized$randomized_1$x,
-                         y = marks_recon$randomized$randomized_1$y,
-                         DBH = marks_recon$randomized$randomized_1$marks)
-
-# Show the Mark-Correlation-Function of the reconstructed and original data.
-Tree.m <- data.frame(markcorr(subset(Tree.ppp, select = DBH), r = seq(0, 25, length.out = 250)))
-Recon.m <- data.frame(markcorr(as.ppp(Tree.marks, W = owin(c(-50, 50), c(-50, 50))), 
-                               r = seq(0, 25, length.out = 250)))
-ggplot(Tree.m)+
-  geom_line(aes(x = r, y = iso))+
-  geom_line(data = Recon.m, aes(x = r, y = iso), color = "red")
-
-
-# Calculate Clark-Evans-Index.
-clarkevansCalc(Tree.ppp)
-clarkevansCalc(Tree.recon)
-
-
-
-NewWorld <- data.frame(x = 0, y = 0, iteration = 0)[-1, ]
-
-WorldSize <- c(-50, 50)
-NNew <- ((WorldSize[2] - WorldSize[1]) ^ 2) / (50 ^ 2) * nrow(TreeData)
-
-for(i in 1:64){
-  Tree.recon <- reconstruct_pattern(Tree.ppp, 
-                                    n_random = 1, 
-                                    max_runs = 1000,
-                                    simplify = TRUE, 
-                                    window = owin(WorldSize, WorldSize),
-                                    n_points = NNew,
-                                    return_input = FALSE,
-                                    # method = "cluster",
-                                    # r_length = 250,
-                                    plot = TRUE)
-  NewWorld <- rbind(NewWorld, data.frame(x = Tree.recon$x, y = Tree.recon$y, iteration = i))
-}
-
-x <- 1
-y <- 1
-for(i in 1:64){
-  NewWorld$x[NewWorld$iteration == i] <- NewWorld$x[NewWorld$iteration == i] + x * 100 - 50
-  NewWorld$y[NewWorld$iteration == i] <- NewWorld$y[NewWorld$iteration == i] + y * 100 - 50
-  x <- x + 1
-  if(x > 8){
-    x <- 1
-    y <- y + 1
-  }
-}
-
-ggplot(NewWorld)+
-  geom_point(aes(x = x, y = y))
-
-
-pcf_NewWorld <- data.frame(pcf(as.ppp(NewWorld, W = owin(c(0, 800), c(0, 800))), r = seq(0, 25, length.out = 250)))[-1, ]
-
-ggplot(pcf_Org)+
-  geom_line(aes(x = r, y = iso))+
-  geom_line(data = pcf_NewWorld, aes(x = r, y = iso), color = "red")
-
-
-NewWorld$x <- NewWorld$x - 400
-NewWorld$y <- NewWorld$y - 400
-New.ppp <- as.ppp(NewWorld[, 1:2], W = owin(c(-400, 400), c(-400, 400)))
-
-marks_sub <- spatstat.geom::subset.ppp(Tree.ppp, select = DBH)
-marks_recon <- reconstruct_pattern_marks(New.ppp, 
-                                         marks_sub,
-                                         n_random = 1, 
-                                         max_runs = 10000,
-                                         e_threshold = 0.002,
-                                         plot = TRUE)
-
-
-
-# Set World Size and calculate the number of Trees on the bigger Plot.
-WorldSize <- c(-400, 400)
-NNew <- ((WorldSize[2] - WorldSize[1]) ^ 2) / (50 ^ 2) * nrow(TreeData)
-# Now we reconstruct the point positions.
-# This is done using the Shar-Package. It reconstructs the Pair-Correlation-function.
-Tree.recon <- reconstruct_pattern(Tree.ppp, 
-                                  n_random = 1, 
-                                  max_runs = 50000,
-                                  simplify = TRUE, 
-                                  window = owin(WorldSize, WorldSize),
-                                  n_points = NNew,
-                                  return_input = FALSE,
-                                  e_threshold = 0.002,
-                                  # method = "cluster",
-                                  # r_length = 250,
-                                  plot = TRUE)
-
-
-
-AllInOne <- data.frame(x = Tree.recon$x, y = Tree.recon$y)
-ggplot(AllInOne)+
-  geom_point(aes(x = x, y = y))
-
-
-TileSize <- 40
-nTiles <- ((WorldSize[2] - WorldSize[1]) ^ 2) / (TileSize ^ 2)
-TileData <- data.frame(x = 1, y = 1, nTrees = 0)[-1, ]
-x <- -400
-y <- -400
-for(i in 1:nTiles){
-  TileData <- rbind(TileData, data.frame(x = x, y = y, 
-                                         nTrees = sum(AllInOne$x >= x & AllInOne$x < (x + TileSize) &
-                                                        AllInOne$y >= y & AllInOne$y < (y + TileSize))))
-  x <- x + TileSize
-  if(x >= WorldSize[2]){
-    x <- -400
-    y <- y + TileSize
-  }
-}
-
-p <- ggplot(TileData)+
-  geom_raster(aes(x = x + TileSize / 2, y = y + TileSize / 2, fill = nTrees))+
-  scale_x_continuous(name = "X-Coordinate", expand = c(0, 0))+
-  scale_y_continuous(name = "Y-Coordinate", expand = c(0, 0))+
-  scale_fill_continuous(name = paste0("Number of Trees\nin an area of\n", TileSize, " x ", TileSize, "m"))+
-  coord_fixed(); p
-
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/03_Reconstruct_Patter_in_One.png"), 
-       height = 4, width = 6)
-
-
-pcf_Org <- data.frame(pcf(Tree.ppp, r = seq(0, 100, length.out = 250)))[-1, ]
-pcf_recon <- data.frame(pcf(as.ppp(AllInOne, W = owin(WorldSize, WorldSize)), r = seq(0, 100, length.out = 250)))[-1, ]
-
-p <- ggplot(pcf_Org)+
-  geom_line(aes(x = r, y = iso))+
-  geom_line(data = pcf_recon, aes(x = r, y = iso), color = "red")+
-  geom_hline(data = data.frame(y = c(1, -1), col = c("a", "b")),
-             aes(yintercept = y, color = col), linetype = "dashed")+
-  scale_x_continuous(name = "radius")+
-  scale_y_continuous(name = "Pair Correlation Function [g(r)]")+
-  scale_color_manual(name = "", values = c(1, 2), labels = c("original Data", "reconstructed Data"))+
-  coord_cartesian(ylim = c(0, 1.25)); p
-
-ggsave(p, file = GetFile("Plots/Pattern_Reconstruction/04_PCF_Patter_in_One.png"), 
-       height = 4, width = 6)
-
-
-
-
-
-
-Stacked <- data.frame(x = 0, y = 0, iteration = 0)[-1, ]
-WorldSize <- c(-400, 400)
-NNew <- ((WorldSize[2] - WorldSize[1]) ^ 2) / (50 ^ 2)
-for(i in 1:NNew){
-  Tree.recon <- reconstruct_pattern(Tree.ppp, 
-                                    n_random = 1, 
-                                    max_runs = 1000,
-                                    simplify = TRUE, 
-                                    window = owin(c(-25, 25), c(-25, 25)),
-                                    n_points = NNew,
-                                    return_input = FALSE,
-                                    comp_fast = NNew,
-                                    plot = TRUE)
-  Stacked <- rbind(Stacked, data.frame(x = Tree.recon$x, y = Tree.recon$y, iteration = i))
-}
-
-x <- 1
-y <- 1
-for(i in 1:64){
-  NewWorld$x[NewWorld$iteration == i] <- NewWorld$x[NewWorld$iteration == i] + x * 50 - 25
-  NewWorld$y[NewWorld$iteration == i] <- NewWorld$y[NewWorld$iteration == i] + y * 50 - 25
-  x <- x + 1
-  if(x > sqrt(NNew)){
-    x <- 1
-    y <- y + 1
-  }
-}
-
-
-
-
-
-
-
-
-Tree.recon <- reconstruct_pattern_custom(Tree.ppp, 
-                                  n_random = 1, 
-                                  max_runs = 20,
-                                  noEdge_runs = 10,
-                                  simplify = TRUE, 
-                                  window = owin(c(-400, 400), c(-400, 400)),
-                                  n_points = NNew,
-                                  return_input = FALSE,
-                                  comp_fast = NNew - 1,
-                                  plot = TRUE)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-myx <- ""
-for(i in 1:length(NewTrees$x)){
-  myx <- paste(myx, round(NewTrees$x[i], digits = 2), sep = ", ")
-}; myx
-
-
-
-
-
-
-
-
-
-
-Recon.ppp <- as.ppp(Tree.marks, W = owin(c(-50, 50), c(-50, 50)))
-plot(markcorr(Recon.ppp))
-lines(markcorr(subset(Tree.ppp, select = DBH)))
-plot(markcorr(subset(Tree.ppp, select = DBH)))
-
-clarkevansCalc(Tree.ppp)
-clarkevansCalc(Tree.recon)
-
-Tree.k <- Kest(Tree.ppp)
-Recon.k <- Kest(Tree.recon)
-##
-plot(Tree.k$r, Tree.k$iso, type = "l")
-lines(Recon.k$r, Recon.k$iso, type = "l", col = "red")
-
-
-Tree.L <- Lest(Tree.ppp)
-Recon.L <- Lest(Tree.recon)
-plot(Tree.L$r, Tree.L$iso, type = "l")
-lines(Recon.L$r, Recon.L$iso, type = "l", col = "red")
-##
-Tree.p <- pcf(Tree.ppp)
-Recon.p <- pcf(Tree.recon)
-plot(Tree.p$r, Tree.p$iso, type = "l")
-lines(Recon.p$r, Recon.p$iso, type = "l", col = "red")
-
-
-Tree.m <- markcorr(subset(Tree.ppp, select = DBH), r = seq(0, 25, length.out = 250))
-Recon.m <- markcorr(as.ppp(Tree.marks, W = owin(c(-50, 50), c(-50, 50))), 
-                    r = seq(0, 25, length.out = 250))
-plot(Tree.m$r, Tree.m$iso, type = "l")
-lines(Recon.m$r, Recon.m$iso, type = "l", col = "red")
-
-plot(markcorr(subset(Tree.ppp, select = DBH), r = seq(0, 12.5, length.out = 250)))
-plot(markcorr(Recon.ppp, r = seq(0, 12.5, length.out = 250)))
-
-
-ggplot(TreeData)+
-  geom_point(data = ReconData, aes(x = x, y = y, size = DBH))+
-  geom_point(aes(x = x, y = y, size = DBH), color = "green")+
-  coord_fixed()
-
-ggplot(TreeData)+
-  geom_density(aes(x = DBH), color = "green", size = 2)+
-  geom_density(data = Tree.marks, aes(x = DBH), size = 2)
-
-
-
-
-
-myx <- ""
-for(i in 1:length(Tree.marks$x)){
-  myx <- paste(myx, round(Tree.marks$DBH[i], digits = 1), sep = ", ")
-}; myx
-
-
-
-
-
-
-
-
-overstory_data <- read_excel("E:/Dokumente/VERMOS/Flaechenaufnahmen/Versuch.xlsx", 
-                             sheet = "5138_Oberstand", col_types = c("text", 
-                                                                     "text", "numeric", "numeric", "text", 
-                                                                     "numeric", "numeric", "numeric", 
-                                                                     "numeric", "numeric", "numeric", 
-                                                                     "numeric", "numeric", "numeric", 
-                                                                     "numeric", "text"))
-
-colnames(overstory_data) <- c("District", "Stand_ID", "Plot_ID", "Tree_ID", "Species", "Species_ID",
-                              "X", "Y", "DBH", "Height", "Crown_Start", "r_crown_N", "r_crown_E",
-                              "r_crown_S", "r_crown_W", "Comment")
-
-
-ggplot(overstory_data)+
-  geom_point(aes(x = X, y = Y, size = DBH))+
-  geom_vline(xintercept = c(-25, 25))+
-  geom_hline(yintercept = c(-25, 25))+
-  geom_point(data = TreeData, aes(x = x, y = y, size = DBH), color = "red", alpha = 0.5)+
-  coord_fixed()
-
-ggplot(overstory_data)+
-  geom_point(aes(x = DBH, y = Height))
-
-
-
-overstory_data$X
-
-
-long <- c("44.7	27.6	43.8	38.0	45.3	44.1	27.2	30.5	31.8	33.0	35.3	47.3	32.4	35.8	37.7	39.8	28.9	43.9	34.8	29.9	30.1	34.9	30.8	36.7	32.1	44.6	41.6	31.4	31.8	30.1	29.2	38.5	30.1	34.6	35.9	30.0	31.5	41.1	34.1	39.8	40.8	34.8	34.3	40.4	37.7	35.6	40.8	37.3	32.9	35.2	37.1	32.3	38.9	32.6	42.0	41.7	39.8	41.7	34.3	36.1	34.1	31.1	33.1	41.8	39.1	27.7	35.9	35.5	38.2	29.8	34.2	33.1	29.0	27.8	39.6	36.4	35.0	31.8	27.4	39.7	26.1	27.5	35.2	35.7	30.1	29.2	43.6	32.1	28.3	39.9	52.2	33.0	31.2	28.9	32.4	30.5	30.3")
-long <- gsub("\t", ", ", long)
-as.character(strsplit(long, "[, ]"))
-as.numeric(strsplit(long, "\t")[[1]])
-
-
-myx <- ""
-for(i in 1:length(ReconData$x)){
-  myx <- paste(myx, round(ReconData$DBH[i], digits = 1), sep = " ")
-}; myx
-
-ReconData$x
-
-
-data("species_a")
-pattern_recon <- reconstruct_pattern(species_a, n_random = 1, max_runs = 1000,
-                                     simplify = TRUE, return_input = FALSE)
-marks_sub <- spatstat.geom::subset.ppp(species_a, select = dbh)
-marks_recon <- reconstruct_pattern_marks(pattern_recon, marks_sub,
-                                         n_random = 19, max_runs = 1000)
-
-plot(species_a)
-
-
-
-
-
-
-
-.from <- 1
-.to <- 3.2
-.by <- 0.5
-
-out <- .from
-lower <- .from + floor((.to - .from) / .by) * .by
-x <- .from
-while(x < lower){
-  x <- x + .by
-  out <- c(out, x)
-}
-
-
-
-seq(.from, .to, .by)
-
-
-
-
+# The reconstructed Data has a good enough fit and thus, this method is used to reconstruct 10 different Plots as Input for our Stand-Model.
 
 
 
