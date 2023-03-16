@@ -86,8 +86,8 @@ NNumbers <- c("Phillip SW Belize" = 17.539, "Lake Charles" = 30.125, "McMinnvill
 FLabels2 <- c("WeatherStation" = "Latitude\n", "CrownShape" = "Crown Shape\n", "CrownTransmissibility" = "Crown\nTransmissibility", "ForestGapSize" = "Gap Size\n", 
              "TotalRad" = "Total\nRadiation", "TotalFull" = "Total\nSunhours", "WeightedRad" = "Centroid\nRadiation", "WeightedFull" = "Centroid\nSunhours", 
              "LightProp" = "most\nShaded", "FullSProp" = "most\nSunhours", "GapSpecies_low" = "intolerant\nArea",
-             "GapSpecies_intermediate" = "intermediate\nArea", "GapSpecies_high" = "tolerant\nArea")
-FLevels <- c("TotalRad", "WeightedRad", "LightProp", "TotalFull", "WeightedFull", "FullSProp", "GapSpecies_low", "GapSpecies_intermediate", "GapSpecies_high")
+             "GapSpecies_intermediate" = "intermediate\nArea", "GapSpecies_high" = "tolerant\nArea", "LRC_low" = "LRC\nlow", "LRC_medium" = "LRC\nmedium", "LRC_high" = "LRC\nhigh")
+FLevels <- c("TotalRad", "WeightedRad", "LightProp", "TotalFull", "WeightedFull", "FullSProp", "LRC_low", "LRC_medium", "LRC_high")
 
 FLabels3 <- c("WeatherStation" = "Latitude\n", "CrownShape" = "Crown Shape\n", "CrownTransmissibility" = "Crown\nTransmissibility", "ForestGapSize" = "Gap Size\n", 
              "TotalRad" = "Total\nRadiation", "TotalFull" = "Total\nSunhours", "WeightedRad" = "Centroid\nRadiation", "WeightedFull" = "Centroid\nSunhours", 
@@ -417,21 +417,21 @@ for(InVar in 1:4){
     MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
     MyOut <- MyOut[MyVals]
     SA_Standardized <- rbind(SA_Standardized, 
-                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "GapSpecies_high", Input = InVal, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "LRC_high", Input = InVal, 
                                         Mean = mean(MyOut), SD = sd(MyOut)))
     
     MyOut <- GapSpecies[GapSpecies$ShadeTolerance == "intermediate", "Proportion"]
     MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
     MyOut <- MyOut[MyVals]
     SA_Standardized <- rbind(SA_Standardized, 
-                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "GapSpecies_intermediate", Input = InVal, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "LRC_medium", Input = InVal, 
                                         Mean = mean(MyOut), SD = sd(MyOut)))
     
     MyOut <- GapSpecies[GapSpecies$ShadeTolerance == "low", "Proportion"]
     MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
     MyOut <- MyOut[MyVals]
     SA_Standardized <- rbind(SA_Standardized, 
-                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "GapSpecies_low", Input = InVal, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "LRC_low", Input = InVal, 
                                         Mean = mean(MyOut), SD = sd(MyOut)))
   }
 }
@@ -439,6 +439,83 @@ for(InVar in 1:4){
 SA_Standardized <- ddply(SA_Standardized, ~ ExplanatoryVariable, transform, 
                          Remin = min(Input), Remax = max(Input))
 SA_Standardized$pExplanatory <- (1 / (SA_Standardized$Remax - SA_Standardized$Remin)) * SA_Standardized$Input + (-1 * (1 / (SA_Standardized$Remax - SA_Standardized$Remin)) * SA_Standardized$Remin)
+
+# Also only for Crown-Shape-Boxplots, get all the Data:
+BoxStandardized <- data.frame(ExplanatoryVariable = "A", ResponseVariable = "B", Input = 1, Output = 1)[-1, ]
+for(InVar in 1){
+  ExVar <- colnames(Experiments2)[InVar]
+  for(InVal in unique(Experiments2[, InVar])){
+    MyVals <- which(Weighted_Rad[, ExVar] == InVal)
+    InVal <- ifelse(is.numeric(InVal), InVal,
+                    as.numeric(NNumbers[InVal]))
+    
+    MyOut <- Weighted_Rad[, "CentroidY"]
+    MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
+    MyOut <- MyOut[MyVals]
+    BoxStandardized <- rbind(BoxStandardized, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "WeightedRad", Input = InVal, 
+                                        Output = MyOut))
+    
+    MyOut <- Weighted_Full[, "CentroidY"]
+    MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
+    MyOut <- MyOut[MyVals]
+    BoxStandardized <- rbind(BoxStandardized, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "WeightedFull", Input = InVal, 
+                                        Output = MyOut))
+    
+    MyOut <- TotalRad[, "TotalRad"]
+    MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
+    MyOut <- MyOut[MyVals]
+    BoxStandardized <- rbind(BoxStandardized, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "TotalRad", Input = InVal, 
+                                        Output = MyOut))
+    
+    MyOut <- TotalFull[, "TotalFull"]
+    MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
+    MyOut <- MyOut[MyVals]
+    BoxStandardized <- rbind(BoxStandardized, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "TotalFull", Input = InVal, 
+                                        Output = MyOut))
+    
+    MyOut <- LightProp[LightProp$Proportion == 0.2, "Area"]
+    MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
+    MyOut <- MyOut[MyVals]
+    BoxStandardized <- rbind(BoxStandardized, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "LightProp", Input = InVal, 
+                                        Output = MyOut))
+    
+    MyOut <- FullSProp[FullSProp$Proportion == 0.2, "Area"]
+    MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
+    MyOut <- MyOut[MyVals]
+    BoxStandardized <- rbind(BoxStandardized, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "FullSProp", Input = InVal, 
+                                        Output = MyOut))
+    
+    MyOut <- GapSpecies[GapSpecies$ShadeTolerance == "high", "Proportion"]
+    MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
+    MyOut <- MyOut[MyVals]
+    BoxStandardized <- rbind(BoxStandardized, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "LRC_high", Input = InVal, 
+                                        Output = MyOut))
+    
+    MyOut <- GapSpecies[GapSpecies$ShadeTolerance == "intermediate", "Proportion"]
+    MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
+    MyOut <- MyOut[MyVals]
+    BoxStandardized <- rbind(BoxStandardized, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "LRC_medium", Input = InVal, 
+                                        Output = MyOut))
+    
+    MyOut <- GapSpecies[GapSpecies$ShadeTolerance == "low", "Proportion"]
+    MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
+    MyOut <- MyOut[MyVals]
+    BoxStandardized <- rbind(BoxStandardized, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "LRC_low", Input = InVal, 
+                                        Output = MyOut))
+  }
+}
+BoxStandardized <- ddply(BoxStandardized, ~ ExplanatoryVariable, transform, 
+                         Remin = min(Input), Remax = max(Input))
+BoxStandardized$pExplanatory <- (1 / (BoxStandardized$Remax - BoxStandardized$Remin)) * BoxStandardized$Input + (-1 * (1 / (BoxStandardized$Remax - BoxStandardized$Remin)) * BoxStandardized$Remin)
 
 # Some important Parameters for the Plots
 TextSize <- 8
@@ -448,7 +525,7 @@ YLimits <- c(-1.5, 1.8)
 
 # Now Plot everything
 Plot1 <- ggplot(SA_Standardized[SA_Standardized$ExplanatoryVariable == "CrownShape", ])+
-  geom_ribbon(aes(x = pExplanatory, ymin = Mean - SD, ymax = Mean + SD), fill = "grey70")+
+  geom_boxplot(data = BoxStandardized, aes(x = pExplanatory, y = Output, group = pExplanatory), width = 0.2, fill = "grey70")+
   geom_line(aes(x = pExplanatory, y = Mean))+
   geom_point(aes(x = pExplanatory, y = Mean))+
   scale_x_continuous(name = "Crown Shape", breaks = c(0, 1), labels = c("Disk", "Ellipsoid"), limits = c(-0.125, 1.125), minor_breaks = NULL)+
