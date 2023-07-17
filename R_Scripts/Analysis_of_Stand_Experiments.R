@@ -83,6 +83,10 @@ StationLats <- data.frame(WeatherStation = c("Phillip SW Belize", "Lake Charles"
 
 NNumbers <- c("Phillip SW Belize" = 17.539, "Lake Charles" = 30.125, "McMinnville" = 45.18, "Lindenberg" = 52.217, "Croker river" = 69.28, "Disk" = 1, "Ellipsoid" = 2)
 
+FLabelsEx <- c("TotalRad" = "Total\nRadiation", "TotalFull" = "Total\nSunhours", "WeightedRad" = "Centroid\nRadiation", "WeightedFull" = "Centroid\nSunhours", 
+               "LightProp" = "most\nShaded", "FullSProp" = "most\nSunhours", "GapSpecies_low" = "intolerant\nArea",
+               "LRC_low" = "LRC\nlow", "LRC_medium" = "LRC\nmedium", "LRC_high" = "LRC\nhigh")
+
 FLabels2 <- c("WeatherStation" = "Latitude\n", "CrownShape" = "Crown Shape\n", "CrownTransmissibility" = "Crown\nTransmissibility", "ForestGapSize" = "Gap Size\n", 
              "TotalRad" = "Total\nRadiation", "TotalFull" = "Total\nSunhours", "WeightedRad" = "Centroid\nRadiation", "WeightedFull" = "Centroid\nSunhours", 
              "LightProp" = "most\nShaded", "FullSProp" = "most\nSunhours", "GapSpecies_low" = "intolerant\nArea",
@@ -521,6 +525,11 @@ BoxStandardized$pExplanatory <- (1 / (BoxStandardized$Remax - BoxStandardized$Re
 TextSize <- 8
 YSpace <- 0.1
 SA_Standardized$ResponseVariable <- factor(SA_Standardized$ResponseVariable, levels = FLevels)
+FLabelsEx <- data.frame(ResponseVariable = names(FLabelsEx), ResponseVariable2 = FLabelsEx)
+SA_Standardized <- merge(SA_Standardized, FLabelsEx, by = c("ResponseVariable"))
+SA_Standardized$ResponseVariable2 <- factor(SA_Standardized$ResponseVariable2, levels = FLabelsEx$ResponseVariable2)
+BoxStandardized <- merge(BoxStandardized, FLabelsEx, by = c("ResponseVariable"))
+BoxStandardized$ResponseVariable2 <- factor(BoxStandardized$ResponseVariable2, levels = FLabelsEx$ResponseVariable2)
 YLimits <- c(-1.5, 1.8)
 
 # Now Plot everything
@@ -530,7 +539,7 @@ Plot1 <- ggplot(SA_Standardized[SA_Standardized$ExplanatoryVariable == "CrownSha
   geom_point(aes(x = pExplanatory, y = Mean))+
   scale_x_continuous(name = "Crown Shape", breaks = c(0, 1), labels = c("Disk", "Ellipsoid"), limits = c(-0.125, 1.125), minor_breaks = NULL)+
   scale_y_continuous(name = "Response Variable", breaks = c(-1, 1), labels = c("low", "high"))+
-  facet_grid(ResponseVariable ~ ExplanatoryVariable, labeller = labeller(ResponseVariable = FLabels2, ExplanatoryVariable = FLabels2))+
+  facet_grid(ResponseVariable2 ~ ExplanatoryVariable, labeller = labeller(ExplanatoryVariable = FLabels2))+
   theme_bw()+
   coord_cartesian(ylim = YLimits)+
   theme(text = element_text(size = TextSize),
@@ -588,7 +597,7 @@ Plot4 <- ggplot(SA_Standardized[SA_Standardized$ExplanatoryVariable == "ForestGa
   scale_x_continuous(name = "Gap Size", breaks = unique(SA_Standardized$pExplanatory[SA_Standardized$ExplanatoryVariable == "ForestGapSize"]), 
                      labels = unique(SA_Standardized$Input[SA_Standardized$ExplanatoryVariable == "ForestGapSize"]), limits = c(-0.125, 1.125), minor_breaks = NULL)+
   scale_y_continuous(name = "Response Variable", breaks = c(-1, 1), labels = c("low", "high"))+
-  facet_grid(ResponseVariable~ ExplanatoryVariable, labeller = labeller(ResponseVariable = FLabels2, ExplanatoryVariable = FLabels2))+
+  facet_grid(ResponseVariable ~ ExplanatoryVariable, labeller = labeller(ResponseVariable = FLabels2, ExplanatoryVariable = FLabels2))+
   theme_bw()+
   coord_cartesian(ylim = YLimits)+
   theme(text = element_text(size = TextSize),
