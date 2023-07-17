@@ -668,10 +668,10 @@ end
 
 @#$#@#$#@
 GRAPHICS-WINDOW
-525
-290
-1226
-1000
+535
+240
+1236
+950
 -1
 -1
 0.8571428571428571
@@ -948,9 +948,39 @@ After the Simulation
 TEXTBOX
 1255
 75
-1540
-990
-The Simulation is finished, if DOY 365 and Hour 24 is reached. DOY and Hour are reset automatically.\n\nOn the World-Map you can now see that the Middle of the Plot is colored. This is the amount of Light each m² in the Model World received ofer the course of a Year. Lighter Regions received more Light, dark Regions received less Light. \n\nBut you can also choose to see other Results.\n\n\n\n\n\nTrees grow better in direct Sunlight. Even if Trees only receive direct Sunlight for a small amount of Time, this Radiation can still contribute significantly to total amount of Light a Plant receives per Day. You can see the amount of Instances a m² of Ground received direct Sunlight if you click here:\n\n\n\n\n\n\n\nIt is also important to see the Distribution of Shading inside the Gap. A measurement for that is the Weighted Centroid of Radiation Energy inside the observed Area. You can also calculate the Weighted Centroid of Direct Sunlight.\n\n\n\n\n\n\n\n\n\nSpecies Distribution inside the Gap is very interesting. We split the Gap into 3 Categories: \n- Suitable for Light Demanding Species\n- Suitable for Intermediate Species\n- Suitable for Shade Tolerant Species\n\nClick here to find out the Distribution of Species inside the Gap:\n\n\n
+1530
+270
+The Simulation is finished, if DOY 365 and Hour 24 is reached. DOY and Hour are reset automatically.\n\nOn the World-Map you can now see that the Middle of the Plot is colored. This is the amount of Light each m² in the Model World received ofer the course of a Year. Lighter Regions received more Light, dark Regions received less Light. \n\nBut you can also choose to see other Results.
+11
+0.0
+1
+
+TEXTBOX
+1255
+270
+1535
+370
+Trees grow better in direct Sunlight. Even if Trees only receive direct Sunlight for a small amount of Time, this Radiation can still contribute significantly to total amount of Light a Plant receives per Day. You can see the amount of Instances a m² of Ground received direct Sunlight if you click here:
+11
+0.0
+1
+
+TEXTBOX
+1255
+440
+1515
+551
+It is also important to see the Distribution of Shading inside the Gap. A measurement for that is the Weighted Centroid of Radiation Energy inside the observed Area. You can also calculate the Weighted Centroid of Direct Sunlight.
+11
+0.0
+1
+
+TEXTBOX
+1255
+635
+1520
+780
+Light Distribution inside the Gap is very interesting. We split the Gap into 3 Light Receiving Classes: \n- Low Light Receiving\n- Medium Light Receiving\n- High Light Receiving\n\nClick here to find out the Distribution of Light Receiving Classes inside the Gap:
 11
 0.0
 1
@@ -958,7 +988,7 @@ The Simulation is finished, if DOY 365 and Hour 24 is reached. DOY and Hour are 
 BUTTON
 1300
 225
-1470
+1495
 258
 Show Radiation
 Plot-Results \"TotalRadiation\"
@@ -974,9 +1004,9 @@ NIL
 
 BUTTON
 1300
-390
-1470
-423
+370
+1495
+403
 Show Full Sunlight
 Plot-Results \"TotalFull\"
 NIL
@@ -991,9 +1021,9 @@ NIL
 
 BUTTON
 1295
-565
-1465
-598
+535
+1490
+568
 Show Radiation Centroid
 Plot-Results \"WeightedRad\"
 NIL
@@ -1008,9 +1038,9 @@ NIL
 
 BUTTON
 1295
-605
-1465
-638
+575
+1490
+608
 Show Sunlight Centroid
 Plot-Results \"WeightedFullS\"
 NIL
@@ -1024,11 +1054,11 @@ NIL
 1
 
 BUTTON
-1300
-820
-1470
-853
-Show Species Distribution
+1295
+765
+1490
+798
+Show Light Receiving Classes
 Plot-Results \"Species\"
 NIL
 1
