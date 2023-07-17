@@ -667,13 +667,12 @@ end
 
 
 
-
 @#$#@#$#@
 GRAPHICS-WINDOW
 525
-215
-1229
-920
+245
+1226
+955
 -1
 -1
 0.8571428571428571
@@ -879,7 +878,7 @@ TEXTBOX
 20
 170
 310
-701
+735
 Before you start the Simulation, you should choose some Settings. We will explain what you can choose from. You can also leave everything as it is.\n\nFirst, pick a forest stand. We prepared 10 different stands for you.\n\nSecond, choose the Tree Parameters. \nYou can set the Shape of Tree Crowns. At the moment, the Model supports 2D-Disk Crowns and 3D-Ellipsoid Crowns.\n\nAlso set the Crown Transmissibility. This defines how much Light goes through the Crown. 0 = 0% of Light from above the Canopy is transmitted by the Crown. 100 = 100% of Light is transmitted by the Crown. \n\nThird, choose a Weather Station. We implemented 5 Weather Stations along a latitudal gradient. Shading near the Equator is different from Shading in the North.\n\nFourth, set the Size of the Model World. You can set the Size between 50 x 50 m and 800 x 800 m. In small Worlds, Shadows are sometimes so long that they exit the Model World. Large Worlds take a long Time to simulate. We recommend a World-Size of 700 x 700 m.\n\nOur Model simulates a Gap in the Forest in the Middle of our World. Trees in the Middle of the World are cut before the Simulation. The Forest-Gap-Size defines the radius of this Gap. \n\nIf you finished setting everything up, press the \"Setup\"-Button. You will see our Model-World unfold.\nThen, press \"go-one-Year\" and the Model will simulate a whole year. You can stop the Model by pressing \"go-one-Year\" again and resume it by pressing the Button again. If you only want to simulate the next Hour, press \"go-one-Hour\".
 11
 0.0
@@ -899,7 +898,7 @@ TEXTBOX
 660
 50
 920
-205
+225
 The Simulation now starts. If the Simulation Speed is slow, increase the Speed using the Slider above. \n\nThe Model now simulates Shading of a Forest to the Ground. You can see the Shading on the Ground. At the Moment, you see all Shadows but we are only interested at the Shading inside the Gap. You can plot only Shadows that are important for us if you switch off \"PlotAllShadows\". If you only want to see the Results and not the Shading Process, turn off \"PlotShadows\".
 11
 0.0
@@ -909,7 +908,7 @@ TEXTBOX
 955
 50
 1160
-195
+220
 The Model is now running for a Year. The current Date is available as Day of Year (DOY, 1 = January 1st, 365 = December 31st) and Time (1 = 01:00, 18 = 18:00).\n\nThe Model is stopping at DOY 365 and Hour 24. You cn also manually stop the Simulation by pressing \"go-one-Year\" and resume the Simulation by pressing the Button again.
 11
 0.0
@@ -951,7 +950,7 @@ TEXTBOX
 1255
 75
 1540
-701
+715
 The Simulation is finished, if DOY 365 and Hour 24 is reached. DOY and Hour are reset automatically.\n\nOn the World-Map you can now see that the Middle of the Plot is colored. This is the amount of Light each m² in the Model World received ofer the course of a Year. Lighter Regions received more Light, dark Regions received less Light. \n\nBut you can also choose to see other Results.\n\n\n\n\n\nTrees grow better in direct Sunlight. Even if Trees only receive direct Sunlight for a small amount of Time, this Radiation can still contribute significantly to total amount of Light a Plant receives per Day. You can see the amount of Instances a m² of Ground received direct Sunlight if you click here:\n\n\n\n\n\nIt is also important to see the Distribution of Shading inside the Gap. A measurement for that is the Weighted Centroid of Radiation Energy inside the observed Area. You can also calculate the Weighted Centroid of Direct Sunlight.\n\n\n\n\n\n\n\nSpecies Distribution inside the Gap is very interesting. We split the Gap into 3 Categories: \n- Suitable for Light Demanding Species\n- Suitable for Intermediate Species\n- Suitable for Shade Tolerant Species\n\nClick here to find out the Distribution of Species inside the Gap:
 11
 0.0
@@ -976,9 +975,9 @@ NIL
 
 BUTTON
 1300
-360
+375
 1470
-393
+408
 Show Full Sunlight
 Plot-Results \"TotalFull\"
 NIL
@@ -993,9 +992,9 @@ NIL
 
 BUTTON
 1300
-475
+500
 1470
-508
+533
 Show Radiation Centroid
 Plot-Results \"WeightedRad\"
 NIL
@@ -1010,9 +1009,9 @@ NIL
 
 BUTTON
 1300
-510
+540
 1470
-543
+573
 Show Sunlight Centroid
 Plot-Results \"WeightedFullS\"
 NIL
@@ -1027,9 +1026,9 @@ NIL
 
 BUTTON
 1300
-660
+710
 1470
-693
+743
 Show Species Distribution
 Plot-Results \"Species\"
 NIL
