@@ -91,12 +91,17 @@ FLabels2 <- c("WeatherStation" = "Latitude\n", "CrownShape" = "Crown Shape\n", "
              "TotalRad" = "Total\nRadiation", "TotalFull" = "Total\nSunhours", "WeightedRad" = "Centroid\nRadiation", "WeightedFull" = "Centroid\nSunhours", 
              "LightProp" = "most\nShaded", "FullSProp" = "most\nSunhours", "GapSpecies_low" = "intolerant\nArea",
              "GapSpecies_intermediate" = "intermediate\nArea", "GapSpecies_high" = "tolerant\nArea", "LRC_low" = "LRC\nlow", "LRC_medium" = "LRC\nmedium", "LRC_high" = "LRC\nhigh")
-FLevels <- c("TotalRad", "WeightedRad", "LightProp", "TotalFull", "WeightedFull", "FullSProp", "LRC_low", "LRC_medium", "LRC_high")
+FLevels <- c("TotalRad", "WeightedRad", "LightProp", "TotalFull", "WeightedFull", "FullSProp", "LRC_high", "LRC_medium", "LRC_low")
 
 FLabels3 <- c("WeatherStation" = "Latitude\n", "CrownShape" = "Crown Shape\n", "CrownTransmissibility" = "Crown\nTransmissibility", "ForestGapSize" = "Gap Size\n", 
-             "TotalRad" = "Total\nRadiation", "TotalFull" = "Total\nSunhours", "WeightedRad" = "Centroid\nRadiation", "WeightedFull" = "Centroid\nSunhours", 
-             "LightProp" = "most\nShaded", "FullSProp" = "most\nSunhours", "GapSpecies_low" = "intolerant\nArea",
-             "GapSpecies_intermediate" = "intermediate\nArea", "GapSpecies_high" = "tolerant\nArea")
+              "TotalRad" = "Total\nRadiation", "TotalFull" = "Total\nSunhours", "WeightedRad" = "Centroid\nRadiation", "WeightedFull" = "Centroid\nSunhours", 
+              "LightProp" = "most\nShaded", "FullSProp" = "most\nSunhours", "GapSpecies_low" = "intolerant\nArea",
+              "GapSpecies_intermediate" = "intermediate\nArea", "GapSpecies_high" = "tolerant\nArea")
+
+FLabels3 <- c("WeatherStation" = "Latitude\n", "CrownShape" = "Crown Shape\n", "CrownTransmissibility" = "Crown\nTransmissibility", "ForestGapSize" = "Gap Size\n", 
+              "TotalRad" = "Total\nRadiation", "TotalFull" = "Total\nSunhours", "WeightedRad" = "Centroid\nRadiation", "WeightedFull" = "Centroid\nSunhours", 
+              "LightProp" = "most\nShaded", "FullSProp" = "most\nSunhours", "GapSpecies_low" = "LRC\nhigh",
+              "GapSpecies_intermediate" = "LRC\nmedium", "GapSpecies_high" = "LRC\nlow")
 
 FLabels4 <- c("Phillip SW Belize" = "Latitude: 17.539", "Lake Charles" = "Latitude: 30.125", 
               "McMinnville" = "Latitude: 45.18", "Lindenberg" = "Latitude: 52.217", 
@@ -421,7 +426,7 @@ for(InVar in 1:4){
     MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
     MyOut <- MyOut[MyVals]
     SA_Standardized <- rbind(SA_Standardized, 
-                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "LRC_high", Input = InVal, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "LRC_low", Input = InVal, 
                                         Mean = mean(MyOut), SD = sd(MyOut)))
     
     MyOut <- GapSpecies[GapSpecies$ShadeTolerance == "intermediate", "Proportion"]
@@ -435,7 +440,7 @@ for(InVar in 1:4){
     MyOut <- (MyOut - mean(MyOut)) / sd(MyOut)
     MyOut <- MyOut[MyVals]
     SA_Standardized <- rbind(SA_Standardized, 
-                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "LRC_low", Input = InVal, 
+                             data.frame(ExplanatoryVariable = ExVar, ResponseVariable = "LRC_high", Input = InVal, 
                                         Mean = mean(MyOut), SD = sd(MyOut)))
   }
 }
@@ -613,7 +618,6 @@ Plot4 <- ggplot(SA_Standardized[SA_Standardized$ExplanatoryVariable == "ForestGa
 AlignedPlots <- align_plots(Plot1, Plot2, Plot3, Plot4, align = "h", axis = "b")
 # Plot All Plots together
 AllPlots <- plot_grid(AlignedPlots[[1]], AlignedPlots[[2]], AlignedPlots[[3]], AlignedPlots[[4]], nrow = 1, rel_widths = c(1.25, 1, 1, 1.4)); AllPlots
-
 
 #################################################################################################################
 #### Standardized Regression Analysis ####
@@ -1231,7 +1235,6 @@ AllPlots_ForestGapSize
 
 # Interactions seem to be limited. Interactions between Crown Shape and Latitude and Crown Shape and Forest Gap Size seem to be limited to Sunhours.
 # We conclude that Interactions play only a minor Role in this Experiment.
-
 
 
 #################################################################################################################
